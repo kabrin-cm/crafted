@@ -9,19 +9,20 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary: #2D5A4A;
-            --primary-dark: #1E3F32;
-            --secondary: #F4E9D8;
-            --accent: #D4A574;
-            --text: #1A1A1A;
-            --text-light: #666666;
-            --;
-            --successwhite: #FFFFFF: #4CAF50;
-            --gradient: linear-gradient(135deg, #2D5A4A 0%, #3D7A6A 100%);
+            --primary: #1a3a34;
+            --primary-light: #2d5a4a;
+            --secondary: #f7f3ef;
+            --accent: #c9a87c;
+            --accent-dark: #a88b5e;
+            --text: #1a1a1a;
+            --text-light: #5a5a5a;
+            --white: #ffffff;
+            --cream: #faf8f5;
+            --gradient: linear-gradient(135deg, #1a3a34 0%, #2d5a4a 100%);
         }
         
         * {
@@ -35,12 +36,13 @@
             line-height: 1.6;
             color: var(--text);
             background: var(--white);
+            overflow-x: hidden;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
         
         /* Header */
@@ -48,10 +50,10 @@
             padding: 20px 0;
             position: fixed;
             width: 100%;
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(20px);
             z-index: 100;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 30px rgba(0,0,0,0.06);
         }
         
         .header-content {
@@ -61,19 +63,38 @@
         }
         
         .logo {
-            font-size: 24px;
-            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 700;
             color: var(--primary);
             text-decoration: none;
+            letter-spacing: -0.5px;
         }
         
         .logo span {
             color: var(--accent);
         }
         
+        .nav-cta {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(26,58,52,0.3);
+        }
+        
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(26,58,52,0.4);
+        }
+        
         /* Hero Section */
         .hero {
-            padding: 140px 0 100px;
+            padding: 180px 0 120px;
             background: var(--secondary);
             text-align: center;
             position: relative;
@@ -83,78 +104,94 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -20%;
+            top: -30%;
+            right: -10%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(26,58,52,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -10%;
             width: 600px;
             height: 600px;
-            background: rgba(45, 90, 74, 0.1);
+            background: radial-gradient(circle, rgba(201,168,124,0.1) 0%, transparent 70%);
             border-radius: 50%;
         }
         
         .hero-badge {
             display: inline-block;
-            background: var(--primary);
-            color: var(--white);
-            padding: 8px 20px;
+            background: var(--white);
+            color: var(--primary);
+            padding: 10px 24px;
             border-radius: 50px;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
+            letter-spacing: 0.5px;
             margin-bottom: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
         
         .hero h1 {
-            font-size: 56px;
-            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(40px, 6vw, 72px);
+            font-weight: 700;
+            color: var(--primary);
             line-height: 1.1;
             margin-bottom: 24px;
-            color: var(--text);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
-        .hero h1 span {
-            color: var(--primary);
-        }
-        
-        .hero-subtitle {
-            font-size: 22px;
+        .hero p {
+            font-size: 20px;
             color: var(--text-light);
-            max-width: 700px;
+            max-width: 600px;
             margin: 0 auto 40px;
+            line-height: 1.7;
         }
         
-        .hero-cta {
+        .hero-buttons {
             display: flex;
             gap: 16px;
             justify-content: center;
             flex-wrap: wrap;
         }
         
-        .btn {
-            display: inline-block;
-            padding: 18px 40px;
-            border-radius: 8px;
-            font-size: 18px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-        }
-        
         .btn-primary {
-            background: var(--primary);
+            background: var(--gradient);
             color: var(--white);
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(26,58,52,0.35);
+            display: inline-block;
         }
         
         .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(45, 90, 74, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(26,58,52,0.45);
         }
         
         .btn-secondary {
-            background: transparent;
+            background: var(--white);
             color: var(--primary);
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
             border: 2px solid var(--primary);
+            display: inline-block;
         }
         
         .btn-secondary:hover {
@@ -168,83 +205,122 @@
             background: var(--white);
         }
         
-        .section-title {
-            font-size: 42px;
-            font-weight: 700;
+        .section-header {
             text-align: center;
             margin-bottom: 60px;
         }
         
-        .problem-content {
-            max-width: 800px;
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .section-header p {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 600px;
             margin: 0 auto;
+        }
+        
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .problem-card {
+            background: var(--cream);
+            padding: 40px 30px;
+            border-radius: 20px;
             text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.04);
         }
         
-        .problem-text {
-            font-size: 22px;
-            line-height: 1.8;
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+        
+        .problem-card .icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .problem-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+        
+        .problem-card p {
+            font-size: 15px;
             color: var(--text-light);
+            line-height: 1.6;
         }
         
-        .problem-text strong {
-            color: var(--text);
-        }
-        
-        .problem-callout {
-            background: var(--secondary);
-            padding: 30px;
-            border-radius: 12px;
-            margin-top: 40px;
-            text-align: left;
-        }
-        
-        .problem-callout p {
-            font-style: italic;
-            color: var(--text-light);
-        }
-        
-        /* Solution Section */
-        .solution {
+        /* Method Section */
+        .method {
             padding: 100px 0;
             background: var(--gradient);
             color: var(--white);
         }
         
-        .solution .section-title {
+        .method .section-header h2,
+        .method .section-header p {
             color: var(--white);
         }
         
-        .features-grid {
+        .method .section-header p {
+            opacity: 0.9;
+        }
+        
+        .method-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
-            margin-top: 60px;
         }
         
-        .feature-card {
+        .method-card {
             background: rgba(255,255,255,0.1);
-            padding: 30px;
-            border-radius: 12px;
             backdrop-filter: blur(10px);
+            padding: 40px 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: all 0.3s ease;
         }
         
-        .feature-icon {
-            font-size: 40px;
+        .method-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-5px);
+        }
+        
+        .method-card .icon {
+            font-size: 42px;
             margin-bottom: 20px;
+            display: block;
         }
         
-        .feature-card h3 {
-            font-size: 22px;
+        .method-card h3 {
+            font-size: 20px;
+            font-weight: 600;
             margin-bottom: 12px;
         }
         
-        .feature-card p {
+        .method-card p {
+            font-size: 15px;
             opacity: 0.9;
-            font-size: 16px;
+            line-height: 1.6;
         }
         
-        /* Results */
+        /* Results Section */
         .results {
             padding: 100px 0;
             background: var(--secondary);
@@ -253,79 +329,110 @@
         .results-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
+            gap: 30px;
         }
         
         .result-card {
             background: var(--white);
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
         }
         
-        .result-card p {
-            font-style: italic;
+        .result-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .result-content {
+            padding: 28px;
+        }
+        
+        .result-content h3 {
             font-size: 18px;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-        
-        .result-author {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .result-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-weight: 700;
-        }
-        
-        .result-name {
             font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 8px;
         }
         
-        /* About Section */
-        .about {
+        .result-content p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        /* Coach Section */
+        .coach {
             padding: 100px 0;
             background: var(--white);
         }
         
-        .about-content {
+        .coach-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
             align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
         }
         
-        .about-image {
+        @media (max-width: 768px) {
+            .coach-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+        
+        .coach-image {
             background: var(--secondary);
-            border-radius: 20px;
-            height: 500px;
+            border-radius: 30px;
+            aspect-ratio: 4/5;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 120px;
+            color: var(--accent);
         }
         
-        .about-text h2 {
-            font-size: 42px;
-            margin-bottom: 24px;
-        }
-        
-        .about-text p {
-            font-size: 18px;
-            color: var(--text-light);
+        .coach-info h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 4vw, 44px);
+            font-weight: 600;
+            color: var(--primary);
             margin-bottom: 20px;
+        }
+        
+        .coach-info .title {
+            color: var(--accent-dark);
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .coach-info p {
+            font-size: 16px;
+            color: var(--text-light);
             line-height: 1.8;
+            margin-bottom: 16px;
         }
         
         /* Pricing Section */
@@ -334,87 +441,144 @@
             background: var(--secondary);
         }
         
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        .pricing-cards {
+            display: flex;
+            justify-content: center;
             gap: 30px;
-            margin-top: 60px;
+            flex-wrap: wrap;
+            max-width: 900px;
+            margin: 0 auto;
         }
         
         .pricing-card {
             background: var(--white);
-            padding: 40px;
-            border-radius: 16px;
+            border-radius: 24px;
+            padding: 50px 40px;
             text-align: center;
+            flex: 1;
+            min-width: 320px;
+            max-width: 400px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
             position: relative;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 70px rgba(0,0,0,0.15);
         }
         
         .pricing-card.featured {
-            border: 3px solid var(--primary);
+            border: 2px solid var(--accent);
             transform: scale(1.05);
         }
         
-        .pricing-badge {
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+        
+        .pricing-card.featured::before {
+            content: 'Most Popular';
             position: absolute;
-            top: -12px;
+            top: -14px;
             left: 50%;
             transform: translateX(-50%);
             background: var(--accent);
             color: var(--white);
             padding: 6px 20px;
-            border-radius: 50px;
-            font-size: 14px;
+            border-radius: 20px;
+            font-size: 12px;
             font-weight: 600;
+            letter-spacing: 0.5px;
         }
         
         .pricing-card h3 {
-            font-size: 24px;
-            margin-bottom: 8px;
-        }
-        
-        .pricing-card .subtitle {
-            color: var(--text-light);
-            margin-bottom: 24px;
-        }
-        
-        .pricing-amount {
-            font-size: 48px;
-            font-weight: 800;
+            font-size: 28px;
+            font-weight: 600;
             color: var(--primary);
             margin-bottom: 8px;
         }
         
-        .pricing-amount span {
-            font-size: 18px;
+        .pricing-card .subtitle {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        
+        .pricing-card .price {
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        
+        .pricing-card .price span {
+            font-size: 16px;
             font-weight: 400;
             color: var(--text-light);
         }
         
-        .pricing-gst {
+        .pricing-card .duration {
             font-size: 14px;
-            color: var(--text-light);
-            margin-bottom: 24px;
+            color: var(--accent-dark);
+            margin-bottom: 30px;
         }
         
-        .pricing-features {
+        .pricing-card ul {
             list-style: none;
             text-align: left;
             margin-bottom: 30px;
         }
         
-        .pricing-features li {
+        .pricing-card li {
             padding: 12px 0;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            font-size: 15px;
+            color: var(--text);
             display: flex;
             align-items: center;
             gap: 12px;
         }
         
-        .pricing-features li::before {
+        .pricing-card li::before {
             content: '✓';
-            color: var(--success);
+            color: var(--primary-light);
             font-weight: 700;
+            font-size: 16px;
+        }
+        
+        .pricing-card .btn {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card .btn-primary {
+            background: var(--gradient);
+            color: var(--white);
+            box-shadow: 0 8px 30px rgba(26,58,52,0.35);
+        }
+        
+        .pricing-card .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(26,58,52,0.45);
+        }
+        
+        .pricing-card .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .pricing-card .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--white);
         }
         
         /* FAQ Section */
@@ -425,23 +589,24 @@
         
         .faq-grid {
             max-width: 800px;
-            margin: 60px auto 0;
+            margin: 0 auto;
         }
         
         .faq-item {
-            padding: 24px 0;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            padding: 30px 0;
         }
         
-        .faq-question {
-            font-size: 20px;
+        .faq-item h3 {
+            font-size: 18px;
             font-weight: 600;
+            color: var(--primary);
             margin-bottom: 12px;
         }
         
-        .faq-answer {
+        .faq-item p {
+            font-size: 15px;
             color: var(--text-light);
-            font-size: 16px;
             line-height: 1.7;
         }
         
@@ -454,48 +619,68 @@
         }
         
         .cta h2 {
-            font-size: 48px;
-            margin-bottom: 24px;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 600;
+            margin-bottom: 20px;
         }
         
         .cta p {
-            font-size: 22px;
+            font-size: 18px;
             opacity: 0.9;
             margin-bottom: 40px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta .btn-primary {
+            background: var(--white);
+            color: var(--primary);
+        }
+        
+        .cta .btn-primary:hover {
+            background: var(--accent);
+            color: var(--white);
         }
         
         /* Footer */
         footer {
             padding: 40px 0;
-            background: var(--text);
+            background: var(--primary);
             color: var(--white);
             text-align: center;
         }
         
         footer p {
             opacity: 0.7;
+            font-size: 14px;
         }
         
-        /* Responsive */
+        /* Mobile */
         @media (max-width: 768px) {
+            .hero {
+                padding: 140px 0 80px;
+            }
+            
             .hero h1 {
                 font-size: 36px;
             }
             
-            .hero-subtitle {
-                font-size: 18px;
+            .hero p {
+                font-size: 17px;
             }
             
-            .section-title {
-                font-size: 32px;
-            }
-            
-            .about-content {
-                grid-template-columns: 1fr;
+            .problem, .method, .results, .coach, .pricing, .faq, .cta {
+                padding: 70px 0;
             }
             
             .pricing-card.featured {
                 transform: none;
+            }
+            
+            .pricing-card.featured:hover {
+                transform: translateY(-10px);
             }
         }
     </style>
@@ -503,21 +688,23 @@
 <body>
     <!-- Header -->
     <header>
-        <div class="container header-content">
-            <a href="#" class="logo">SNS <span>Method</span></a>
-            <a href="#pricing" class="btn btn-primary">View Programs</a>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">SNS <span>Method</span></a>
+                <a href="#pricing" class="nav-cta">Get Started</a>
+            </div>
         </div>
     </header>
     
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <span class="hero-badge">Transform Your Relationship With Food</span>
-            <h1>How we have helped over <span>200+ Busy Women</span> Achieve their dream body without crash diets, or 2x a day workouts.</h1>
-            <p class="hero-subtitle">The SNS Method helps busy women get into the best shape of their life—without starving, without giving up the foods they love, and without another quick fix that won't last.</p>
-            <div class="hero-cta">
-                <a href="#pricing" class="btn btn-primary">View Programs</a>
-                <a href="#about" class="btn btn-secondary">Meet Sharan</a>
+            <span class="hero-badge">For Busy Women Who Want Lasting Results</span>
+            <h1>Transform Your Relationship With Food</h1>
+            <p>Stop the cycle of dieting. Learn how your body actually works—and make decisions that last. No starvation. No deprivation. Just results.</p>
+            <div class="hero-buttons">
+                <a href="#pricing" class="btn-primary">View Programs</a>
+                <a href="#results" class="btn-secondary">See Results</a>
             </div>
         </div>
     </section>
@@ -525,89 +712,121 @@
     <!-- Problem Section -->
     <section class="problem">
         <div class="container">
-            <h2 class="section-title">You've Tried Everything. Nothing Worked.</h2>
-            <div class="problem-content">
-                <p class="problem-text">
-                    You've done <strong>keto</strong>, you've tried <strong>intermittent fasting</strong>. You've counted calories, tracked macros, and followed meal plans.<br><br>
-                    And every single time? You end up in a cycle and loop, lose the weight and it comes back. Or maybe you are even stuck where you do not see the results you want to see.<br><br>
-                    <strong>You're not broken or lacking willpower. You've just been taught and are following the wrong approach.</strong><br><br>
-                    The problem isn't you. It's the diet mentality that is portrayed.
-                </p>
-                <div class="problem-callout">
-                    <p><strong>plateau</strong> (noun): when your body adapts to your diet and weight loss stops—even though you're doing everything "right"</p>
+            <div class="section-header">
+                <h2>You've Tried Everything. Nothing Worked.</h2>
+                <p>You're not broken. You've just been following the wrong approach.</p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <span class="icon">🥗</span>
+                    <h3>Diets Don't Work</h3>
+                    <p>Keto, intermittent fasting, calorie counting—they all work short-term. Then the weight comes back.</p>
+                </div>
+                <div class="problem-card">
+                    <span class="icon">😔</span>
+                    <h3>Feel Like You're Failing</h3>
+                    <p>When diets stop working, you blame yourself. But the problem was never you—it was the method.</p>
+                </div>
+                <div class="problem-card">
+                    <span class="icon">🔄</span>
+                    <h3>The Yo-Yo Cycle</h3>
+                    <p>Lose weight, gain it back, start over. Again and again. It's exhausting.</p>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Solution Section -->
-    <section class="solution">
+    <!-- Method Section -->
+    <section class="method">
         <div class="container">
-            <h2 class="section-title">This is the exact reason we built SNS Method. It's a Complete Lifestyle Overhaul.</h2>
-            <p style="text-align: center; font-size: 20px; opacity: 0.9;">The SNS Method teaches you how your body actually works so you can make decisions that last. Your body is unique to your lifestyle and circumstance, stop trying to force another person's plan that worked for their body onto yours—it simply will not work.</p>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🧬</div>
+            <div class="section-header">
+                <h2>This Is the SNS Method</h2>
+                <p>A complete lifestyle overhaul—not another quick fix</p>
+            </div>
+            <div class="method-grid">
+                <div class="method-card">
+                    <span class="icon">🧬</span>
                     <h3>Hormone Optimization</h3>
                     <p>Understand WHY you've been stuck. We address the root cause, not just symptoms.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⚖️</div>
+                <div class="method-card">
+                    <span class="icon">⚖️</span>
                     <h3>Food Neutrality</h3>
                     <p>No more "good" vs "bad" foods. Build a healthy relationship with all food.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🌱</div>
+                <div class="method-card">
+                    <span class="icon">🌱</span>
                     <h3>Sustainable Habits</h3>
                     <p>Build what lasts, not what quits. Habits that work for YOUR life.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💬</div>
+                <div class="method-card">
+                    <span class="icon">💬</span>
                     <h3>Personalized Feedback</h3>
                     <p>Real coaching, not generic plans. We tailor to YOUR body and goals.</p>
                 </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 60px;">
-                <p style="font-size: 24px; font-weight: 600;">You'll learn <strong>HOW</strong> to eat, not just <strong>WHAT</strong> to eat.</p>
             </div>
         </div>
     </section>
     
     <!-- Results Section -->
-    <section class="results">
+    <section class="results" id="results">
         <div class="container">
-            <h2 class="section-title">Real Women. Real Results. No Starvation Required.</h2>
-            
+            <div class="section-header">
+                <h2>Real Women. Real Results.</h2>
+                <p>Hear their stories in their own words</p>
+            </div>
             <div class="results-grid">
                 <div class="result-card">
-                    <p>"I lost over 20lbs while learning I could eat good food, enjoy life AND see results. The SNS Method addresses all aspects of your life—how they're connected, why you feel stuck, and what to do about it. I felt like I was working with a close friend, even though we'd never met in person."</p>
-                    <div class="result-author">
-                        <div class="result-avatar">K</div>
-                        <div class="result-name">Kaitlin H.</div>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/4rWox-_Jeys" allowfullscreen></iframe>
+                    </div>
+                    <div class="result-content">
+                        <h3>Asha's Transformation</h3>
+                        <p>How the SNS Method transformed her relationship with nutrition, health, and wellness.</p>
                     </div>
                 </div>
-                
                 <div class="result-card">
-                    <p>"I was terrified that eating more would make me gain weight. Now? I've never eaten this much in my life—and I'm losing weight, have more energy, better sleep, and I've eliminated binge eating entirely. The emphasis on food neutrality completely changed my relationship with eating."</p>
-                    <div class="result-author">
-                        <div class="result-avatar">R</div>
-                        <div class="result-name">Rianne M.</div>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/j-oLdHZWAZw" allowfullscreen></iframe>
+                    </div>
+                    <div class="result-content">
+                        <h3>Sandy's Journey</h3>
+                        <p>How Sandy hit her goals with the SNS Method and transformed her lifestyle.</p>
+                    </div>
+                </div>
+                <div class="result-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/mSh5F2Bsn6U" allowfullscreen></iframe>
+                    </div>
+                    <div class="result-content">
+                        <h3>Stephanie's Results</h3>
+                        <p>How the SNS Method helped Stephanie achieve her fitness and body composition goals.</p>
+                    </div>
+                </div>
+                <div class="result-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/IjRiOQ2EQKg" allowfullscreen></iframe>
+                    </div>
+                    <div class="result-content">
+                        <h3>Megan's Story</h3>
+                        <p>How the SNS Method changed Megan's approach to nutrition, stress, and daily lifestyle.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- About Section -->
-    <section class="about" id="about">
+    <!-- Coach Section -->
+    <section class="coach">
         <div class="container">
-            <div class="about-content">
-                <div class="about-image">👩‍💼</div>
-                <div class="about-text">
+            <div class="coach-content">
+                <div class="coach-image">
+                    👩‍💼
+                </div>
+                <div class="coach-info">
                     <h2>Meet Your Coach</h2>
-                    <p>I'm Sharan Scali—Certified Advanced Sports & Exercise Nutritional Advisor, Hormone Specialist, and Mom of two.</p>
+                    <span class="title">Sharan Scali — Certified Advanced Sports & Exercise Nutritional Advisor</span>
+                    <p>I'm Sharan—Certified Advanced Sports & Exercise Nutritional Advisor, Hormone Specialist, and Mom of two.</p>
                     <p>I've spent years helping women break free from the diet cycle—not by giving you another meal plan to follow, but by teaching you how your body works and giving you habits that actually last.</p>
                     <p>I've been where you are. I know how frustrating it is to try everything and get nowhere.</p>
                     <p>That's why the SNS Method isn't about perfection. It's about progress you can maintain.</p>
@@ -619,52 +838,38 @@
     <!-- Pricing Section -->
     <section class="pricing" id="pricing">
         <div class="container">
-            <h2 class="section-title">Choose Your Path</h2>
-            
-            <div class="pricing-grid">
+            <div class="section-header">
+                <h2>Choose Your Path</h2>
+                <p>Invest in yourself—your future self will thank you</p>
+            </div>
+            <div class="pricing-cards">
                 <div class="pricing-card">
                     <h3>Elite</h3>
                     <p class="subtitle">Email + App Support</p>
-                    <div class="pricing-amount">$375<span>+GST</span></div>
-                    <p class="pricing-gst">3 months</p>
-                    <ul class="pricing-features">
+                    <p class="price">$375<span>+GST</span></p>
+                    <p class="duration">3 months</p>
+                    <ul>
                         <li>Personalized nutrition programming</li>
                         <li>Hormone optimization guidance</li>
                         <li>App-based support</li>
                         <li>Food neutrality education</li>
                         <li>Sustainable habit building</li>
                     </ul>
-                    <a href="#" class="btn btn-primary" style="width: 100%;">Get Started</a>
+                    <a href="#" class="btn btn-secondary">Get Started</a>
                 </div>
-                
                 <div class="pricing-card featured">
-                    <span class="pricing-badge">Most Popular</span>
                     <h3>Premium</h3>
                     <p class="subtitle">WhatsApp + Video Calls</p>
-                    <div class="pricing-amount">$495<span>+GST</span></div>
-                    <p class="pricing-gst">3 months</p>
-                    <ul class="pricing-features">
+                    <p class="price">$495<span>+GST</span></p>
+                    <p class="duration">3 months</p>
+                    <ul>
                         <li>Everything in Elite, plus:</li>
                         <li>WhatsApp support</li>
                         <li>3x 1-on-1 video calls</li>
                         <li>Personalized strategy sessions</li>
                         <li>Direct access to Sharan</li>
                     </ul>
-                    <a href="#" class="btn btn-primary" style="width: 100%;">Get Started</a>
-                </div>
-                
-                <div class="pricing-card">
-                    <h3>6-Month Elite</h3>
-                    <p class="subtitle">Email + App Support</p>
-                    <div class="pricing-amount">$675<span>+GST</span></div>
-                    <p class="pricing-gst">6 months</p>
-                    <ul class="pricing-features">
-                        <li>Everything in Elite</li>
-                        <li>Extended support period</li>
-                        <li>More time for transformation</li>
-                        <li>Better value</li>
-                    </ul>
-                    <a href="#" class="btn btn-primary" style="width: 100%;">Get Started</a>
+                    <a href="#" class="btn btn-primary">Get Started</a>
                 </div>
             </div>
         </div>
@@ -673,27 +878,25 @@
     <!-- FAQ Section -->
     <section class="faq">
         <div class="container">
-            <h2 class="section-title">Questions?</h2>
-            
+            <div class="section-header">
+                <h2>Questions?</h2>
+            </div>
             <div class="faq-grid">
                 <div class="faq-item">
-                    <h4 class="faq-question">Do I have to give up foods I love?</h4>
-                    <p class="faq-answer">No. This isn't about restriction. It's about understanding how food affects your body—so you can make choices that work for YOU.</p>
+                    <h3>Do I have to give up foods I love?</h3>
+                    <p>No. This isn't about restriction. It's about understanding how food affects your body—so you can make choices that work for YOU.</p>
                 </div>
-                
                 <div class="faq-item">
-                    <h4 class="faq-question">How is this different from a meal plan?</h4>
-                    <p class="faq-answer">Meal plans tell you WHAT to eat. We teach you HOW to eat. You'll understand your body, build sustainable habits, and have the knowledge to make your own decisions—forever.</p>
+                    <h3>How is this different from a meal plan?</h3>
+                    <p>Meal plans tell you WHAT to eat. We teach you HOW to eat. You'll understand your body, build sustainable habits, and have the knowledge to make your own decisions—forever.</p>
                 </div>
-                
                 <div class="faq-item">
-                    <h4 class="faq-question">I'm really busy. Will I have time for this?</h4>
-                    <p class="faq-answer">Yes. The method fits into your life, not the other way around. We work with real moms with real schedules.</p>
+                    <h3>I'm really busy. Will I have time for this?</h3>
+                    <p>Yes. The method fits into your life, not the other way around. We work with real moms with real schedules.</p>
                 </div>
-                
                 <div class="faq-item">
-                    <h4 class="faq-question">What if I've tried everything and failed?</h4>
-                    <p class="faq-answer">Perfect. That's exactly who this is for. The SNS Method addresses why past attempts didn't work—and gives you something that actually sticks.</p>
+                    <h3>What if I've tried everything and failed?</h3>
+                    <p>Perfect. That's exactly who this is for. The SNS Method addresses why past attempts didn't work—and gives you something that actually sticks.</p>
                 </div>
             </div>
         </div>
@@ -703,37 +906,31 @@
     <section class="cta">
         <div class="container">
             <h2>Your Best Shape Is Waiting</h2>
-            <p>You've tried the diets. You've done the deprivation. You've started over more times than you can count.<br>Now try something different.</p>
-            <a href="#pricing" class="btn" style="background: white; color: var(--primary);">View Programs</a>
+            <p>You've tried the diets. You've done the deprivation. Now try something different.</p>
+            <a href="#pricing" class="btn-primary">View Programs</a>
         </div>
     </section>
     
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>© 2026 Snatches & Samosas | All Rights Reserved</p>
+            <p>© 2026 SNS Method. All rights reserved.</p>
         </div>
     </footer>
     
     <script>
-        // Smooth scroll
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
-        });
-        
-        // Sticky header
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.style.boxShadow = '0 4px 30px rgba(0,0,0,0.1)';
-            } else {
-                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.05)';
-            }
         });
     </script>
 </body>
