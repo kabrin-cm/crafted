@@ -728,6 +728,11 @@
                 grid-template-columns: 1fr;
             }
             
+            /* Stack target sections on mobile */
+            .container > div[style*="grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+            }
+            
             .hero {
                 padding: 120px 0 60px;
                 text-align: center;
@@ -863,19 +868,34 @@
     <section>
         <div class="container">
             <div class="section-header">
-                <h2>Is The SNS Method For You?</h2>
-                <p>This is for you if...</p>
+                <h2>Is The SNS Method Right For You?</h2>
             </div>
             
-            <div class="target-grid">
-                <div class="target-item">You are a busy mom with limited time</div>
-                <div class="target-item">You have tried every diet and failed</div>
-                <div class="target-item">You want results without starving yourself</div>
-                <div class="target-item">You are tired of quick fixes that do not last</div>
-                <div class="target-item">You want to eat your favorite foods</div>
-                <div class="target-item">You need a sustainable, long-term solution</div>
-                <div class="target-item">You want to understand how your body works</div>
-                <div class="target-item">You are ready to commit to real change</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); max-width: 900px; margin: 0 auto;">
+                <div style="background: white; padding: var(--space-xl); border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
+                    <h3 style="color: var(--success); font-size: 18px; margin-bottom: var(--space-lg); font-weight: 600;">✓ This Is For You If...</h3>
+                    <div style="display: flex; flex-direction: column; gap: var(--space-md);">
+                        <div style="display: flex; align-items: center; gap: var(--space-sm);"><span style="color: var(--success);">✓</span> You are a busy mom with limited time</div>
+                        <div style="display: flex; align-items: center; gap: var(--space-sm);"><span style="color: var(--success);">✓</span> You have tried every diet and failed</div>
+                        <div style="display: flex; align-items: center; gap: var(--space-sm);"><span style="color: var(--success);">✓</span> You want results without starving</div>
+                        <div style="display: flex; align-items: center; gap: var(--space-sm);"><span style="color: var(--success);">✓</span> You are tired of quick fixes</div>
+                        <div style="display: flex; align-items: center; gap: var(--space-sm);"><span style="color: var(--success);">✓</span> You want to eat your favorite foods</div>
+                        <div style="display: flex; align-items: center; gap: var(--space-sm);"><span style="color: var(--success);">✓</span> You want sustainable, long-term results</div>
+                        <div style="display: flex; align-items: center; gap: var(--space-sm);"><span style="color: var(--success);">✓</span> You are ready to commit to real change</div>
+                    </div>
+                </div>
+                <div style="background: white; padding: var(--space-xl); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border-left: 4px solid #ef4444;">
+                    <h3 style="color: #ef4444; font-size: 18px; margin-bottom: var(--space-lg); font-weight: 600;">✗ This Is NOT For You If...</h3>
+                    <div style="display: flex; flex-direction: column; gap: var(--space-md);">
+                        <div style="display: flex; align-items: center; gap: var(--space-sm);"><span style="color: #ef4444;">✗</span> You are looking for a quick fix</div>
+                        <div style="display: flex; align-items: center; gap: var(--space-sm);"><span style="color: #ef4444;">✗</span> You want someone to tell you what to eat</div>
+                        <div style="display: flex; align-items: center; gap: var(--space-sm);"><span style="color: #ef4444;">✗</span> You are not willing to change habits</div>
+                        <div style="display: flex; align-items: center; gap: var(--space-sm);"><span style="color: #ef4444;">✗</span> You want results without any effort</div>
+                        <div style="display: flex; align-items: center; gap: var(--space-sm);"><span style="color: #ef4444;">✗</span> You are not ready to invest in yourself</div>
+                        <div style="display: flex; align-items: center; gap: var(--space-sm);"><span style="color: #ef4444;">✗</span> You want a meal plan, not a lifestyle</div>
+                        <div style="display: flex; align-items: center; gap: var(--space-sm);"><span style="color: #ef4444;">✗</span> You are not committed to lasting change</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -977,27 +997,58 @@
                 </div>
             </div>
             
-            <!-- Video Testimonials -->
+            <!-- Video Testimonials - MAIN TESTIMONIALS -->
             <div style="text-align: center; margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--primary); border-radius: var(--radius-lg);">
-                <h2 style="color: white; font-family: var(--font-display); font-size: 28px; margin-bottom: var(--space-sm);">Watch Real Results</h2>
-                <p style="color: rgba(255,255,255,0.8); margin-bottom: var(--space-xl);">See what women just like you have achieved</p>
+                <h2 style="color: white; font-family: var(--font-display); font-size: 28px; margin-bottom: var(--space-sm);">Hear From Women Who Have Transformed</h2>
+                <p style="color: rgba(255,255,255,0.8); margin-bottom: var(--space-xl);">Watch their real stories and see what is possible for you</p>
             </div>
             
             <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-lg); margin-top: var(--space-xl);">
+                <!-- Video 1: Asha -->
                 <div style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); border: 3px solid var(--accent);">
                     <div style="position: relative; padding-bottom: 56.25%; height: 0; background: #000;">
                         <iframe src="https://www.youtube.com/embed/4rWox-_Jeys" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"></iframe>
                     </div>
                     <div style="padding: var(--space-lg);">
-                        <h3 style="font-size: 18px; color: var(--primary); font-weight: 600;">Asha's Transformation</h3>
+                        <h3 style="font-size: 20px; color: var(--primary); font-weight: 600; margin-bottom: var(--space-sm);">Asha's Transformation</h3>
+                        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">Asha had tried every diet out there. Keto. Intermittent fasting. Calorie counting. Nothing worked long-term. After the SNS Method, she finally found balance and lost weight without feeling deprived.</p>
+                        <p style="font-size: 13px; color: var(--accent); font-weight: 600; margin-top: var(--space-sm);">Lost 20+ lbs without dieting</p>
                     </div>
                 </div>
+                
+                <!-- Video 2: Sandy -->
                 <div style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); border: 3px solid var(--accent);">
                     <div style="position: relative; padding-bottom: 56.25%; height: 0; background: #000;">
                         <iframe src="https://www.youtube.com/embed/j-oLdHZWAZw" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"></iframe>
                     </div>
                     <div style="padding: var(--space-lg);">
-                        <h3 style="font-size: 18px; color: var(--primary); font-weight: 600;">Sandy's Journey</h3>
+                        <h3 style="font-size: 20px; color: var(--primary); font-weight: 600; margin-bottom: var(--space-sm);">Sandy's Journey</h3>
+                        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">Sandy was skeptical after trying so many programs before. The SNS Method showed her that it was never about the food - it was about her mindset and relationship with eating.</p>
+                        <p style="font-size: 13px; color: var(--accent); font-weight: 600; margin-top: var(--space-sm);">Found food freedom and energy</p>
+                    </div>
+                </div>
+                
+                <!-- Video 3: Stephanie -->
+                <div style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); border: 3px solid var(--accent);">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; background: #000;">
+                        <iframe src="https://www.youtube.com/embed/mSh5F2Bsn6U" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"></iframe>
+                    </div>
+                    <div style="padding: var(--space-lg);">
+                        <h3 style="font-size: 20px; color: var(--primary); font-weight: 600; margin-bottom: var(--space-sm);">Stephanie's Results</h3>
+                        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">Stephanie was stuck in the yo-yo diet cycle for years. She learned how to eat intuitively and now maintains her results without constant tracking or restrictions.</p>
+                        <p style="font-size: 13px; color: var(--accent); font-weight: 600; margin-top: var(--space-sm);">Broke free from yo-yo dieting</p>
+                    </div>
+                </div>
+                
+                <!-- Video 4: Megan -->
+                <div style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); border: 3px solid var(--accent);">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; background: #000;">
+                        <iframe src="https://www.youtube.com/embed/IjRiOQ2EQKg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"></iframe>
+                    </div>
+                    <div style="padding: var(--space-lg);">
+                        <h3 style="font-size: 20px; color: var(--primary); font-weight: 600; margin-bottom: var(--space-sm);">Megan's Story</h3>
+                        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">Megan was afraid to eat more thinking it would make her gain weight. Through the SNS Method, she discovered that eating more actually helped her lose weight and feel more energized.</p>
+                        <p style="font-size: 13px; color: var(--accent); font-weight: 600; margin-top: var(--space-sm);">More energy, better sleep</p>
                     </div>
                 </div>
             </div>
