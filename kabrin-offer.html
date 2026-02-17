@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The High Ticket Playbook | AI Marketing System for Consultants</title>
+    <meta name="description" content="The proven marketing system that helps consultants and coaches land $2K+ clients on autopilot using AI and Facebook Ads.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #1a3a34;
+            --primary-light: #2d5a4a;
+            --accent: #c9a87c;
+            --accent-light: #d4b896;
+            --background: #ffffff;
+            --background-alt: #f7f3ef;
+            --text: #1a1a1a;
+            --text-muted: #5a5a5a;
+            --success: #22c55e;
+            
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            
+            --space-xs: 4px;
+            --space-sm: 8px;
+            --space-md: 16px;
+            --space-lg: 24px;
+            --space-xl: 32px;
+            --space-2xl: 48px;
+            --space-3xl: 64px;
+            --space-4xl: 96px;
+            
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+            --shadow-lg: 0 8px 30px rgba(0,0,0,0.12);
+            --shadow-xl: 0 20px 40px rgba(0,0,0,0.15);
+            
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-xl: 40px;
+            --radius-full: 9999px;
+            
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            color: var(--text);
+            background: var(--background);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 16px 0;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .logo span { color: var(--accent); }
+        
+        .header-cta {
+            background: var(--primary);
+            color: white;
+            padding: 12px 28px;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .header-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 140px 0 80px;
+            background: linear-gradient(135deg, var(--background-alt) 0%, #e8e4dc 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(201,168,124,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .hero-content {
+            max-width: 600px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: var(--space-lg);
+            color: var(--primary);
+        }
+        
+        .hero h1 span {
+            color: var(--accent);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            color: var(--text-muted);
+            margin-bottom: var(--space-xl);
+            line-height: 1.7;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 18px 36px;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-accent {
+            background: var(--accent);
+            color: var(--primary);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-accent:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            background: var(--accent-light);
+        }
+        
+        .hero-trust {
+            margin-top: var(--space-xl);
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+        
+        /* Sections */
+        section {
+            padding: var(--space-4xl) 0;
+        }
+        
+        .section-alt {
+            background: var(--background-alt);
+        }
+        
+        .section-dark {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .section-dark h2 {
+            color: white;
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto var(--space-3xl);
+        }
+        
+        .section-header h2 {
+            font-size: 40px;
+            margin-bottom: var(--space-md);
+            color: var(--primary);
+        }
+        
+        .section-header p {
+            font-size: 18px;
+            color: var(--text-muted);
+        }
+        
+        /* Problem */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-3xl);
+            align-items: center;
+        }
+        
+        .problem-content h2 {
+            font-size: 36px;
+            margin-bottom: var(--space-lg);
+            color: var(--primary);
+        }
+        
+        .problem-list {
+            list-style: none;
+        }
+        
+        .problem-list li {
+            padding: var(--space-md) 0;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-md);
+        }
+        
+        .problem-list li::before {
+            content: '✕';
+            color: #e74c3c;
+            font-weight: bold;
+            margin-top: 4px;
+        }
+        
+        /* Solution */
+        .solution-card {
+            background: white;
+            padding: var(--space-3xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            text-align: center;
+        }
+        
+        .solution-card h3 {
+            font-size: 28px;
+            margin-bottom: var(--space-lg);
+            color: var(--primary);
+        }
+        
+        .solution-card p {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .solution-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-lg);
+            text-align: left;
+            margin-top: var(--space-xl);
+        }
+        
+        .solution-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-sm);
+        }
+        
+        .solution-feature::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: bold;
+            margin-top: 2px;
+        }
+        
+        /* Results */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-lg);
+        }
+        
+        .result-card {
+            background: white;
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+        }
+        
+        .result-number {
+            font-family: var(--font-display);
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .result-label {
+            font-size: 16px;
+            color: var(--text-muted);
+        }
+        
+        /* Authority */
+        .authority-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-3xl);
+            align-items: center;
+        }
+        
+        .authority-image {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: var(--radius-xl);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .authority-content h2 {
+            font-size: 36px;
+            margin-bottom: var(--space-lg);
+            color: var(--primary);
+        }
+        
+        .authority-list {
+            list-style: none;
+        }
+        
+        .authority-list li {
+            padding: var(--space-md) 0;
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-md);
+        }
+        
+        .authority-list li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: bold;
+            margin-top: 2px;
+        }
+        
+        /* For You / Not For You */
+        .target-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+        }
+        
+        .target-section {
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+        }
+        
+        .target-yes {
+            background: rgba(34,197,94,0.08);
+            border: 2px solid var(--success);
+        }
+        
+        .target-no {
+            background: rgba(231,76,60,0.08);
+            border: 2px solid #e74c3c;
+        }
+        
+        .target-section h3 {
+            font-size: 24px;
+            margin-bottom: var(--space-lg);
+        }
+        
+        .target-yes h3 { color: var(--success); }
+        .target-no h3 { color: #e74c3c; }
+        
+        .target-list {
+            list-style: none;
+        }
+        
+        .target-list li {
+            padding: var(--space-sm) 0;
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-sm);
+        }
+        
+        .target-yes .target-list li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: bold;
+        }
+        
+        .target-no .target-list li::before {
+            content: '✕';
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        /* Pricing */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-lg);
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .pricing-card.featured {
+            transform: scale(1.05);
+            border: 3px solid var(--accent);
+        }
+        
+        .pricing-badge {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 8px 40px;
+            font-size: 12px;
+            font-weight: 600;
+            transform: rotate(45deg);
+        }
+        
+        .pricing-header {
+            padding: var(--space-xl);
+            text-align: center;
+            background: var(--primary);
+            color: white;
+        }
+        
+        .pricing-card.featured .pricing-header {
+            background: var(--accent);
+            color: var(--primary);
+        }
+        
+        .pricing-name {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .pricing-price {
+            font-family: var(--font-display);
+            font-size: 48px;
+            font-weight: 700;
+        }
+        
+        .pricing-period {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        .pricing-features {
+            padding: var(--space-xl);
+        }
+        
+        .pricing-features ul {
+            list-style: none;
+        }
+        
+        .pricing-features li {
+            padding: var(--space-sm) 0;
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-sm);
+            font-size: 15px;
+        }
+        
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: bold;
+            margin-top: 2px;
+        }
+        
+        .pricing-cta {
+            padding: 0 var(--space-xl) var(--space-xl);
+        }
+        
+        .pricing-cta .btn {
+            width: 100%;
+            text-align: center;
+        }
+        
+        /* Guarantee */
+        .guarantee {
+            background: var(--background-alt);
+            padding: var(--space-3xl) 0;
+            text-align: center;
+        }
+        
+        .guarantee h3 {
+            font-size: 28px;
+            margin-bottom: var(--space-md);
+            color: var(--primary);
+        }
+        
+        /* FAQ */
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-md);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            font-size: 18px;
+            color: var(--primary);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .faq-answer {
+            color: var(--text-muted);
+        }
+        
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            padding: var(--space-4xl) 0;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 42px;
+            color: white;
+            margin-bottom: var(--space-lg);
+        }
+        
+        .cta p {
+            font-size: 20px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: var(--space-xl);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--text);
+            color: white;
+            padding: var(--space-2xl) 0;
+            text-align: center;
+        }
+        
+        footer p {
+            opacity: 0.7;
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 18px; }
+            .problem-grid, .authority-grid, .target-grid, .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            .results-grid { grid-template-columns: 1fr; }
+            .pricing-card.featured { transform: none; }
+            .solution-features { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">Kabrin<span>.</span></div>
+                <a href="#pricing" class="header-cta">Get Started</a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Get 5, 10, 15K Months Without Spending Years Figuring Out Ads and <span>AI</span></h1>
+                <p>The proven marketing system that helps consultants and coaches land $2K+ clients on autopilot using AI and Facebook Ads.</p>
+                <div class="hero-buttons">
+                    <a href="#pricing" class="btn btn-primary">Get The System</a>
+                    <a href="#how-it-works" class="btn btn-accent">How It Works</a>
+                </div>
+                <p class="hero-trust">Join 200+ consultants who have scaled with our system</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Problem -->
+    <section id="problem">
+        <div class="container">
+            <div class="problem-grid">
+                <div class="problem-content">
+                    <h2>You're Good at What You Do. But Marketing? That's the Problem.</h2>
+                    <p style="font-size: 18px; color: var(--text-muted); margin-bottom: var(--space-lg);">You've tried everything. Ads, email, content. Nothing works for high-ticket offers. It's frustrating watching others succeed while you're stuck.</p>
+                    <ul class="problem-list">
+                        <li>You've tried ads but they eat budget without results</li>
+                        <li>AI tools are confusing and everyone says something different</li>
+                        <li>You know your offer is worth $2K, 5K, 10K but can't prove it</li>
+                        <li>You're tired of chasing leads and want them to come to you</li>
+                        <li>You see others succeeding but can't copy their methods</li>
+                        <li>You're overwhelmed by all the "expert" advice out there</li>
+                    </ul>
+                </div>
+                <div style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); border-radius: var(--radius-xl); padding: var(--space-3xl); display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; text-align: center;">
+                    It Doesn't Have to Be This Way
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Solution -->
+    <section id="how-it-works" class="section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2>Here's the System That Generates $10K+ Months</h2>
+                <p>The High Ticket Playbook is a complete marketing system built specifically for consultants and coaches selling high-ticket services.</p>
+            </div>
+            
+            <div class="solution-card">
+                <h3>What You Get Inside</h3>
+                <p>Everything you need to attract, convert, and close high-ticket clients on autopilot.</p>
+                
+                <div class="solution-features">
+                    <div class="solution-feature">AI prompts that actually convert (not generic ChatGPT stuff)</div>
+                    <div class="solution-feature">Facebook ad framework specifically for $2K+ offers</div>
+                    <div class="solution-feature">Email sequences that nurture high-ticket buyers</div>
+                    <div class="solution-feature">Landing page templates that sell without being salesy</div>
+                    <div class="solution-feature">Pricing positioning guide to command premium rates</div>
+                    <div class="solution-feature">Scaling playbook to go from 5K to 15K to 25K months</div>
+                    <div class="solution-feature">Client avatar deep dive so you know exactly who to target</div>
+                    <div class="solution-feature">Real case studies with exact numbers and strategies</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Results -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>Real Results from Real People</h2>
+                <p>These aren't hypotheticals. These are actual results from consultants and coaches who implemented our system.</p>
+            </div>
+            
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-number">$10K</div>
+                    <div class="result-label">in 90 days</div>
+                    <p style="margin-top: var(--space-md); font-size: 14px; color: var(--text-muted);">Consultant went from zero to 10K/month using our Facebook ad framework</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">$5K</div>
+                    <div class="result-label">average client</div>
+                    <p style="margin-top: var(--space-md); font-size: 14px; color: var(--text-muted);">Coach filled calendar with $5K clients after implementing our landing page system</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">$25K</div>
+                    <div class="result-label">per month</div>
+                    <p style="margin-top: var(--space-md); font-size: 14px; color: var(--text-muted);">Agency owner scaled from 3K to 25K/month with our AI email sequences</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Authority -->
+    <section class="section-alt">
+        <div class="container">
+            <div class="authority-grid">
+                <div class="authority-image">
+                    [Your Photo Here]
+                </div>
+                <div class="authority-content">
+                    <h2>Here's Who I Am and Why You Should Listen</h2>
+                    <p style="font-size: 18px; color: var(--text-muted); margin-bottom: var(--space-lg);">I'm not teaching theory. I'm showing you exactly what I use to generate clients for my own business and my clients.</p>
+                    
+                    <ul class="authority-list">
+                        <li>Built marketing systems for 6-figure clients</li>
+                        <li>Generated millions in revenue using AI and ads</li>
+                        <li>Real practitioner, not just a teacher</li>
+                        <li>Been where you are, broke through to the other side</li>
+                        <li>Currently running a profitable marketing agency</li>
+                        <li>Using AI and ads daily, not just talking about them</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Target -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>Is This For You?</h2>
+            </div>
+            
+            <div class="target-grid">
+                <div class="target-section target-yes">
+                    <h3>This Is For You If...</h3>
+                    <ul class="target-list">
+                        <li>You sell consulting, coaching, or professional services</li>
+                        <li>Your offer is $2K or higher</li>
+                        <li>You want to scale beyond referrals</li>
+                        <li>You're willing to implement and take action</li>
+                        <li>You want to use AI but don't know where to start</li>
+                        <li>You're ready to invest in your marketing</li>
+                    </ul>
+                </div>
+                <div class="target-section target-no">
+                    <h3>This Is NOT For You If...</h3>
+                    <ul class="target-list">
+                        <li>You're looking for a magic button</li>
+                        <li>You're not willing to invest in marketing</li>
+                        <li>You're selling low-ticket products</li>
+                        <li>You want someone else to do the work</li>
+                        <li>You don't have an offer yet</li>
+                        <li>You're not ready to take action</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing -->
+    <section id="pricing" class="section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2>Invest in Your Future</h2>
+                <p>Choose the option that fits your needs. All options include a 30-day money-back guarantee.</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-name">Self-Paced</div>
+                        <div class="pricing-price">$497</div>
+                        <div class="pricing-period">one-time</div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li>Complete video course (8 modules)</li>
+                            <li>PDF blueprints and templates</li>
+                            <li>Ad creative templates</li>
+                            <li>Email sequence templates</li>
+                            <li>Landing page templates</li>
+                            <li>Pricing positioning guide</li>
+                            <li>Email support</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-cta">
+                        <a href="#" class="btn btn-primary">Get Started</a>
+                    </div>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">MOST POPULAR</div>
+                    <div class="pricing-header">
+                        <div class="pricing-name">Accelerator</div>
+                        <div class="pricing-price">$1,997</div>
+                        <div class="pricing-period">one-time</div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li>Everything in Self-Paced</li>
+                            <li>12 group coaching calls</li>
+                            <li>Private community access</li>
+                            <li>90-day intensive program</li>
+                            <li>Weekly Q&A sessions</li>
+                            <li>Peer accountability partners</li>
+                            <li>Priority email support</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-cta">
+                        <a href="#" class="btn btn-accent">Get Started</a>
+                    </div>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-name">Done With You</div>
+                        <div class="pricing-price">$5,997</div>
+                        <div class="pricing-period">one-time</div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li>Everything in Accelerator</li>
+                            <li>3 1-on-1 strategy calls</li>
+                            <li>Done-for-you ad setup</li>
+                            <li>Custom strategy for your business</li>
+                            <li>Lifetime updates</li>
+                            <li>Priority support</li>
+                            <li>VIP access</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-cta">
+                        <a href="#" class="btn btn-primary">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Guarantee -->
+    <section class="guarantee">
+        <div class="container">
+            <h3>30-Day Money-Back Guarantee</h3>
+            <p style="max-width: 600px; margin: var(--space-md) auto; color: var(--text-muted);">If this doesn't work for you, I'll refund every penny. No questions asked. You have 30 days to implement and see results. If you're not happy, I'll give you your money back. Simple as that.</p>
+        </div>
+    </section>
+    
+    <!-- FAQ -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">How long does it take to see results?</div>
+                    <div class="faq-answer">Most clients see their first paid client within 30-60 days. This depends on your implementation speed and existing audience.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Do I need ad spend?</div>
+                    <div class="faq-answer">Yes, you'll need budget for testing. We show you how to start with as little as $500/month and scale up as you get results.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What if I don't know AI?</div>
+                    <div class="faq-answer">That's the point. We give you the exact prompts and systems. You just implement. No technical knowledge required.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Is this for beginners?</div>
+                    <div class="faq-answer">This is for people who already have an offer and want to scale. If you're starting from zero, get your offer right first.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What's included in the course?</div>
+                    <div class="faq-answer">8 video modules, templates, blueprints, email sequences, ad creatives, landing pages, and more. Everything you need.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Is there a refund policy?</div>
+                    <div class="faq-answer">Yes, 30-day money-back guarantee. If it doesn't work, you get your money back. No hard feelings.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>Your Next Client Is Waiting</h2>
+            <p>Don't let another month go by struggling with marketing. Get the system that works.</p>
+            <a href="#pricing" class="btn btn-accent" style="background: white; color: var(--primary);">Get Started Now</a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Kabrin. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
