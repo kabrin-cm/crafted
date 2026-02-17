@@ -211,7 +211,26 @@
         
         /* Section Styles */
         section {
-            padding: var(--space-4xl) 0;
+            padding: var(--space-3xl) 0;
+        }
+        
+        @media (min-width: 1024px) {
+            section {
+                padding: var(--space-2xl) 0;
+            }
+            
+            .hero {
+                padding: 120px 0 60px;
+                min-height: auto;
+            }
+            
+            .hero-content {
+                max-width: 500px;
+            }
+            
+            h1 {
+                font-size: 42px;
+            }
         }
         
         .section-dark {
@@ -935,27 +954,34 @@
             </div>
             
             <!-- Video Testimonials -->
-            <div class="section-header" style="margin-top: var(--space-2xl);">
-                <h2>Hear Their Stories</h2>
+            <div style="text-align: center; margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--primary); border-radius: var(--radius-lg);">
+                <h2 style="color: white; font-family: var(--font-display); font-size: 28px; margin-bottom: var(--space-sm);">Watch Real Results</h2>
+                <p style="color: rgba(255,255,255,0.8); margin-bottom: var(--space-xl);">See what women just like you have achieved</p>
             </div>
             
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-lg);">
-                <div style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
-                    <div style="position: relative; padding-bottom: 56.25%; height: 0;">
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-lg); margin-top: var(--space-xl);">
+                <div style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); border: 3px solid var(--accent);">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; background: #000;">
                         <iframe src="https://www.youtube.com/embed/4rWox-_Jeys" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"></iframe>
                     </div>
                     <div style="padding: var(--space-lg);">
-                        <h3 style="font-size: 18px; color: var(--primary);">Asha's Transformation</h3>
+                        <h3 style="font-size: 18px; color: var(--primary); font-weight: 600;">Asha's Transformation</h3>
+                        <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Lost 20+ lbs</p>
                     </div>
                 </div>
-                <div style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
-                    <div style="position: relative; padding-bottom: 56.25%; height: 0;">
+                <div style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); border: 3px solid var(--accent);">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; background: #000;">
                         <iframe src="https://www.youtube.com/embed/j-oLdHZWAZw" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"></iframe>
                     </div>
                     <div style="padding: var(--space-lg);">
-                        <h3 style="font-size: 18px; color: var(--primary);">Sandy's Journey</h3>
+                        <h3 style="font-size: 18px; color: var(--primary); font-weight: 600;">Sandy's Journey</h3>
+                        <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Energy restored</p>
                     </div>
                 </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: var(--space-lg);">
+                <a href="#pricing" class="btn btn-primary" style="background: var(--accent);">Start Your Transformation</a>
             </div>
         </div>
     </section>
