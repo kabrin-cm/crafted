@@ -6,7 +6,6 @@
     <title>SNS Method | Transform Your Relationship With Food</title>
     <meta name="description" content="The SNS Method helps busy women get into the best shape of their life—without diets, without deprivation, and without quick fixes that don't last.">
     
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -25,11 +24,7 @@
             --gradient: linear-gradient(135deg, #1a3a34 0%, #2d5a4a 100%);
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -39,13 +34,8 @@
             overflow-x: hidden;
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
         
-        /* Header */
         header {
             padding: 20px 0;
             position: fixed;
@@ -56,11 +46,7 @@
             box-shadow: 0 2px 30px rgba(0,0,0,0.06);
         }
         
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
         
         .logo {
             font-family: 'Playfair Display', serif;
@@ -68,12 +54,9 @@
             font-weight: 700;
             color: var(--primary);
             text-decoration: none;
-            letter-spacing: -0.5px;
         }
         
-        .logo span {
-            color: var(--accent);
-        }
+        .logo span { color: var(--accent); }
         
         .nav-cta {
             background: var(--gradient);
@@ -87,12 +70,8 @@
             box-shadow: 0 4px 20px rgba(26,58,52,0.3);
         }
         
-        .nav-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 30px rgba(26,58,52,0.4);
-        }
+        .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 30px rgba(26,58,52,0.4); }
         
-        /* Hero Section */
         .hero {
             padding: 180px 0 120px;
             background: var(--secondary);
@@ -112,28 +91,14 @@
             border-radius: 50%;
         }
         
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -20%;
-            left: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(201,168,124,0.1) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-        
         .hero-badge {
             display: inline-block;
-            background: var(--white);
-            color: var(--primary);
             padding: 10px 24px;
             border-radius: 50px;
             font-size: 13px;
             font-weight: 600;
             letter-spacing: 0.5px;
             margin-bottom: 24px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
         
         .hero h1 {
@@ -156,12 +121,7 @@
             line-height: 1.7;
         }
         
-        .hero-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+        .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
         
         .btn-primary {
             background: var(--gradient);
@@ -174,12 +134,11 @@
             transition: all 0.3s ease;
             box-shadow: 0 8px 30px rgba(26,58,52,0.35);
             display: inline-block;
+            border: none;
+            cursor: pointer;
         }
         
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(26,58,52,0.45);
-        }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(26,58,52,0.45); }
         
         .btn-secondary {
             background: var(--white);
@@ -194,21 +153,11 @@
             display: inline-block;
         }
         
-        .btn-secondary:hover {
-            background: var(--primary);
-            color: var(--white);
-        }
+        .btn-secondary:hover { background: var(--primary); color: var(--white); }
         
-        /* Problem Section */
-        .problem {
-            padding: 100px 0;
-            background: var(--white);
-        }
+        .problem { padding: 100px 0; background: var(--white); }
         
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
+        .section-header { text-align: center; margin-bottom: 60px; }
         
         .section-header h2 {
             font-family: 'Playfair Display', serif;
@@ -218,12 +167,7 @@
             margin-bottom: 20px;
         }
         
-        .section-header p {
-            font-size: 18px;
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto;
-        }
+        .section-header p { font-size: 18px; color: var(--text-light); max-width: 600px; margin: 0 auto; }
         
         .problem-grid {
             display: grid;
@@ -239,48 +183,38 @@
             border-radius: 20px;
             text-align: center;
             transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.04);
         }
         
-        .problem-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        .problem-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+        
+        .problem-card h3 { font-size: 18px; font-weight: 600; color: var(--primary); margin-bottom: 12px; }
+        .problem-card p { font-size: 15px; color: var(--text-light); line-height: 1.6; }
+        
+        .stats { padding: 60px 0; background: var(--primary); }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
         }
         
-        .problem-card .icon {
-            font-size: 40px;
-            margin-bottom: 20px;
-            display: block;
+        .stats-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
         }
         
-        .problem-card h3 {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 12px;
+        .stats-label {
+            font-size: 14px;
+            color: rgba(255,255,255,0.8);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
-        .problem-card p {
-            font-size: 15px;
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-        
-        /* Method Section */
-        .method {
-            padding: 100px 0;
-            background: var(--gradient);
-            color: var(--white);
-        }
-        
-        .method .section-header h2,
-        .method .section-header p {
-            color: var(--white);
-        }
-        
-        .method .section-header p {
-            opacity: 0.9;
-        }
+        .method { padding: 100px 0; background: var(--gradient); color: white; }
         
         .method-grid {
             display: grid;
@@ -290,41 +224,17 @@
         
         .method-card {
             background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
             padding: 40px 30px;
             border-radius: 20px;
             border: 1px solid rgba(255,255,255,0.15);
             transition: all 0.3s ease;
         }
         
-        .method-card:hover {
-            background: rgba(255,255,255,0.15);
-            transform: translateY(-5px);
-        }
+        .method-card:hover { background: rgba(255,255,255,0.15); transform: translateY(-5px); }
+        .method-card h3 { font-size: 20px; font-weight: 600; margin-bottom: 12px; }
+        .method-card p { font-size: 15px; opacity: 0.9; line-height: 1.6; }
         
-        .method-card .icon {
-            font-size: 42px;
-            margin-bottom: 20px;
-            display: block;
-        }
-        
-        .method-card h3 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        
-        .method-card p {
-            font-size: 15px;
-            opacity: 0.9;
-            line-height: 1.6;
-        }
-        
-        /* Results Section */
-        .results {
-            padding: 100px 0;
-            background: var(--secondary);
-        }
+        .results { padding: 100px 0; background: var(--secondary); }
         
         .results-grid {
             display: grid;
@@ -333,9 +243,8 @@
         }
         
         @media (max-width: 768px) {
-            .results-grid {
-                grid-template-columns: 1fr;
-            }
+            .results-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
         }
         
         .result-card {
@@ -346,50 +255,16 @@
             transition: all 0.3s ease;
         }
         
-        .result-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
-        }
+        .result-card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(0,0,0,0.12); }
         
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            background: #000;
-        }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
         
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
+        .result-content { padding: 28px; }
+        .result-content h3 { font-size: 18px; font-weight: 600; color: var(--primary); margin-bottom: 8px; }
+        .result-content p { font-size: 14px; color: var(--text-light); line-height: 1.6; }
         
-        .result-content {
-            padding: 28px;
-        }
-        
-        .result-content h3 {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 8px;
-        }
-        
-        .result-content p {
-            font-size: 14px;
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-        
-        /* Coach Section */
-        .coach {
-            padding: 100px 0;
-            background: var(--white);
-        }
+        .coach { padding: 100px 0; background: var(--white); }
         
         .coach-content {
             display: grid;
@@ -401,22 +276,11 @@
         }
         
         @media (max-width: 768px) {
-            .coach-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
+            .coach-content { grid-template-columns: 1fr; text-align: center; }
         }
         
-        .coach-image {
-            background: var(--secondary);
-            border-radius: 30px;
-            aspect-ratio: 4/5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 120px;
-            color: var(--accent);
-        }
+        .coach-image { background: var(--secondary); border-radius: 30px; aspect-ratio: 4/5; overflow: hidden; }
+        .coach-image img { width: 100%; height: 100%; object-fit: cover; border-radius: 30px; }
         
         .coach-info h2 {
             font-family: 'Playfair Display', serif;
@@ -426,445 +290,103 @@
             margin-bottom: 20px;
         }
         
-        .coach-info .title {
-            color: var(--accent-dark);
-            font-weight: 600;
-            font-size: 16px;
-            margin-bottom: 20px;
-            display: block;
-        }
+        .coach-info .title { color: var(--accent-dark); font-weight: 600; font-size: 16px; margin-bottom: 20px; display: block; }
+        .coach-info p { font-size: 16px; color: var(--text-light); line-height: 1.8; margin-bottom: 16px; }
         
-        .coach-info p {
-            font-size: 16px;
-            color: var(--text-light);
-            line-height: 1.8;
-            margin-bottom: 16px;
-        }
+        .pricing { padding: 100px 0; background: var(--secondary); }
         
-        /* Pricing Section */
-        .pricing {
-            padding: 100px 0;
-            background: var(--secondary);
-        }
-        
-        .pricing-cards {
-            display: flex;
-            justify-content: center;
+        .dual-pricing {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 30px;
-            flex-wrap: wrap;
             max-width: 900px;
             margin: 0 auto;
+        }
+        
+        @media (max-width: 768px) {
+            .dual-pricing { grid-template-columns: 1fr; }
         }
         
         .pricing-card {
             background: var(--white);
             border-radius: 24px;
-            padding: 50px 40px;
+            padding: 40px;
             text-align: center;
-            flex: 1;
-            min-width: 320px;
-            max-width: 400px;
             box-shadow: 0 10px 50px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            position: relative;
         }
         
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 70px rgba(0,0,0,0.15);
-        }
-        
-        .pricing-card.featured {
-            border: 2px solid var(--accent);
-            transform: scale(1.05);
-        }
-        
-        .pricing-card.featured:hover {
-            transform: scale(1.05) translateY(-10px);
-        }
-        
-        .pricing-card.featured::before {
-            content: 'Most Popular';
-            position: absolute;
-            top: -14px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--accent);
-            color: var(--white);
-            padding: 6px 20px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-        
-        .pricing-card h3 {
-            font-size: 28px;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 8px;
-        }
-        
-        .pricing-card .subtitle {
-            font-size: 14px;
-            color: var(--text-light);
-            margin-bottom: 20px;
-        }
+        .pricing-card h3 { font-size: 28px; font-weight: 600; color: var(--primary); margin-bottom: 8px; }
+        .pricing-card .subtitle { font-size: 14px; color: var(--text-light); margin-bottom: 20px; }
         
         .pricing-card .price {
             font-family: 'Playfair Display', serif;
             font-size: 52px;
             font-weight: 700;
             color: var(--primary);
-            margin-bottom: 8px;
         }
         
-        .pricing-card .price span {
+        .pricing-card .price span { font-size: 18px; font-weight: 400; color: var(--text-light); }
+        
+        .duration-select {
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: 12px;
+            border: 2px solid var(--primary);
             font-size: 16px;
-            font-weight: 400;
-            color: var(--text-light);
-        }
-        
-        .pricing-card .duration {
-            font-size: 14px;
-            color: var(--accent-dark);
-            margin-bottom: 30px;
+            color: var(--text);
+            background: white;
+            cursor: pointer;
+            font-weight: 600;
+            margin-bottom: 24px;
         }
         
         .pricing-card ul {
             list-style: none;
             text-align: left;
-            margin-bottom: 30px;
+            margin-bottom: 24px;
+            padding: 0 10px;
         }
         
-        .pricing-card li {
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(0,0,0,0.06);
-            font-size: 15px;
-            color: var(--text);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+        .pricing-card li { padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 14px; }
         
-        .pricing-card li::before {
-            content: '✓';
-            color: var(--primary-light);
-            font-weight: 700;
-            font-size: 16px;
-        }
+        .elite-card { border: 3px solid var(--accent); transform: scale(1.03); position: relative; }
         
-        .pricing-card .btn {
-            display: block;
-            width: 100%;
-            padding: 18px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.3s ease;
-        }
-        
-        .pricing-card .btn-primary {
-            background: var(--gradient);
-            color: var(--white);
-            box-shadow: 0 8px 30px rgba(26,58,52,0.35);
-        }
-        
-        .pricing-card .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(26,58,52,0.45);
-        }
-        
-        .pricing-card .btn-secondary {
-            background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-        
-        .pricing-card .btn-secondary:hover {
-            background: var(--primary);
-            color: var(--white);
-        }
-        
-        /* FAQ Section */
-        .faq {
-            padding: 100px 0;
-            background: var(--white);
-        }
-        
-        .faq-grid {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .faq-item {
-            border-bottom: 1px solid rgba(0,0,0,0.08);
-            padding: 30px 0;
-        }
-        
-        .faq-item h3 {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 12px;
-        }
-        
-        .faq-item p {
-            font-size: 15px;
-            color: var(--text-light);
-            line-height: 1.7;
-        }
-        
-        /* CTA Section */
-        .cta {
-            padding: 100px 0;
-            background: var(--gradient);
-            text-align: center;
-            color: var(--white);
-        }
-        
-        .cta h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(32px, 4vw, 48px);
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-        
-        .cta p {
-            font-size: 18px;
-            opacity: 0.9;
-            margin-bottom: 40px;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .cta .btn-primary {
-            background: var(--white);
-            color: var(--primary);
-        }
-        
-        .cta .btn-primary:hover {
-            background: var(--accent);
-            color: var(--white);
-        }
-        
-        /* Footer */
-        footer {
-            padding: 40px 0;
-            background: var(--primary);
-            color: var(--white);
-            text-align: center;
-        }
-        
-        footer p {
-            opacity: 0.7;
-            font-size: 14px;
-        }
-        
-        /* Mobile */
-        @media (max-width: 768px) {
-            .hero {
-                padding: 140px 0 80px;
-            }
-            
-            .hero h1 {
-                font-size: 36px;
-            }
-            
-            .hero p {
-                font-size: 17px;
-            }
-            
-            .problem, .method, .results, .coach, .pricing, .faq, .cta {
-                padding: 70px 0;
-            }
-            
-            .pricing-selector {
-                padding: 24px !important;
-            }
-            
-            .pricing-selector > div:first-child {
-                grid-template-columns: 1fr !important;
-            }
-            
-            .pricing-selector ul {
-                grid-template-columns: 1fr !important;
-            }
-            
-            .coach-image {
-                aspect-ratio: 1;
-                max-width: 300px;
-                margin: 0 auto;
-            }
-            
-            /* Dual Pricing Mobile */
-            .dual-pricing {
-                grid-template-columns: 1fr !important;
-            }
-            
-            .pricing-card {
-                transform: none !important;
-            }
-            
-            /* Stats Mobile */
-            .container > div:first-child {
-                grid-template-columns: repeat(2, 1fr) !important;
-            }
-        }
-        
-        /* Scroll Animations */
-        .fade-in {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .stagger {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .stagger.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Section Header - Always visible */
-        .section-header {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Card Hover Effects */
-        .problem-card, .method-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .result-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        /* Button Hover Animation */
-        .btn-primary, .btn-secondary, .nav-cta {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .btn-primary::after, .btn-secondary::after, .nav-cta::after {
-            content: '';
+        .popular-badge {
             position: absolute;
-            top: 50%;
+            top: -14px;
             left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255,255,255,0.2);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: width 0.4s ease, height 0.4s ease;
-        }
-        
-        .btn-primary:hover::after, .btn-secondary:hover::after, .nav-cta:hover::after {
-            width: 300px;
-            height: 300px;
-        }
-        
-        /* Hero Badge Animation */
-        .hero-badge {
-            animation: fadeInDown 0.8s ease forwards;
-        }
-        
-        .hero-badge:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-        
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Hero Text Animation */
-        .hero h1 {
-            animation: fadeInUp 0.8s ease 0.3s forwards;
-            opacity: 0;
-        }
-        
-        .hero p {
-            animation: fadeInUp 0.8s ease 0.5s forwards;
-            opacity: 0;
-        }
-        
-        .hero-buttons {
-            animation: fadeInUp 0.8s ease 0.7s forwards;
-            opacity: 0;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Section Header Animation */
-        .section-header {
-            opacity: 1;
-            transform: translateY(0);
-            transition: none;
-        }
-        
-        /* Video Container Hover */
-        .video-container {
-            transition: transform 0.3s ease;
-        }
-        
-        .result-card:hover .video-container {
-            transform: scale(1.02);
-        }
-        
-        /* Pricing Selector Animation */
-        .pricing-selector {
-            animation: fadeInUp 0.8s ease forwards;
-        }
-        
-        /* Nav Link Hover Underline */
-        .nav-cta {
-            transition: all 0.3s ease;
-        }
-        
-        .nav-cta:hover {
-            letter-spacing: 1px;
-        }
-        
-        /* Smooth Page Load */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* Selection Color */
-        ::selection {
+            transform: translateX(-50%);
             background: var(--accent);
             color: white;
+            padding: 8px 24px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
         }
+        
+        .faq { padding: 100px 0; background: var(--white); }
+        
+        .faq-grid { max-width: 800px; margin: 0 auto; }
+        
+        .faq-item { border-bottom: 1px solid rgba(0,0,0,0.08); padding: 30px 0; }
+        .faq-item h3 { font-size: 18px; font-weight: 600; color: var(--primary); margin-bottom: 12px; }
+        .faq-item p { font-size: 15px; color: var(--text-light); line-height: 1.7; }
+        
+        .cta { padding: 100px 0; background: var(--gradient); text-align: center; color: white; }
+        
+        .cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 4vw, 48px); font-weight: 600; margin-bottom: 20px; }
+        .cta p { font-size: 18px; opacity: 0.9; margin-bottom: 40px; max-width: 500px; margin-left: auto; margin-right: auto; }
+        
+        .cta .btn-primary { background: var(--white); color: var(--primary); }
+        .cta .btn-primary:hover { background: var(--accent); color: var(--white); }
+        
+        footer { padding: 40px 0; background: var(--primary); color: white; text-align: center; }
+        footer p { opacity: 0.7; font-size: 14px; }
+        
+        ::selection { background: var(--accent); color: white; }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container">
             <div class="header-content">
@@ -874,7 +396,6 @@
         </div>
     </header>
     
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <span class="hero-badge" style="background: linear-gradient(135deg, #1a3a34 0%, #2d5a4a 100%); color: white; box-shadow: 0 4px 20px rgba(26,58,52,0.4);">For Busy Women Who Want Lasting Results</span>
@@ -888,7 +409,6 @@
         </div>
     </section>
     
-    <!-- Problem Section -->
     <section class="problem">
         <div class="container">
             <div class="section-header">
@@ -897,17 +417,17 @@
             </div>
             <div class="problem-grid">
                 <div class="problem-card">
-                    <div class="problem-icon" style="font-size: 32px; font-weight: 700; color: var(--primary); margin-bottom: 16px;">01</div>
+                    <div style="font-size: 32px; font-weight: 700; color: var(--primary); margin-bottom: 16px;">01</div>
                     <h3>Diets Don't Work</h3>
                     <p>Keto, intermittent fasting, calorie counting—they all work short-term. Then the weight comes back.</p>
                 </div>
                 <div class="problem-card">
-                    <div class="problem-icon" style="font-size: 32px; font-weight: 700; color: var(--primary); margin-bottom: 16px;">02</div>
+                    <div style="font-size: 32px; font-weight: 700; color: var(--primary); margin-bottom: 16px;">02</div>
                     <h3>Feel Like You're Failing</h3>
                     <p>When diets stop working, you blame yourself. But the problem was never you—it was the method.</p>
                 </div>
                 <div class="problem-card">
-                    <div class="problem-icon" style="font-size: 32px; font-weight: 700; color: var(--primary); margin-bottom: 16px;">03</div>
+                    <div style="font-size: 32px; font-weight: 700; color: var(--primary); margin-bottom: 16px;">03</div>
                     <h3>The Yo-Yo Cycle</h3>
                     <p>Lose weight, gain it back, start over. Again and again. It's exhausting.</p>
                 </div>
@@ -915,31 +435,29 @@
         </div>
     </section>
     
-    <!-- Stats Section -->
-    <section style="padding: 60px 0; background: var(--primary);">
+    <section class="stats">
         <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center;">
+            <div class="stats-grid">
                 <div>
-                    <div style="font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; color: white; margin-bottom: 8px;">200+</div>
-                    <div style="font-size: 14px; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 1px;">Women Transformed</div>
+                    <div class="stats-number">200+</div>
+                    <div class="stats-label">Women Transformed</div>
                 </div>
                 <div>
-                    <div style="font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; color: white; margin-bottom: 8px;">7,300+</div>
-                    <div style="font-size: 14px; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 1px;">Instagram Followers</div>
+                    <div class="stats-number">7,300+</div>
+                    <div class="stats-label">Instagram Followers</div>
                 </div>
                 <div>
-                    <div style="font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; color: white; margin-bottom: 8px;">14+</div>
-                    <div style="font-size: 14px; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 1px;">Years Experience</div>
+                    <div class="stats-number">14+</div>
+                    <div class="stats-label">Years Experience</div>
                 </div>
                 <div>
-                    <div style="font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; color: white; margin-bottom: 8px;">98%</div>
-                    <div style="font-size: 14px; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 1px;">Success Rate</div>
+                    <div class="stats-number">98%</div>
+                    <div class="stats-label">Success Rate</div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Method Section -->
     <section class="method">
         <div class="container">
             <div class="section-header">
@@ -971,7 +489,6 @@
         </div>
     </section>
     
-    <!-- Results Section -->
     <section class="results" id="results">
         <div class="container">
             <div class="section-header">
@@ -1019,13 +536,11 @@
         </div>
     </section>
     
-    <!-- Coach Section -->
     <section class="coach">
         <div class="container">
             <div class="coach-content">
                 <div class="coach-image">
-                    <!-- Replace with actual Sharan photo - placeholder image below -->
-                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&h=1000&fit=crop&crop=face" alt="Sharan Scali" style="width: 100%; height: 100%; object-fit: cover; border-radius: 30px;">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&h=1000&fit=crop&crop=face" alt="Sharan Scali">
                 </div>
                 <div class="coach-info">
                     <h2>Meet Your Coach</h2>
@@ -1039,7 +554,6 @@
         </div>
     </section>
     
-    <!-- Pricing Section -->
     <section class="pricing" id="pricing">
         <div class="container">
             <div class="section-header">
@@ -1048,47 +562,48 @@
                 <span class="hero-badge" style="background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); color: #dc2626; font-size: 13px; font-weight: 700; border: 2px solid #dc2626; box-shadow: 0 4px 15px rgba(220,38,38,0.2);">Limited spots available - Next cohort fills fast</span>
             </div>
             
-            <!-- Duration Selection First -->
-            <div style="max-width: 500px; margin: 0 auto 50px; text-align: center;">
-                <label style="display: block; font-weight: 700; margin-bottom: 16px; color: var(--primary); font-size: 20px;">How long do you want to commit?</label>
-                <select id="durationSelect" onchange="updateDuration()" style="width: 100%; padding: 20px 24px; border-radius: 16px; border: 3px solid var(--primary); font-size: 18px; color: var(--text); background: white; cursor: pointer; font-weight: 600; box-shadow: 0 4px 20px rgba(26,58,52,0.15);">
-                    <option value="3">3 Months</option>
-                    <option value="6">6 Months (Save $75)</option>
-                    <option value="12">12 Months (Best Value - Save $300)</option>
-                </select>
-            </div>
-            
-            <!-- Two Column Pricing Cards -->
-            <div class="dual-pricing" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 900px; margin: 0 auto;">
+            <div class="dual-pricing">
                 <!-- Starter Plan -->
-                <div class="pricing-card" style="background: white; border-radius: 24px; padding: 40px; text-align: center; box-shadow: 0 10px 50px rgba(0,0,0,0.08); border: 2px solid transparent;">
-                    <h3 style="font-size: 28px; font-weight: 600; color: var(--primary); margin-bottom: 8px;">Starter</h3>
-                    <p style="font-size: 14px; color: var(--text-light); margin-bottom: 16px;">Email + App Support</p>
-                    <p style="font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 700; color: var(--primary);" id="starter-price">$375<span style="font-size: 18px; font-weight: 400; color: var(--text-light);">+GST</span></p>
-                    <p style="font-size: 14px; color: var(--accent-dark); margin-bottom: 24px; font-weight: 600;" id="starter-duration">3 months</p>
-                    <ul style="list-style: none; text-align: left; margin-bottom: 24px; padding: 0 10px;">
-                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 14px;">✓ Personalized nutrition programming</li>
-                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 14px;">✓ Hormone optimization guidance</li>
-                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 14px;">✓ App-based support</li>
-                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 14px;">✓ Food neutrality education</li>
-                        <li style="padding: 10px 0; font-size: 14px;">✓ Sustainable habit building</li>
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <p class="subtitle">Email + App Support</p>
+                    <p class="price" id="starter-price">$375<span>+GST</span></p>
+                    
+                    <select id="starterDuration" class="duration-select" onchange="updateStarterDuration()">
+                        <option value="3">3 Months - $375</option>
+                        <option value="6">6 Months - $675</option>
+                        <option value="12">12 Months - $1,200</option>
+                    </select>
+                    
+                    <ul>
+                        <li>Personalized nutrition programming</li>
+                        <li>Hormone optimization guidance</li>
+                        <li>App-based support</li>
+                        <li>Food neutrality education</li>
+                        <li>Sustainable habit building</li>
                     </ul>
                     <button onclick="selectPlan('starter')" style="width: 100%; padding: 18px; border-radius: 50px; font-weight: 600; font-size: 18px; cursor: pointer; background: transparent; color: var(--primary); border: 2px solid var(--primary);">Apply Now</button>
                 </div>
                 
                 <!-- Elite Plan -->
-                <div class="pricing-card" style="background: white; border-radius: 24px; padding: 40px; text-align: center; box-shadow: 0 10px 50px rgba(0,0,0,0.08); border: 3px solid var(--accent); transform: scale(1.03); position: relative;">
-                    <span style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--accent); color: white; padding: 8px 24px; border-radius: 20px; font-size: 13px; font-weight: 700;">Most Popular</span>
-                    <h3 style="font-size: 28px; font-weight: 600; color: var(--primary); margin-bottom: 8px;">Elite</h3>
-                    <p style="font-size: 14px; color: var(--text-light); margin-bottom: 16px;">WhatsApp + Video Calls</p>
-                    <p style="font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 700; color: var(--primary);" id="elite-price">$495<span style="font-size: 18px; font-weight: 400; color: var(--text-light);">+GST</span></p>
-                    <p style="font-size: 14px; color: var(--accent-dark); margin-bottom: 24px; font-weight: 600;" id="elite-duration">3 months</p>
-                    <ul style="list-style: none; text-align: left; margin-bottom: 24px; padding: 0 10px;">
-                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 14px;">✓ Everything in Starter, plus:</li>
-                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 14px;">✓ WhatsApp support</li>
-                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 14px;">✓ 3x 1-on-1 video calls</li>
-                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 14px;">✓ Personalized strategy sessions</li>
-                        <li style="padding: 10px 0; font-size: 14px;">✓ Direct access to Sharan</li>
+                <div class="pricing-card elite-card">
+                    <span class="popular-badge">Most Popular</span>
+                    <h3>Elite</h3>
+                    <p class="subtitle">WhatsApp + Video Calls</p>
+                    <p class="price" id="elite-price">$495<span>+GST</span></p>
+                    
+                    <select id="eliteDuration" class="duration-select" onchange="updateEliteDuration()">
+                        <option value="3">3 Months - $495</option>
+                        <option value="6">6 Months - $840</option>
+                        <option value="12">12 Months - $1,500</option>
+                    </select>
+                    
+                    <ul>
+                        <li>Everything in Starter, plus:</li>
+                        <li>WhatsApp support</li>
+                        <li>3x 1-on-1 video calls</li>
+                        <li>Personalized strategy sessions</li>
+                        <li>Direct access to Sharan</li>
                     </ul>
                     <button onclick="selectPlan('elite')" style="width: 100%; padding: 18px; border-radius: 50px; font-weight: 600; font-size: 18px; cursor: pointer; background: var(--gradient); color: white; border: none; box-shadow: 0 6px 25px rgba(26,58,52,0.4);">Claim Your Spot</button>
                 </div>
@@ -1096,7 +611,6 @@
         </div>
     </section>
     
-    <!-- FAQ Section -->
     <section class="faq">
         <div class="container">
             <div class="section-header">
@@ -1123,7 +637,6 @@
         </div>
     </section>
     
-    <!-- CTA Section -->
     <section class="cta">
         <div class="container">
             <h2>Your Best Shape Is Waiting</h2>
@@ -1132,114 +645,32 @@
         </div>
     </section>
     
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>© 2026 SNS Method. All rights reserved.</p>
+            <p>2026 SNS Method. All rights reserved.</p>
         </div>
     </footer>
     
     <script>
-        // Pricing data
-        const pricingData = {
-            starter: { prices: { '3': 375, '6': 675, '12': 1200 } },
-            elite: { prices: { '3': 495, '6': 840, '12': 1500 } }
-        };
+        const starterPrices = { '3': 375, '6': 675, '12': 1200 };
+        const elitePrices = { '3': 495, '6': 840, '12': 1500 };
         
-        function updateDuration() {
-            const duration = document.getElementById('durationSelect').value;
-            
-            // Update Starter price
-            document.getElementById('starter-price').innerHTML = '$' + pricingData.starter.prices[duration] + '<span style="font-size: 18px; font-weight: 400; color: var(--text-light);">+GST</span>';
-            document.getElementById('starter-duration').textContent = duration + ' months';
-            
-            // Update Elite price
-            document.getElementById('elite-price').innerHTML = '$' + pricingData.elite.prices[duration] + '<span style="font-size: 18px; font-weight: 400; color: var(--text-light);">+GST</span>';
-            document.getElementById('elite-duration').textContent = duration + ' months';
+        function updateStarterDuration() {
+            const duration = document.getElementById('starterDuration').value;
+            document.getElementById('starter-price').innerHTML = '$' + starterPrices[duration] + '<span>+GST</span>';
+        }
+        
+        function updateEliteDuration() {
+            const duration = document.getElementById('eliteDuration').value;
+            document.getElementById('elite-price').innerHTML = '$' + elitePrices[duration] + '<span>+GST</span>';
         }
         
         function selectPlan(plan) {
-            const duration = document.getElementById('durationSelect').value;
-            const price = pricingData[plan].prices[duration];
+            const duration = document.getElementById(plan + 'Duration').value;
+            const price = plan === 'starter' ? starterPrices[duration] : elitePrices[duration];
             const planName = plan.charAt(0).toUpperCase() + plan.slice(1);
-            alert('You selected the ' + planName + ' plan for ' + duration + ' months at $' + price + '+GST. Redirecting to checkout...');
-            // In production, this would redirect to checkout
+            alert('You selected the ' + planName + ' plan for ' + (duration == '3' ? '3' : duration == '6' ? '6' : '12') + ' months at $' + price + '+GST. Redirecting to checkout...');
         }
-        
-        // Scroll Animation Observer
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-        
-        // Add animation classes and observe elements
-        document.addEventListener('DOMContentLoaded', () => {
-            // Add fade-in animation to sections
-            const sections = document.querySelectorAll('.problem-grid, .method-grid, .results-grid, .coach-content, .faq-grid, .section-header');
-            sections.forEach(section => {
-                section.classList.add('fade-in');
-                observer.observe(section);
-            });
-            
-            // Add stagger animation to cards
-            const cards = document.querySelectorAll('.problem-card, .method-card, .result-card');
-            cards.forEach((card, index) => {
-                card.classList.add('stagger');
-                card.style.transitionDelay = (index * 0.1) + 's';
-                observer.observe(card);
-            });
-            
-            // Header scroll effect
-            const header = document.querySelector('header');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    header.style.padding = '12px 0';
-                    header.style.boxShadow = '0 4px 30px rgba(0,0,0,0.1)';
-                } else {
-                    header.style.padding = '20px 0';
-                    header.style.boxShadow = '0 2px 30px rgba(0,0,0,0.06)';
-                }
-            });
-            
-            // Video lazy loading
-            const videos = document.querySelectorAll('.video-container iframe');
-            videos.forEach(video => {
-                video.setAttribute('loading', 'lazy');
-            });
-            
-            // Add hover effect to result cards
-            const resultCards = document.querySelectorAll('.result-card');
-            resultCards.forEach(card => {
-                card.addEventListener('mouseenter', () => {
-                    card.style.transform = 'translateY(-10px) scale(1.02)';
-                });
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = 'translateY(-8px)';
-                });
-            });
-            
-            // Smooth scroll for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-        });
     </script>
 </body>
 </html>
