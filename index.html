@@ -707,6 +707,11 @@
             .pricing-card {
                 transform: none !important;
             }
+            
+            /* Stats Mobile */
+            .container > div:first-child {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
         }
         
         /* Scroll Animations */
@@ -873,7 +878,7 @@
     <section class="hero">
         <div class="container">
             <span class="hero-badge" style="background: linear-gradient(135deg, #1a3a34 0%, #2d5a4a 100%); color: white; box-shadow: 0 4px 20px rgba(26,58,52,0.4);">For Busy Women Who Want Lasting Results</span>
-            <span class="hero-badge" style="margin-left: 12px; background: linear-gradient(135deg, #c9a87c 0%, #a88b5e 100%); color: white; box-shadow: 0 4px 20px rgba(201,168,124,0.4); font-weight: 700;">✓ 200+ Women Transformed</span>
+            <span class="hero-badge" style="margin-left: 12px; background: linear-gradient(135deg, #c9a87c 0%, #a88b5e 100%); color: white; box-shadow: 0 4px 20px rgba(201,168,124,0.4); font-weight: 700;">200+ Women Transformed</span>
             <h1>Transform Your Relationship With Food</h1>
             <p>Stop the cycle of dieting. Learn how your body actually works—and make decisions that last. No starvation. No deprivation. Just results.</p>
             <div class="hero-buttons">
@@ -892,19 +897,43 @@
             </div>
             <div class="problem-grid">
                 <div class="problem-card">
-                    <span class="icon">🥗</span>
+                    <div class="problem-icon" style="font-size: 32px; font-weight: 700; color: var(--primary); margin-bottom: 16px;">01</div>
                     <h3>Diets Don't Work</h3>
                     <p>Keto, intermittent fasting, calorie counting—they all work short-term. Then the weight comes back.</p>
                 </div>
                 <div class="problem-card">
-                    <span class="icon">😔</span>
+                    <div class="problem-icon" style="font-size: 32px; font-weight: 700; color: var(--primary); margin-bottom: 16px;">02</div>
                     <h3>Feel Like You're Failing</h3>
                     <p>When diets stop working, you blame yourself. But the problem was never you—it was the method.</p>
                 </div>
                 <div class="problem-card">
-                    <span class="icon">🔄</span>
+                    <div class="problem-icon" style="font-size: 32px; font-weight: 700; color: var(--primary); margin-bottom: 16px;">03</div>
                     <h3>The Yo-Yo Cycle</h3>
                     <p>Lose weight, gain it back, start over. Again and again. It's exhausting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Stats Section -->
+    <section style="padding: 60px 0; background: var(--primary);">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center;">
+                <div>
+                    <div style="font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; color: white; margin-bottom: 8px;">200+</div>
+                    <div style="font-size: 14px; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 1px;">Women Transformed</div>
+                </div>
+                <div>
+                    <div style="font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; color: white; margin-bottom: 8px;">7,300+</div>
+                    <div style="font-size: 14px; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 1px;">Instagram Followers</div>
+                </div>
+                <div>
+                    <div style="font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; color: white; margin-bottom: 8px;">14+</div>
+                    <div style="font-size: 14px; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 1px;">Years Experience</div>
+                </div>
+                <div>
+                    <div style="font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; color: white; margin-bottom: 8px;">98%</div>
+                    <div style="font-size: 14px; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 1px;">Success Rate</div>
                 </div>
             </div>
         </div>
@@ -919,23 +948,23 @@
             </div>
             <div class="method-grid">
                 <div class="method-card">
-                    <span class="icon">🧬</span>
+                    <div style="font-size: 36px; font-weight: 700; color: white; margin-bottom: 16px; opacity: 0.3;">01</div>
                     <h3>Hormone Optimization</h3>
                     <p>Understand WHY you've been stuck. We address the root cause, not just symptoms.</p>
                 </div>
                 <div class="method-card">
-                    <span class="icon">⚖️</span>
+                    <div style="font-size: 36px; font-weight: 700; color: white; margin-bottom: 16px; opacity: 0.3;">02</div>
                     <h3>Food Neutrality</h3>
                     <p>No more "good" vs "bad" foods. Build a healthy relationship with all food.</p>
                 </div>
                 <div class="method-card">
-                    <span class="icon">🌱</span>
+                    <div style="font-size: 36px; font-weight: 700; color: white; margin-bottom: 16px; opacity: 0.3;">03</div>
                     <h3>Sustainable Habits</h3>
                     <p>Build what lasts, not what quits. Habits that work for YOUR life.</p>
                 </div>
                 <div class="method-card">
-                    <span class="icon">💬</span>
-                    <h3>Personalized Feedback</h3>
+                    <div style="font-size: 36px; font-weight: 700; color: white; margin-bottom: 16px; opacity: 0.3;">04</div>
+                    <h3>Personalized Coaching</h3>
                     <p>Real coaching, not generic plans. We tailor to YOUR body and goals.</p>
                 </div>
             </div>
@@ -1016,7 +1045,7 @@
             <div class="section-header">
                 <h2>Choose Your Path</h2>
                 <p style="margin-bottom: 30px;">Invest in yourself—your future self will thank you</p>
-                <span class="hero-badge" style="background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); color: #dc2626; font-size: 13px; font-weight: 700; border: 2px solid #dc2626; box-shadow: 0 4px 15px rgba(220,38,38,0.2);">⚡ Limited spots available — Next cohort fills fast</span>
+                <span class="hero-badge" style="background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); color: #dc2626; font-size: 13px; font-weight: 700; border: 2px solid #dc2626; box-shadow: 0 4px 15px rgba(220,38,38,0.2);">Limited spots available - Next cohort fills fast</span>
             </div>
             
             <!-- Duration Selection First -->
