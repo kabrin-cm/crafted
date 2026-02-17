@@ -693,6 +693,155 @@
                 margin: 0 auto;
             }
         }
+        
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .stagger {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .stagger.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Card Hover Effects */
+        .problem-card, .method-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .result-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        /* Button Hover Animation */
+        .btn-primary, .btn-secondary, .nav-cta {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::after, .btn-secondary::after, .nav-cta::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.4s ease, height 0.4s ease;
+        }
+        
+        .btn-primary:hover::after, .btn-secondary:hover::after, .nav-cta:hover::after {
+            width: 300px;
+            height: 300px;
+        }
+        
+        /* Hero Badge Animation */
+        .hero-badge {
+            animation: fadeInDown 0.8s ease forwards;
+        }
+        
+        .hero-badge:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Hero Text Animation */
+        .hero h1 {
+            animation: fadeInUp 0.8s ease 0.3s forwards;
+            opacity: 0;
+        }
+        
+        .hero p {
+            animation: fadeInUp 0.8s ease 0.5s forwards;
+            opacity: 0;
+        }
+        
+        .hero-buttons {
+            animation: fadeInUp 0.8s ease 0.7s forwards;
+            opacity: 0;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Section Header Animation */
+        .section-header {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .section-header.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Video Container Hover */
+        .video-container {
+            transition: transform 0.3s ease;
+        }
+        
+        .result-card:hover .video-container {
+            transform: scale(1.02);
+        }
+        
+        /* Pricing Selector Animation */
+        .pricing-selector {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        /* Nav Link Hover Underline */
+        .nav-cta {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-cta:hover {
+            letter-spacing: 1px;
+        }
+        
+        /* Smooth Page Load */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Selection Color */
+        ::selection {
+            background: var(--accent);
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -832,6 +981,7 @@
         <div class="container">
             <div class="coach-content">
                 <div class="coach-image">
+                    <!-- Replace with actual Sharan photo - placeholder image below -->
                     <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&h=1000&fit=crop&crop=face" alt="Sharan Scali" style="width: 100%; height: 100%; object-fit: cover; border-radius: 30px;">
                 </div>
                 <div class="coach-info">
@@ -997,17 +1147,78 @@
         // Initialize pricing on page load
         updatePricing();
         
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+        // Scroll Animation Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
                 }
+            });
+        }, observerOptions);
+        
+        // Add animation classes and observe elements
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add fade-in animation to sections
+            const sections = document.querySelectorAll('.problem-grid, .method-grid, .results-grid, .coach-content, .faq-grid');
+            sections.forEach(section => {
+                section.classList.add('fade-in');
+                observer.observe(section);
+            });
+            
+            // Add stagger animation to cards
+            const cards = document.querySelectorAll('.problem-card, .method-card, .result-card');
+            cards.forEach((card, index) => {
+                card.classList.add('stagger');
+                card.style.transitionDelay = (index * 0.1) + 's';
+                observer.observe(card);
+            });
+            
+            // Header scroll effect
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.style.padding = '12px 0';
+                    header.style.boxShadow = '0 4px 30px rgba(0,0,0,0.1)';
+                } else {
+                    header.style.padding = '20px 0';
+                    header.style.boxShadow = '0 2px 30px rgba(0,0,0,0.06)';
+                }
+            });
+            
+            // Video lazy loading
+            const videos = document.querySelectorAll('.video-container iframe');
+            videos.forEach(video => {
+                video.setAttribute('loading', 'lazy');
+            });
+            
+            // Add hover effect to result cards
+            const resultCards = document.querySelectorAll('.result-card');
+            resultCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(-8px)';
+                });
+            });
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
             });
         });
     </script>
