@@ -215,22 +215,10 @@
         }
         
         @media (min-width: 1024px) {
-            section {
-                padding: var(--space-2xl) 0;
-            }
-            
-            .hero {
-                padding: 120px 0 60px;
-                min-height: auto;
-            }
-            
-            .hero-content {
-                max-width: 500px;
-            }
-            
-            h1 {
-                font-size: 42px;
-            }
+            section { padding: var(--space-2xl) 0; }
+            .hero { padding: 120px 0 60px; min-height: auto; }
+            .hero-content { max-width: 500px; }
+            h1 { font-size: 42px; }
         }
         
         .section-dark {
@@ -333,6 +321,36 @@
             font-size: 18px;
             color: var(--text);
             font-style: italic;
+        }
+        
+        /* Is This For You? */
+        .target-section {
+            background: var(--background-alt);
+        }
+        
+        .target-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .target-item {
+            background: white;
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .target-item::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: bold;
+            font-size: 18px;
         }
         
         /* Method Steps */
@@ -443,17 +461,6 @@
             width: 100%;
             border-radius: var(--radius-xl);
             box-shadow: var(--shadow-xl);
-        }
-        
-        .coach-image-accent {
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            width: 100%;
-            height: 100%;
-            border: 3px solid var(--accent);
-            border-radius: var(--radius-xl);
-            z-index: -1;
         }
         
         .coach-image {
@@ -711,16 +718,14 @@
         @media (max-width: 768px) {
             .features-grid,
             .pricing-grid,
-            .coach-grid {
+            .coach-grid,
+            .method-grid,
+            .case-study-stats {
                 grid-template-columns: 1fr;
             }
             
-            .method-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .case-study-stats {
-                grid-template-columns: repeat(2, 1fr);
+            .target-grid {
+                grid-template-columns: 1fr;
             }
             
             .hero {
@@ -746,7 +751,7 @@
         <div class="container">
             <div class="header-inner">
                 <a href="#" class="logo">SNS <span>Method</span></a>
-                <a href="#pricing" class="header-cta">Apply Now</a>
+                <a href="#pricing" class="header-cta">Get Started</a>
             </div>
         </div>
     </header>
@@ -756,14 +761,13 @@
         <div class="container">
             <div class="hero-content">
                 <span class="badge">For Busy Women Who Want Lasting Results</span>
-                <span class="badge badge-alt" style="margin-left: 8px;">200+ Women Transformed</span>
                 
-                <h1>Transform Your Relationship With Food</h1>
+                <h1>Stop Dieting. Start Living.</h1>
                 
-                <p class="hero-subtitle">No more starving yourself, or depriving yourself of your favorite foods. Time to get your dream physique and health in a sustainable way with results that last for life.</p>
+                <p class="hero-subtitle">No more starving yourself or depriving yourself of your favorite foods. Get your dream body in a sustainable way, with results that last for life.</p>
                 
                 <div class="hero-buttons">
-                    <a href="#pricing" class="btn btn-primary">Get Started</a>
+                    <a href="#pricing" class="btn btn-primary">Get Your Dream Body</a>
                     <a href="#case-studies" class="btn btn-secondary">See Results</a>
                 </div>
             </div>
@@ -773,12 +777,12 @@
     <!-- Trust Bar -->
     <section class="trust-bar">
         <div class="container">
-            <p>Trusted By Women Across [Location]</p>
+            <p>Results That Speak</p>
             <div class="trust-items">
                 <span class="trust-item">14+ Years Experience</span>
                 <span class="trust-item">200+ Women Transformed</span>
-                <span class="trust-item">Certified Nutritional Advisor</span>
-                <span class="trust-item">Hormone Specialist</span>
+                <span class="trust-item">Certified Expert</span>
+                <span class="trust-item">98% Success Rate</span>
             </div>
         </div>
     </section>
@@ -787,49 +791,49 @@
     <section>
         <div class="container">
             <div class="section-header">
-                <h2>Everything You Get Inside The SNS Method</h2>
+                <h2>What You Get Inside The SNS Method</h2>
             </div>
             
             <div class="features-grid">
                 <div class="feature-card">
                     <span class="check">✓</span>
                     <h3>Hormone Optimization</h3>
-                    <p>Understand why you have been stuck. We address the root cause, not just symptoms.</p>
+                    <p>Address the root cause. Stop fighting your body and start working with it.</p>
                 </div>
                 <div class="feature-card">
                     <span class="check">✓</span>
-                    <h3>Personalized Nutrition Programming</h3>
-                    <p>Custom meal guidance tailored to YOUR body, YOUR lifestyle, and YOUR goals.</p>
+                    <h3>Personalized Nutrition Plan</h3>
+                    <p>A plan built for YOUR body, YOUR lifestyle, and YOUR goals. Not generic rules.</p>
                 </div>
                 <div class="feature-card">
                     <span class="check">✓</span>
-                    <h3>Food Neutrality Education</h3>
-                    <p>No more good vs bad foods. Build a healthy relationship with ALL food.</p>
+                    <h3>Food Freedom</h3>
+                    <p>Eat the foods you love without guilt. No labels, no restrictions, no deprivation.</p>
                 </div>
                 <div class="feature-card">
                     <span class="check">✓</span>
-                    <h3>Sustainable Habit Building</h3>
-                    <p>Build habits that last, not ones that quit. Habits that work for YOUR life.</p>
+                    <h3>Habits That Stick</h3>
+                    <p>Build tiny habits that fit into your busy life. No dramatic overhauls.</p>
                 </div>
                 <div class="feature-card">
                     <span class="check">✓</span>
-                    <h3>App-Based Support</h3>
-                    <p>Track your progress, access resources, and stay accountable through our app.</p>
+                    <h3>App Support</h3>
+                    <p>Track progress, access resources, and stay accountable through our app.</p>
                 </div>
                 <div class="feature-card">
                     <span class="check">✓</span>
                     <h3>WhatsApp Support (Elite)</h3>
-                    <p>Direct access to Sharan for real-time questions and accountability.</p>
+                    <p>Direct access to Sharan for real-time answers when you need them most.</p>
                 </div>
                 <div class="feature-card">
                     <span class="check">✓</span>
                     <h3>1-on-1 Video Calls (Elite)</h3>
-                    <p>Personalized strategy sessions to review progress and adjust your plan.</p>
+                    <p>Personal strategy sessions to keep you on track and troubleshoot obstacles.</p>
                 </div>
                 <div class="feature-card">
                     <span class="check">✓</span>
-                    <h3>Lifetime Access</h3>
-                    <p>Once you complete the program, you have the knowledge forever. No relapses.</p>
+                    <h3>Lifetime Knowledge</h3>
+                    <p>Once you learn how your body works, you have the tools forever.</p>
                 </div>
             </div>
         </div>
@@ -839,84 +843,104 @@
     <section class="section-alt">
         <div class="container">
             <div class="section-header">
-                <h2>How Long Are You Going To Keep Trading Your Time And Energy For Results That Never Last?</h2>
+                <h2>How Long Will You Keep Trading Your Time And Energy For Results That Never Last?</h2>
                 <p>Be honest with yourself for a second.</p>
             </div>
             
             <div class="problem-list">
-                <div class="problem-item">The alarm clock that goes off before you are ready, every single day</div>
                 <div class="problem-item">The scale that goes up and down every week, no matter what you do</div>
                 <div class="problem-item">The diet that works for 2 weeks, then you "fall off" and gain it all back</div>
-                <div class="problem-item">The feeling of failure every time you can't stick to another meal plan</div>
+                <div class="problem-item">The feeling of failure every time you cannot stick to another meal plan</div>
                 <div class="problem-item">The frustration of trying everything and getting nowhere</div>
                 <div class="problem-item">The "someday" that never comes... someday you will have the body you want</div>
             </div>
             
-            <p class="problem-conclusion">You are not crazy for wanting something different.<br>You are just looking in the wrong places.</p>
+            <p class="problem-conclusion">You are not broken.<br>You just have not been shown the right way yet.</p>
         </div>
     </section>
     
-    <!-- 4. SOLUTION / METHOD -->
+    <!-- 4. IS THIS FOR YOU? -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>Is The SNS Method For You?</h2>
+                <p>This is for you if...</p>
+            </div>
+            
+            <div class="target-grid">
+                <div class="target-item">You are a busy mom with limited time</div>
+                <div class="target-item">You have tried every diet and failed</div>
+                <div class="target-item">You want results without starving yourself</div>
+                <div class="target-item">You are tired of quick fixes that do not last</div>
+                <div class="target-item">You want to eat your favorite foods</div>
+                <div class="target-item">You need a sustainable, long-term solution</div>
+                <div class="target-item">You want to understand how your body works</div>
+                <div class="target-item">You are ready to commit to real change</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 5. SOLUTION / METHOD -->
     <section class="section-dark">
         <div class="container">
             <div class="section-header">
-                <h2>The SNS Method System</h2>
-                <p>We do not do diets. We do sustainable lifestyle change.</p>
+                <h2>The SNS Method</h2>
+                <p>Not a diet. A complete lifestyle overhaul.</p>
             </div>
             
             <div class="method-grid">
                 <div class="method-card">
                     <div class="method-number">01</div>
                     <h3>Hormone Reset</h3>
-                    <p>Optimize your hormones so your body actually burns fat and has energy.</p>
+                    <p>Optimize your hormones so your body burns fat and has energy.</p>
                 </div>
                 <div class="method-card">
                     <div class="method-number">02</div>
-                    <h3>Food Neutrality</h3>
-                    <p>Learn to eat intuitively without labels, guilt, or restriction.</p>
+                    <h3>Food Freedom</h3>
+                    <p>Learn to eat intuitively without labels, guilt, or restrictions.</p>
                 </div>
                 <div class="method-card">
                     <div class="method-number">03</div>
                     <h3>Habit Stacking</h3>
-                    <p>Build tiny habits that stack onto your existing routine seamlessly.</p>
+                    <p>Build habits that fit seamlessly into your existing routine.</p>
                 </div>
                 <div class="method-card">
                     <div class="method-number">04</div>
                     <h3>Maintenance</h3>
-                    <p>Learn how to maintain your results without constant effort or tracking.</p>
+                    <p>Learn to maintain results without constant tracking or effort.</p>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- 5. SOCIAL PROOF / CASE STUDIES -->
+    <!-- 6. SOCIAL PROOF / CASE STUDIES -->
     <section id="case-studies">
         <div class="container">
             <div class="section-header">
                 <h2>Real Women. Real Results.</h2>
-                <p>Here is what the SNS Method has done for women just like you.</p>
+                <p>Women just like you have transformed their bodies and lives.</p>
             </div>
             
             <!-- Case Study 1 -->
             <div class="case-study">
                 <div class="case-study-header">
                     <h3>Case Study #1</h3>
-                    <h2>Lost Over 20lbs While Learning She Could Eat Good Food, Enjoy Life AND See Results</h2>
+                    <h2>"I Lost 20+ lbs And Gained My Life Back"</h2>
                 </div>
-                <p>Kaitlin had tried everything. Keto. Intermittent fasting. Calorie counting. She was getting married and wanted to look her best, but every diet left her feeling deprived and hungry.</p>
-                <p>When she joined the SNS Method, she realized it was never about the food. It was about her relationship with food. She learned that she could eat the foods she loved and still see results. No deprivation. No starvation. Just balance.</p>
+                <p>Kaitlin had tried everything. Keto. Intermittent fasting. Calorie counting. She was getting married and wanted to look her best, but every diet left her feeling deprived and hungry. She was stuck in the yo-yo cycle of losing weight and gaining it back.</p>
+                <p>When she joined the SNS Method, everything changed. She realized it was never about the food. It was about her relationship with food. She learned that she could eat the foods she loved and still see results. No deprivation. No starvation. Just balance.</p>
                 <div class="case-study-stats">
                     <div class="stat">
                         <div class="stat-value">20+</div>
                         <div class="stat-label">Lbs Lost</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-value">0</div>
-                        <div class="stat-label">Diets Failed</div>
-                    </div>
-                    <div class="stat">
                         <div class="stat-value">100%</div>
                         <div class="stat-label">Food Freedom</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">0</div>
+                        <div class="stat-label">Diets Tried</div>
                     </div>
                     <div class="stat">
                         <div class="stat-value">Happy</div>
@@ -929,10 +953,10 @@
             <div class="case-study">
                 <div class="case-study-header">
                     <h3>Case Study #2</h3>
-                    <h2>From Terrified Of Eating More To Having More Energy Than Ever Before</h2>
+                    <h2>"I Have More Energy Than I Did In My 20s"</h2>
                 </div>
-                <p>Rianne was terrified that eating more would make her gain weight. She had been taught that less is more, and the thought of increasing her food intake felt counterintuitive.</p>
-                <p>After the SNS Method, she now has more energy than ever before, better sleep, and has completely eliminated binge eating. She says she has "never eaten this much in her life" and is now losing weight "easily and effortlessly" without trying.</p>
+                <p>Rianne was terrified that eating more would make her gain weight. She had been taught that less is more, and the thought of increasing her food intake felt completely wrong.</p>
+                <p>After the SNS Method, she now has more energy than ever before, sleeps better, and has completely eliminated binge eating. She says she has "never eaten this much in her life" and is now losing weight "easily and effortlessly" without even trying.</p>
                 <div class="case-study-stats">
                     <div class="stat">
                         <div class="stat-value">More</div>
@@ -944,7 +968,7 @@
                     </div>
                     <div class="stat">
                         <div class="stat-value">0</div>
-                        <div class="stat-label">Binge Episodes</div>
+                        <div class="stat-label">Binge Days</div>
                     </div>
                     <div class="stat">
                         <div class="stat-value">Easy</div>
@@ -966,7 +990,6 @@
                     </div>
                     <div style="padding: var(--space-lg);">
                         <h3 style="font-size: 18px; color: var(--primary); font-weight: 600;">Asha's Transformation</h3>
-                        <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Lost 20+ lbs</p>
                     </div>
                 </div>
                 <div style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); border: 3px solid var(--accent);">
@@ -975,7 +998,6 @@
                     </div>
                     <div style="padding: var(--space-lg);">
                         <h3 style="font-size: 18px; color: var(--primary); font-weight: 600;">Sandy's Journey</h3>
-                        <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Energy restored</p>
                     </div>
                 </div>
             </div>
@@ -986,7 +1008,7 @@
         </div>
     </section>
     
-    <!-- 6. ABOUT SECTION -->
+    <!-- 7. ABOUT SECTION -->
     <section class="section-alt">
         <div class="container">
             <div class="coach-grid">
@@ -995,17 +1017,17 @@
                 </div>
                 <div class="coach-content">
                     <h2>Meet Your Coach</h2>
-                    <span class="coach-title">Sharan Scali, Certified Advanced Sports and Exercise Nutritional Advisor</span>
-                    <p>I am Sharan, Certified Advanced Sports and Exercise Nutritional Advisor, Hormone Specialist, and Mom of one.</p>
-                    <p>I have spent years helping women break free from the diet cycle, not by giving you another meal plan to follow, but by teaching you how your body works and giving you habits that actually last.</p>
-                    <p>I have been where you are. I know how frustrating it is to try everything and get nowhere. I know what it feels like to fail another diet and blame yourself for not having enough willpower.</p>
+                    <span class="coach-title">Sharan Scali, Certified Nutritional Advisor</span>
+                    <p>I am Sharan. Certified Nutritional Advisor. Hormone Specialist. Mom of one.</p>
+                    <p>I have spent years helping women break free from the diet cycle. Not by giving you another meal plan to follow, but by teaching you how your body actually works.</p>
+                    <p>I have been where you are. I know what it feels like to fail another diet and blame yourself for not having enough willpower.</p>
                     <p>That is why the SNS Method is not about perfection. It is about progress you can maintain. Forever.</p>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- 7. PRICING SECTION -->
+    <!-- 8. PRICING SECTION -->
     <section id="pricing">
         <div class="container">
             <div class="section-header">
@@ -1034,7 +1056,7 @@
                         <li>Sustainable habit building</li>
                     </ul>
                     
-                    <button class="btn btn-secondary" onclick="selectPlan('starter')" style="width: 100%;">Apply Now</button>
+                    <button class="btn btn-secondary" onclick="selectPlan('starter')" style="width: 100%;">Get Started</button>
                 </div>
                 
                 <!-- Elite -->
@@ -1058,15 +1080,15 @@
                         <li>Direct access to Sharan</li>
                     </ul>
                     
-                    <button class="btn btn-primary" onclick="selectPlan('elite')" style="width: 100%;">Claim Your Spot</button>
+                    <button class="btn btn-primary" onclick="selectPlan('elite')" style="width: 100%;">Get Your Dream Body</button>
                 </div>
             </div>
             
-            <p class="guarantee"><strong>100% Satisfaction Guarantee:</strong> If you are not happy after the first30 days, we will refund your investment. No questions asked.</p>
+            <p class="guarantee"><strong>100% Satisfaction Guarantee:</strong> If you are not happy after the first 30 days, we will refund your investment. No questions asked.</p>
         </div>
     </section>
     
-    <!-- 8. FAQ SECTION -->
+    <!-- 9. FAQ SECTION -->
     <section class="section-alt">
         <div class="container">
             <div class="section-header">
@@ -1080,7 +1102,7 @@
                 </div>
                 <div class="faq-item">
                     <h3>How is this different from a meal plan?</h3>
-                    <p>Meal plans tell you what to eat. We teach you how to eat. You will understand your body, build sustainable habits, and have the knowledge to make your own decisions, forever.</p>
+                    <p>Meal plans tell you what to eat. We teach you how to eat. You will understand your body and have the knowledge forever.</p>
                 </div>
                 <div class="faq-item">
                     <h3>I am really busy. Will I have time for this?</h3>
@@ -1088,26 +1110,26 @@
                 </div>
                 <div class="faq-item">
                     <h3>What if I have tried everything and failed?</h3>
-                    <p>Perfect. That is exactly who this is for. The SNS Method addresses why past attempts did not work, and gives you something that actually sticks.</p>
+                    <p>Perfect. That is exactly who this is for. The SNS Method addresses why past attempts did not work.</p>
                 </div>
                 <div class="faq-item">
                     <h3>How soon will I see results?</h3>
-                    <p>Most women see initial results within 2-4 weeks. The program is designed for sustainable, long-term transformation, not quick fixes that do not last.</p>
+                    <p>Most women see initial results within 2-4 weeks. This is about sustainable, long-term transformation.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>What is included in the 1-on-1 video calls?</h3>
-                    <p>Your video calls with Sharan are personalized strategy sessions where we review your progress, troubleshoot challenges, and adjust your plan based on how your body responds.</p>
+                    <h3>What is included in the video calls?</h3>
+                    <p>Personal strategy sessions where we review your progress, troubleshoot challenges, and adjust your plan.</p>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- 9. FINAL CTA -->
+    <!-- 10. FINAL CTA -->
     <section class="cta">
         <div class="container">
-            <h2>Your Best Shape Is Waiting</h2>
-            <p>You have tried the diets. You have done the deprivation. Now try something different.</p>
-            <a href="#pricing" class="btn" style="background: white; color: var(--primary);">Get Started</a>
+            <h2>Your Dream Body Is Waiting</h2>
+            <p>You have tried the diets. You have done the deprivation. Now try the method that actually works.</p>
+            <a href="#pricing" class="btn" style="background: white; color: var(--primary);">Get Started Now</a>
         </div>
     </section>
     
