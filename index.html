@@ -276,7 +276,16 @@
         }
         
         @media (max-width: 768px) {
-            .coach-content { grid-template-columns: 1fr; text-align: center; }
+            .coach-content { 
+                grid-template-columns: 1fr; 
+                text-align: center; 
+            }
+            .coach-image { 
+                order: -1; 
+                aspect-ratio: 4/3;
+                max-width: 400px;
+                margin: 0 auto 30px;
+            }
         }
         
         .coach-image { background: var(--secondary); border-radius: 30px; aspect-ratio: 4/5; overflow: hidden; }
@@ -430,29 +439,6 @@
                     <div style="font-size: 32px; font-weight: 700; color: var(--primary); margin-bottom: 16px;">03</div>
                     <h3>The Yo-Yo Cycle</h3>
                     <p>Lose weight, gain it back, start over. Again and again. It's exhausting.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div>
-                    <div class="stats-number">200+</div>
-                    <div class="stats-label">Women Transformed</div>
-                </div>
-                <div>
-                    <div class="stats-number">7,300+</div>
-                    <div class="stats-label">Instagram Followers</div>
-                </div>
-                <div>
-                    <div class="stats-number">14+</div>
-                    <div class="stats-label">Years Experience</div>
-                </div>
-                <div>
-                    <div class="stats-number">98%</div>
-                    <div class="stats-label">Success Rate</div>
                 </div>
             </div>
         </div>
