@@ -733,6 +733,16 @@
                 grid-template-columns: 1fr !important;
             }
             
+            /* Stack video testimonials on mobile */
+            .section > .container > div[style*="grid-template-columns: repeat(2"] {
+                grid-template-columns: 1fr !important;
+            }
+            
+            /* Stack coach sections on mobile */
+            .section-alt > .container > div[style*="grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+            }
+            
             .hero {
                 padding: 120px 0 60px;
                 text-align: center;
@@ -905,7 +915,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>The SNS Method</h2>
-                <p>Not a diet. A complete lifestyle overhaul.</p>
+                <p style="color: #c9a87c; font-size: 22px; font-weight: 500;">Not a diet. A complete lifestyle overhaul.</p>
             </div>
             
             <div class="method-grid">
@@ -939,6 +949,62 @@
             <div class="section-header">
                 <h2>Real Women. Real Results.</h2>
                 <p>Women just like you have transformed their bodies and lives.</p>
+            </div>
+            
+            <!-- Video Testimonials - FIRST -->
+            <div style="text-align: center; margin-bottom: var(--space-xl); padding: var(--space-xl); background: var(--primary); border-radius: var(--radius-lg);">
+                <h2 style="color: white; font-family: var(--font-display); font-size: 28px; margin-bottom: var(--space-sm);">Hear From Women Who Have Transformed</h2>
+                <p style="color: rgba(255,255,255,0.8); margin-bottom: var(--space-xl);">Watch their real stories and see what is possible for you</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-lg); margin-bottom: var(--space-2xl);">
+                <!-- Video 1: Asha -->
+                <div style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); border: 3px solid var(--accent);">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; background: #000;">
+                        <iframe src="https://www.youtube.com/embed/4rWox-_Jeys" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"></iframe>
+                    </div>
+                    <div style="padding: var(--space-lg);">
+                        <h3 style="font-size: 20px; color: var(--primary); font-weight: 600; margin-bottom: var(--space-sm);">Asha's Transformation</h3>
+                        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">Asha had tried every diet out there. Keto. Intermittent fasting. Calorie counting. Nothing worked long-term. After the SNS Method, she finally found balance and lost weight without feeling deprived.</p>
+                        <p style="font-size: 13px; color: var(--accent); font-weight: 600; margin-top: var(--space-sm);">Lost 20+ lbs without dieting</p>
+                    </div>
+                </div>
+                
+                <!-- Video 2: Sandy -->
+                <div style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); border: 3px solid var(--accent);">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; background: #000;">
+                        <iframe src="https://www.youtube.com/embed/j-oLdHZWAZw" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"></iframe>
+                    </div>
+                    <div style="padding: var(--space-lg);">
+                        <h3 style="font-size: 20px; color: var(--primary); font-weight: 600; margin-bottom: var(--space-sm);">Sandy's Journey</h3>
+                        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">Sandy was skeptical after trying so many programs before. The SNS Method showed her that it was never about the food - it was about her mindset and relationship with eating.</p>
+                        <p style="font-size: 13px; color: var(--accent); font-weight: 600; margin-top: var(--space-sm);">Found food freedom and energy</p>
+                    </div>
+                </div>
+                
+                <!-- Video 3: Stephanie -->
+                <div style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); border: 3px solid var(--accent);">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; background: #000;">
+                        <iframe src="https://www.youtube.com/embed/mSh5F2Bsn6U" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"></iframe>
+                    </div>
+                    <div style="padding: var(--space-lg);">
+                        <h3 style="font-size: 20px; color: var(--primary); font-weight: 600; margin-bottom: var(--space-sm);">Stephanie's Results</h3>
+                        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">Stephanie was stuck in the yo-yo diet cycle for years. She learned how to eat intuitively and now maintains her results without constant tracking or restrictions.</p>
+                        <p style="font-size: 13px; color: var(--accent); font-weight: 600; margin-top: var(--space-sm);">Broke free from yo-yo dieting</p>
+                    </div>
+                </div>
+                
+                <!-- Video 4: Megan -->
+                <div style="background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); border: 3px solid var(--accent);">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; background: #000;">
+                        <iframe src="https://www.youtube.com/embed/IjRiOQ2EQKg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"></iframe>
+                    </div>
+                    <div style="padding: var(--space-lg);">
+                        <h3 style="font-size: 20px; color: var(--primary); font-weight: 600; margin-bottom: var(--space-sm);">Megan's Story</h3>
+                        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">Megan was afraid to eat more thinking it would make her gain weight. Through the SNS Method, she discovered that eating more actually helped her lose weight and feel more energized.</p>
+                        <p style="font-size: 13px; color: var(--accent); font-weight: 600; margin-top: var(--space-sm);">More energy, better sleep</p>
+                    </div>
+                </div>
             </div>
             
             <!-- Case Study 1 -->
@@ -1062,17 +1128,39 @@
     <!-- 7. ABOUT SECTION -->
     <section class="section-alt">
         <div class="container">
-            <div class="coach-grid">
+            <div class="section-header">
+                <h2>Meet Your Team</h2>
+                <p>Two coaches dedicated to your transformation</p>
+            </div>
+            
+            <!-- Coach 1: Sharan -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3xl); margin-bottom: var(--space-3xl); align-items: center;">
                 <div class="coach-image">
-                    <img src="sharan.jpg" alt="Sharan Scali">
+                    <img src="sharan.jpg" alt="Sharan Scali" style="width: 100%; border-radius: var(--radius-xl); box-shadow: var(--shadow-xl);">
                 </div>
                 <div class="coach-content">
-                    <h2>Meet Your Coach</h2>
-                    <span class="coach-title">Sharan Scali, Certified Nutritional Advisor</span>
+                    <h2>Sharan Scali</h2>
+                    <span class="coach-title">Founder, Certified Nutritional Advisor</span>
                     <p>I am Sharan. Certified Nutritional Advisor. Hormone Specialist. Mom of one.</p>
                     <p>I have spent years helping women break free from the diet cycle. Not by giving you another meal plan to follow, but by teaching you how your body actually works.</p>
                     <p>I have been where you are. I know what it feels like to fail another diet and blame yourself for not having enough willpower.</p>
                     <p>That is why the SNS Method is not about perfection. It is about progress you can maintain. Forever.</p>
+                </div>
+            </div>
+            
+            <!-- Coach 2: Lindsay -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3xl); align-items: center;">
+                <div class="coach-image">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&h=1000&fit=crop&crop=face" alt="Lindsay Langston" style="width: 100%; border-radius: var(--radius-xl); box-shadow: var(--shadow-xl);">
+                </div>
+                <div class="coach-content">
+                    <h2>Lindsay Langston</h2>
+                    <span class="coach-title">PNL1 Nutrition Coach, Crossfit Level 1</span>
+                    <p>I am Lindsay. Certified Nutrition Coach. Wife. Mom of two.</p>
+                    <p>I graduated from Arizona State University with a Bachelor of Science in Communication and a minor in Media Analysis in 2010. After moving to Canada, I got into all things health, fitness, and nutrition.</p>
+                    <p>I first did a deep dive into the importance of the quality of the food we eat. But I felt something was missing. That is when I reached out to Sharan and became a SnS client first.</p>
+                    <p>It was here I learned the importance of consuming enough food to reach your goals but also how important our everyday habits are to maintain them. I chose to work with Sharan because of the importance she placed on prioritizing your health over simply just losing weight.</p>
+                    <p>After having two boys, I decided to take the leap and got my nutrition certification. I now help clients thrive as a busy mother of two, wife, and full-time nutritionist.</p>
                 </div>
             </div>
         </div>
