@@ -675,12 +675,22 @@
                 padding: 70px 0;
             }
             
-            .pricing-card.featured {
-                transform: none;
+            .pricing-selector {
+                padding: 24px !important;
             }
             
-            .pricing-card.featured:hover {
-                transform: translateY(-10px);
+            .pricing-selector > div:first-child {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .pricing-selector ul {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .coach-image {
+                aspect-ratio: 1;
+                max-width: 300px;
+                margin: 0 auto;
             }
         }
     </style>
@@ -844,37 +854,44 @@
                 <p style="margin-bottom: 30px;">Invest in yourself—your future self will thank you</p>
                 <span class="hero-badge" style="background: #fee2e2; color: #dc2626; font-size: 12px;">⚡ Limited spots available — Next cohort fills fast</span>
             </div>
-            <div class="pricing-cards">
-                <div class="pricing-card">
-                    <h3>Elite</h3>
-                    <p class="subtitle">Email + App Support</p>
-                    <p class="price">$375<span>+GST</span></p>
-                    <p class="duration">3 months</p>
-                    <ul>
-                        <li>Personalized nutrition programming</li>
-                        <li>Hormone optimization guidance</li>
-                        <li>App-based support</li>
-                        <li>Food neutrality education</li>
-                        <li>Sustainable habit building</li>
-                    </ul>
-                    <p style="font-size: 12px; color: var(--text-light); margin-bottom: 20px;">🔒 100% satisfaction guarantee</p>
-                    <a href="#" class="btn btn-secondary">Apply Now</a>
+            
+            <!-- Pricing Selector -->
+            <div class="pricing-selector" style="max-width: 600px; margin: 0 auto; background: white; border-radius: 24px; padding: 40px; box-shadow: 0 10px 50px rgba(0,0,0,0.08);">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
+                    <div>
+                        <label style="display: block; font-weight: 600; margin-bottom: 10px; color: var(--primary);">Select Program</label>
+                        <select id="planSelect" onchange="updatePricing()" style="width: 100%; padding: 16px; border-radius: 12px; border: 2px solid #e5e5e5; font-size: 16px; color: var(--text); background: white; cursor: pointer;">
+                            <option value="elite">Elite — Email + App Support</option>
+                            <option value="premium" selected>Premium — WhatsApp + Video Calls</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="display: block; font-weight: 600; margin-bottom: 10px; color: var(--primary);">Duration</label>
+                        <select id="durationSelect" onchange="updatePricing()" style="width: 100%; padding: 16px; border-radius: 12px; border: 2px solid #e5e5e5; font-size: 16px; color: var(--text); background: white; cursor: pointer;">
+                            <option value="3">3 Months</option>
+                            <option value="6">6 Months</option>
+                            <option value="12">12 Months</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="pricing-card featured">
-                    <h3>Premium</h3>
-                    <p class="subtitle">WhatsApp + Video Calls</p>
-                    <p class="price">$495<span>+GST</span></p>
-                    <p class="duration">3 months</p>
-                    <ul>
-                        <li>Everything in Elite, plus:</li>
-                        <li>WhatsApp support</li>
-                        <li>3x 1-on-1 video calls</li>
-                        <li>Personalized strategy sessions</li>
-                        <li>Direct access to Sharan</li>
-                    </ul>
-                    <p style="font-size: 12px; color: var(--text-light); margin-bottom: 20px;">🔒 100% satisfaction guarantee</p>
-                    <a href="#" class="btn btn-primary">Claim Your Spot</a>
+                
+                <div id="priceDisplay" style="text-align: center; margin-bottom: 30px;">
+                    <p id="planName" style="font-size: 24px; font-weight: 600; color: var(--primary); margin-bottom: 8px;">Premium</p>
+                    <p id="planDesc" style="font-size: 14px; color: var(--text-light); margin-bottom: 12px;">WhatsApp + Video Calls</p>
+                    <p id="priceAmount" style="font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 700; color: var(--primary);">$495<span style="font-size: 20px; font-weight: 400; color: var(--text-light);">+GST</span></p>
+                    <p id="durationLabel" style="font-size: 14px; color: var(--accent-dark); margin-top: 8px;">3 months</p>
                 </div>
+                
+                <div id="featuresList" style="background: var(--secondary); border-radius: 16px; padding: 24px; margin-bottom: 30px;">
+                    <h4 style="font-size: 14px; font-weight: 600; color: var(--primary); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px;">What's Included:</h4>
+                    <ul id="featuresUl" style="list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                        <!-- Features populated by JS -->
+                    </ul>
+                </div>
+                
+                <p style="font-size: 12px; color: var(--text-light); margin-bottom: 20px; text-align: center;">🔒 100% satisfaction guarantee</p>
+                
+                <a href="#" id="purchaseBtn" class="btn-primary" style="display: block; text-align: center; padding: 20px; font-size: 18px;">Claim Your Spot</a>
             </div>
         </div>
     </section>
@@ -923,6 +940,63 @@
     </footer>
     
     <script>
+        // Pricing data
+        const pricingData = {
+            elite: {
+                name: 'Elite',
+                desc: 'Email + App Support',
+                prices: { '3': 375, '6': 675, '12': 1200 },
+                features: [
+                    'Personalized nutrition programming',
+                    'Hormone optimization guidance',
+                    'App-based support',
+                    'Food neutrality education',
+                    'Sustainable habit building',
+                    'Weekly check-ins'
+                ]
+            },
+            premium: {
+                name: 'Premium',
+                desc: 'WhatsApp + Video Calls',
+                prices: { '3': 495, '6': 840, '12': 1500 },
+                features: [
+                    'Everything in Elite, plus:',
+                    'WhatsApp support',
+                    '3x 1-on-1 video calls',
+                    'Personalized strategy sessions',
+                    'Direct access to Sharan',
+                    'Priority support'
+                ]
+            }
+        };
+        
+        function updatePricing() {
+            const plan = document.getElementById('planSelect').value;
+            const duration = document.getElementById('durationSelect').value;
+            const data = pricingData[plan];
+            
+            // Update price display
+            document.getElementById('planName').textContent = data.name;
+            document.getElementById('planDesc').textContent = data.desc;
+            document.getElementById('priceAmount').innerHTML = '$' + data.prices[duration] + '<span style="font-size: 20px; font-weight: 400; color: var(--text-light);">+GST</span>';
+            document.getElementById('durationLabel').textContent = duration + ' months';
+            
+            // Update features
+            const featuresUl = document.getElementById('featuresUl');
+            featuresUl.innerHTML = data.features.map(f => '<li style="font-size: 14px; color: var(--text); display: flex; align-items: center; gap: 8px;"><span style="color: var(--primary-light);">✓</span> ' + f + '</li>').join('');
+            
+            // Update button text
+            const btn = document.getElementById('purchaseBtn');
+            if (plan === 'premium') {
+                btn.textContent = 'Claim Your Spot';
+            } else {
+                btn.textContent = 'Apply Now';
+            }
+        }
+        
+        // Initialize pricing on page load
+        updatePricing();
+        
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
