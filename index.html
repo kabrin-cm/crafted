@@ -621,49 +621,24 @@
             color: var(--terra);
         }
 
-        /* === CASE STUDIES === */
-        .case-study {
-            background: var(--white);
+        /* === MID-PAGE CTA === */
+        .mid-cta {
+            text-align: center;
+            padding: var(--space-2xl);
+            background: var(--cream-dark);
             border-radius: var(--radius-xl);
-            padding: var(--space-2xl) var(--space-2xl);
-            border: 1px solid rgba(42,36,32,0.06);
-            margin-bottom: var(--space-xl);
+            margin-top: var(--space-2xl);
         }
-        .case-study-label {
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: var(--terra);
-            margin-bottom: var(--space-sm);
-        }
-        .case-study h2 {
+        .mid-cta p {
             font-family: var(--font-display);
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 500;
             color: var(--sage-dark);
             font-style: italic;
             margin-bottom: var(--space-lg);
         }
-        .case-study p { font-size: 16px; color: var(--warm-muted); line-height: 1.7; margin-bottom: var(--space-md); }
-        .case-stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: var(--space-lg);
-            padding-top: var(--space-lg);
-            border-top: 1px solid rgba(42,36,32,0.06);
-            margin-top: var(--space-lg);
-        }
-        .case-stat { text-align: center; }
-        .case-stat .val {
-            font-family: var(--font-display);
-            font-size: 28px; font-weight: 600;
-            color: var(--sage);
-        }
-        .case-stat .lbl {
-            font-size: 11px; text-transform: uppercase;
-            letter-spacing: 0.08em; color: var(--warm-muted);
-        }
+
+
 
         /* === COACHES === */
         .coach-grid {
@@ -969,7 +944,6 @@
             .features-grid, .pricing-grid, .coach-grid, .qualifier-grid, .testimonial-grid, .video-grid { grid-template-columns: 1fr; }
             .method-grid { grid-template-columns: repeat(2, 1fr); }
             .method-grid::before { display: none; }
-            .case-stats { grid-template-columns: repeat(2, 1fr); }
             .hero { padding: 100px 0 60px; min-height: auto; text-align: center; }
             .hero-sub { margin-left: auto; margin-right: auto; }
             .hero-buttons { justify-content: center; flex-direction: column; align-items: center; }
@@ -1288,6 +1262,11 @@
                     </div>
                 </div>
             </div>
+
+            <div class="mid-cta reveal">
+                <p>Ready to write your own transformation story?</p>
+                <a href="#pricing" class="btn btn-primary">See Pricing</a>
+            </div>
         </div>
     </section>
 
@@ -1340,37 +1319,6 @@
                         <p>Afraid to eat more. Discovered that eating more actually helped her lose weight and feel more energized.</p>
                         <span class="video-result">More energy, better sleep</span>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══ CASE STUDIES ═══ -->
-    <section>
-        <div class="container">
-            <div class="case-study reveal">
-                <div class="case-study-label">Case Study</div>
-                <h2>"I Lost 20+ lbs And Gained My Life Back"</h2>
-                <p>Kaitlin had tried everything. Keto. Intermittent fasting. Calorie counting. She was getting married and wanted to look her best, but every diet left her feeling deprived and hungry.</p>
-                <p>When she joined the SNS Method, everything changed. She realized it was never about the food. It was about her relationship with food. She learned that she could eat the foods she loved and still see results.</p>
-                <div class="case-stats">
-                    <div class="case-stat"><div class="val">20+</div><div class="lbl">Lbs Lost</div></div>
-                    <div class="case-stat"><div class="val">100%</div><div class="lbl">Food Freedom</div></div>
-                    <div class="case-stat"><div class="val">0</div><div class="lbl">Diets Since</div></div>
-                    <div class="case-stat"><div class="val">Happy</div><div class="lbl">Wedding Day</div></div>
-                </div>
-            </div>
-
-            <div class="case-study reveal">
-                <div class="case-study-label">Case Study</div>
-                <h2>"I Have More Energy Than I Did In My 20s"</h2>
-                <p>Rianne was terrified that eating more would make her gain weight. She had been taught that less is more, and the thought of increasing her food intake felt completely wrong.</p>
-                <p>After the SNS Method, she now has more energy than ever before, sleeps better, and has completely eliminated binge eating. She says she has "never eaten this much in her life" and is losing weight "easily and effortlessly."</p>
-                <div class="case-stats">
-                    <div class="case-stat"><div class="val">More</div><div class="lbl">Energy</div></div>
-                    <div class="case-stat"><div class="val">Better</div><div class="lbl">Sleep</div></div>
-                    <div class="case-stat"><div class="val">0</div><div class="lbl">Binge Days</div></div>
-                    <div class="case-stat"><div class="val">Easy</div><div class="lbl">Weight Loss</div></div>
                 </div>
             </div>
         </div>
