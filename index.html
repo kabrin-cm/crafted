@@ -3,28 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SNS Method | Transform Your Relationship With Food</title>
-    <meta name="description" content="The SNS Method helps busy women get into the best shape of their life without diets, without deprivation.">
+    <title>SNS Method | Stop Dieting. Start Living.</title>
+    <meta name="description" content="The SNS Method helps busy women transform their relationship with food. No diets. No deprivation. Just sustainable results that last.">
+    <meta name="theme-color" content="#3d5a45">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --primary: #1a3a34;
-            --primary-light: #2d5a4a;
-            --accent: #c9a87c;
-            --accent-light: #d4b896;
-            --background: #ffffff;
-            --background-alt: #f7f3ef;
-            --text: #1a1a1a;
-            --text-muted: #5a5a5a;
-            --success: #22c55e;
-            --danger: #ef4444;
+            --sage: #3d5a45;
+            --sage-light: #5a7a62;
+            --sage-dark: #2a3e2f;
+            --terra: #c27856;
+            --terra-light: #d49070;
+            --terra-dark: #a86040;
+            --cream: #faf7f2;
+            --cream-dark: #f0ebe3;
+            --warm-dark: #2a2420;
+            --warm-muted: #7a7068;
+            --warm-light: #a89e94;
+            --success: #5a8f65;
+            --white: #ffffff;
 
-            --font-display: 'Playfair Display', Georgia, serif;
-            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
             --space-xs: 4px;
             --space-sm: 8px;
@@ -34,338 +38,414 @@
             --space-2xl: 48px;
             --space-3xl: 64px;
             --space-4xl: 96px;
-
-            --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
-            --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
-            --shadow-lg: 0 8px 30px rgba(0,0,0,0.12);
-            --shadow-xl: 0 20px 40px rgba(0,0,0,0.15);
+            --space-5xl: 128px;
 
             --radius-sm: 8px;
-            --radius-md: 16px;
-            --radius-lg: 24px;
-            --radius-xl: 40px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 32px;
             --radius-full: 9999px;
 
-            --transition: all 0.3s ease;
+            --shadow-sm: 0 2px 8px rgba(42,36,32,0.04);
+            --shadow-md: 0 4px 20px rgba(42,36,32,0.07);
+            --shadow-lg: 0 8px 40px rgba(42,36,32,0.10);
+            --shadow-xl: 0 20px 60px rgba(42,36,32,0.14);
+
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-fast: all 0.2s ease;
         }
 
         html { scroll-behavior: smooth; }
 
-        /* Animations */
+        /* === ANIMATIONS === */
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
+            from { opacity: 0; transform: translateY(40px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-
-        @keyframes subtlePulse {
-            0%, 100% { box-shadow: 0 4px 16px rgba(26,58,52,0.3); }
-            50% { box-shadow: 0 4px 24px rgba(26,58,52,0.5); }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(2deg); }
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 4px 20px rgba(194,120,86,0.3); }
+            50% { box-shadow: 0 4px 32px rgba(194,120,86,0.5); }
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes countUp {
+            from { opacity: 0; transform: scale(0.5); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-60px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(60px); }
+            to { opacity: 1; transform: translateX(0); }
         }
 
-        .fade-in {
-            opacity: 0;
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        .fade-in-delay-1 { animation-delay: 0.1s; }
-        .fade-in-delay-2 { animation-delay: 0.2s; }
-        .fade-in-delay-3 { animation-delay: 0.3s; }
-        .fade-in-delay-4 { animation-delay: 0.4s; }
-
+        /* === RESETS === */
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: var(--font-body);
-            color: var(--text);
-            background: var(--background);
-            line-height: 1.65;
+            color: var(--warm-dark);
+            background: var(--cream);
+            line-height: 1.7;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 var(--space-xl); }
+        .container { max-width: 1140px; margin: 0 auto; padding: 0 var(--space-xl); }
+        .container-narrow { max-width: 800px; margin: 0 auto; padding: 0 var(--space-xl); }
 
-        /* Header */
+        /* === TEXTURE OVERLAY === */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.015'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* === HEADER === */
         header {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             z-index: 100;
-            padding: 16px 0;
-            background: rgba(255,255,255,0.95);
+            padding: 20px 0;
+            background: transparent;
+            transition: var(--transition);
+        }
+        header.scrolled {
+            padding: 12px 0;
+            background: rgba(250,247,242,0.96);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
+            box-shadow: 0 1px 0 rgba(42,36,32,0.06);
         }
-
-        header.scrolled {
-            padding: 10px 0;
-            background: rgba(255,255,255,0.98);
-            box-shadow: var(--shadow-md);
-        }
-
-        .header-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
         .logo {
             font-family: var(--font-display);
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 600;
-            color: var(--primary);
+            color: var(--sage);
             text-decoration: none;
+            letter-spacing: -0.01em;
         }
-
-        .logo span { color: var(--accent); }
-
+        .logo em {
+            font-style: italic;
+            color: var(--terra);
+            font-weight: 500;
+        }
         .header-cta {
-            background: var(--primary);
-            color: white;
-            padding: 12px 28px;
+            background: var(--sage);
+            color: var(--cream);
+            padding: 10px 24px;
             border-radius: var(--radius-full);
             font-weight: 600;
-            font-size: 14px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
             transition: var(--transition);
-            box-shadow: var(--shadow-md);
             text-decoration: none;
         }
+        .header-cta:hover { background: var(--sage-dark); transform: translateY(-1px); }
 
-        .header-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* Hero */
+        /* === HERO === */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 140px 0 80px;
-            background: var(--background-alt);
+            padding: 160px 0 100px;
+            background: var(--cream);
             position: relative;
             overflow: hidden;
         }
-
-        .hero::before {
-            content: '';
+        /* Organic decorative shapes */
+        .hero-shape-1 {
             position: absolute;
-            top: -30%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(184,149,110,0.15) 0%, transparent 60%);
+            top: 10%;
+            right: -5%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle at 30% 40%, rgba(61,90,69,0.06) 0%, transparent 70%);
+            border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%;
+            animation: floatSlow 8s ease-in-out infinite;
+        }
+        .hero-shape-2 {
+            position: absolute;
+            bottom: 5%;
+            left: -8%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle at 60% 50%, rgba(194,120,86,0.05) 0%, transparent 70%);
+            border-radius: 40% 60% 50% 50% / 60% 40% 50% 50%;
+            animation: floatSlow 10s ease-in-out infinite reverse;
+        }
+        .hero-content { position: relative; z-index: 2; max-width: 620px; }
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            background: var(--sage);
+            color: var(--cream);
+            padding: 8px 20px;
+            border-radius: var(--radius-full);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: var(--space-xl);
+        }
+        .hero-label::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--terra);
             border-radius: 50%;
         }
-
-        .hero-content {
-            max-width: 600px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .badge {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 10px 20px;
-            border-radius: var(--radius-full);
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: var(--space-lg);
-        }
-
-        h1 {
+        .hero h1 {
             font-family: var(--font-display);
-            font-size: clamp(40px, 5vw, 58px);
-            font-weight: 600;
-            color: var(--primary);
-            line-height: 1.1;
+            font-size: clamp(48px, 6vw, 72px);
+            font-weight: 500;
+            color: var(--sage-dark);
+            line-height: 1.05;
             margin-bottom: var(--space-lg);
             letter-spacing: -0.02em;
         }
-
-        .hero-subtitle {
+        .hero h1 em {
+            font-style: italic;
+            color: var(--terra);
+        }
+        .hero-sub {
             font-size: 18px;
-            color: var(--text-muted);
-            margin-bottom: var(--space-xl);
-            line-height: 1.7;
+            color: var(--warm-muted);
+            line-height: 1.8;
+            margin-bottom: var(--space-2xl);
+            max-width: 500px;
         }
+        .hero-buttons { display: flex; gap: var(--space-md); flex-wrap: wrap; }
 
-        .hero-buttons {
-            display: flex;
-            gap: var(--space-md);
-            flex-wrap: wrap;
-        }
-
+        /* === BUTTONS === */
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 16px 32px;
+            padding: 16px 36px;
             font-family: var(--font-body);
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 600;
             border-radius: var(--radius-full);
             border: none;
             cursor: pointer;
             transition: var(--transition);
             text-decoration: none;
+            letter-spacing: 0.02em;
         }
-
         .btn-primary {
-            background: var(--primary);
-            color: white;
-            box-shadow: var(--shadow-md);
+            background: var(--terra);
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(194,120,86,0.3);
         }
-
         .btn-primary:hover {
+            background: var(--terra-dark);
             transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 6px 28px rgba(194,120,86,0.4);
         }
-
-        .btn-primary-pulse {
-            animation: subtlePulse 3s ease-in-out infinite;
-        }
-
-        .btn-secondary {
+        .btn-primary-pulse { animation: pulseGlow 3s ease-in-out infinite; }
+        .btn-ghost {
             background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
+            color: var(--sage);
+            border: 1.5px solid var(--sage);
         }
-
-        .btn-secondary:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        .btn-accent {
-            background: var(--accent);
-            color: white;
+        .btn-ghost:hover { background: var(--sage); color: var(--cream); }
+        .btn-white {
+            background: var(--white);
+            color: var(--sage-dark);
             box-shadow: var(--shadow-md);
         }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
 
-        .btn-accent:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-            background: var(--accent-light);
+        /* === SECTIONS === */
+        section { padding: var(--space-5xl) 0; }
+        .section-sage { background: var(--sage-dark); color: var(--cream); }
+        .section-cream { background: var(--cream-dark); }
+        .section-white { background: var(--white); }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--terra);
+            margin-bottom: var(--space-md);
+        }
+        .section-label::before {
+            content: '';
+            width: 24px;
+            height: 1.5px;
+            background: var(--terra);
         }
 
-        /* Section Styles */
-        section {
-            padding: var(--space-3xl) 0;
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(36px, 4.5vw, 52px);
+            font-weight: 500;
+            color: var(--sage-dark);
+            line-height: 1.1;
+            margin-bottom: var(--space-md);
+            letter-spacing: -0.02em;
         }
+        .section-sage .section-title { color: var(--cream); }
 
-        .section-dark {
-            background: var(--primary);
-            color: white;
+        .section-sub {
+            font-size: 17px;
+            color: var(--warm-muted);
+            line-height: 1.7;
+            max-width: 560px;
         }
-
-        .section-dark h2,
-        .section-dark p { color: white; }
-
-        .section-alt {
-            background: var(--background-alt);
-        }
+        .section-sage .section-sub { color: rgba(250,247,242,0.7); }
 
         .section-header {
             text-align: center;
             max-width: 700px;
             margin: 0 auto var(--space-3xl);
         }
+        .section-header .section-sub {
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-        .section-header h2 {
+        /* === TRUST BAR === */
+        .trust-bar {
+            padding: var(--space-2xl) 0;
+            background: var(--white);
+            border-top: 1px solid rgba(42,36,32,0.04);
+            border-bottom: 1px solid rgba(42,36,32,0.04);
+        }
+        .trust-grid {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-3xl);
+            flex-wrap: wrap;
+        }
+        .trust-stat { text-align: center; }
+        .trust-stat .value {
             font-family: var(--font-display);
-            font-size: clamp(32px, 4vw, 44px);
+            font-size: 36px;
             font-weight: 600;
-            color: var(--primary);
-            margin-bottom: var(--space-md);
+            color: var(--sage);
+            display: block;
+            line-height: 1;
+        }
+        .trust-stat .label {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--warm-muted);
+            margin-top: var(--space-xs);
         }
 
-        .section-header p {
-            font-size: 18px;
-            color: var(--text-muted);
-        }
-
-        /* Features / What You Get */
+        /* === FEATURES === */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-xl);
+            gap: var(--space-lg);
         }
-
         .feature-card {
-            background: white;
-            padding: var(--space-xl);
+            background: var(--white);
+            padding: var(--space-xl) var(--space-xl);
             border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(42,36,32,0.06);
             transition: var(--transition);
+            position: relative;
+            overflow: hidden;
         }
-
-        .feature-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 3px;
+            height: 0;
+            background: var(--terra);
+            transition: height 0.4s ease;
         }
-
-        .feature-card .check {
-            color: var(--success);
-            font-size: 24px;
+        .feature-card:hover::before { height: 100%; }
+        .feature-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: transparent; }
+        .feature-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--cream);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-bottom: var(--space-md);
-            display: block;
         }
+        .feature-icon svg { width: 22px; height: 22px; stroke: var(--sage); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+        .feature-card h3 { font-size: 16px; font-weight: 700; color: var(--sage-dark); margin-bottom: var(--space-xs); }
+        .feature-card p { font-size: 14px; color: var(--warm-muted); line-height: 1.6; }
 
-        .feature-card h3 {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: var(--space-sm);
-        }
-
-        .feature-card p {
-            font-size: 14px;
-            color: var(--text-muted);
-        }
-
-        /* Problem Section */
-        .problem-list {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
+        /* === PROBLEM SECTION === */
+        .problem-list { max-width: 640px; margin: 0 auto; }
         .problem-item {
             padding: var(--space-lg) 0;
-            border-bottom: 1px solid rgba(0,0,0,0.08);
-            font-size: 18px;
-            color: var(--text-muted);
+            border-bottom: 1px solid rgba(250,247,242,0.1);
+            font-size: 17px;
+            color: rgba(250,247,242,0.75);
             display: flex;
             align-items: flex-start;
             gap: var(--space-md);
         }
-
-        .problem-item::before {
-            content: '\2192';
-            color: var(--accent);
-            font-weight: bold;
-            font-size: 20px;
+        .problem-item .arrow {
+            color: var(--terra);
+            font-size: 14px;
             flex-shrink: 0;
+            margin-top: 4px;
         }
-
         .problem-conclusion {
             text-align: center;
-            margin-top: var(--space-xl);
-            font-size: 18px;
-            color: var(--text);
+            margin-top: var(--space-2xl);
+            padding: var(--space-xl);
+            border: 1px solid rgba(250,247,242,0.15);
+            border-radius: var(--radius-lg);
+        }
+        .problem-conclusion p {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--cream);
             font-style: italic;
+            line-height: 1.4;
         }
 
-        /* Is This For You? */
+        /* === QUALIFIER === */
         .qualifier-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -373,821 +453,662 @@
             max-width: 900px;
             margin: 0 auto;
         }
-
-        .qualifier-card {
-            background: white;
-            padding: var(--space-xl);
+        .qual-card {
+            padding: var(--space-2xl);
             border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(42,36,32,0.06);
         }
-
-        .qualifier-card.not-for-you {
-            border-left: 4px solid var(--danger);
-        }
-
-        .qualifier-card h3 {
-            font-size: 18px;
-            margin-bottom: var(--space-lg);
+        .qual-card.yes { background: var(--white); }
+        .qual-card.no { background: var(--cream-dark); }
+        .qual-card h3 {
+            font-family: var(--font-display);
+            font-size: 22px;
             font-weight: 600;
+            margin-bottom: var(--space-lg);
         }
-
-        .qualifier-card h3.yes { color: var(--success); }
-        .qualifier-card h3.no { color: var(--danger); }
-
-        .qualifier-list {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-md);
+        .qual-card.yes h3 { color: var(--sage); }
+        .qual-card.no h3 { color: var(--warm-muted); }
+        .qual-list { display: flex; flex-direction: column; gap: 14px; }
+        .qual-list .item {
+            display: flex; align-items: center; gap: var(--space-sm);
+            font-size: 15px; color: var(--warm-dark);
         }
+        .qual-list .icon { flex-shrink: 0; font-weight: 700; font-size: 14px; }
+        .qual-card.yes .icon { color: var(--sage); }
+        .qual-card.no .icon { color: var(--warm-light); }
 
-        .qualifier-list .item {
-            display: flex;
-            align-items: center;
-            gap: var(--space-sm);
-            font-size: 15px;
-            color: var(--text-muted);
-        }
-
-        .qualifier-list .item .icon-yes { color: var(--success); font-weight: bold; }
-        .qualifier-list .item .icon-no { color: var(--danger); font-weight: bold; }
-
-        /* Method Steps */
+        /* === METHOD === */
         .method-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: var(--space-lg);
+            position: relative;
         }
-
-        .method-card {
+        /* Connecting line */
+        .method-grid::before {
+            content: '';
+            position: absolute;
+            top: 48px;
+            left: 12.5%;
+            right: 12.5%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(250,247,242,0.2), rgba(250,247,242,0.2), transparent);
+        }
+        .method-step {
             text-align: center;
             padding: var(--space-xl) var(--space-md);
+            position: relative;
         }
-
-        .method-number {
+        .method-num {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: 1.5px solid var(--terra);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-lg);
             font-family: var(--font-display);
-            font-size: 48px;
-            font-weight: 700;
-            color: var(--accent);
-            opacity: 0.6;
-            margin-bottom: var(--space-md);
-        }
-
-        .method-card h3 {
-            font-size: 18px;
+            font-size: 22px;
             font-weight: 600;
-            color: white;
-            margin-bottom: var(--space-sm);
+            color: var(--terra);
+            background: var(--sage-dark);
+            position: relative;
+            z-index: 2;
         }
+        .method-step h3 { font-size: 17px; font-weight: 700; color: var(--cream); margin-bottom: var(--space-sm); }
+        .method-step p { font-size: 14px; color: rgba(250,247,242,0.65); line-height: 1.6; }
 
-        .method-card p {
-            font-size: 14px;
-            color: rgba(255,255,255,0.8);
+        /* === TESTIMONIALS (Written) === */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-xl);
         }
+        .testimonial-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--space-2xl);
+            border: 1px solid rgba(42,36,32,0.06);
+            transition: var(--transition);
+            position: relative;
+        }
+        .testimonial-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+        .testimonial-quote-mark {
+            font-family: var(--font-display);
+            font-size: 64px;
+            color: var(--terra);
+            opacity: 0.2;
+            line-height: 1;
+            position: absolute;
+            top: 16px;
+            left: 24px;
+        }
+        .testimonial-stats {
+            display: flex;
+            gap: var(--space-lg);
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-lg);
+            border-bottom: 1px solid rgba(42,36,32,0.06);
+        }
+        .t-stat .t-val {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--sage);
+            display: block;
+            line-height: 1.1;
+        }
+        .t-stat .t-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--warm-muted);
+        }
+        .testimonial-text {
+            font-size: 15px;
+            color: var(--warm-muted);
+            line-height: 1.7;
+            margin-bottom: var(--space-lg);
+            font-style: italic;
+        }
+        .testimonial-author { display: flex; align-items: center; gap: var(--space-md); }
+        .testimonial-avatar {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            background: var(--cream-dark);
+            display: flex; align-items: center; justify-content: center;
+            font-family: var(--font-display);
+            font-size: 16px; font-weight: 600; color: var(--sage);
+        }
+        .testimonial-name { font-size: 14px; font-weight: 700; color: var(--sage-dark); }
+        .testimonial-detail { font-size: 12px; color: var(--warm-muted); }
 
-        /* Video Testimonials */
+        /* === VIDEO TESTIMONIALS === */
         .video-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-lg);
-            margin-bottom: var(--space-2xl);
+            gap: var(--space-xl);
         }
-
         .video-card {
-            background: white;
             border-radius: var(--radius-lg);
             overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            border: 3px solid var(--accent);
+            background: var(--white);
+            border: 1px solid rgba(42,36,32,0.06);
             transition: var(--transition);
         }
-
-        .video-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-xl);
-        }
-
+        .video-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
         .video-wrapper {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
-            background: #000;
+            background: var(--sage-dark);
         }
-
         .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
+            position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%; border: none;
         }
-
-        .video-info {
-            padding: var(--space-lg);
-        }
-
-        .video-info h3 {
-            font-size: 20px;
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: var(--space-sm);
-        }
-
-        .video-info p {
-            font-size: 14px;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        .video-info .result-tag {
-            font-size: 13px;
-            color: var(--accent);
-            font-weight: 600;
+        .video-info { padding: var(--space-lg); }
+        .video-info h3 { font-size: 17px; font-weight: 700; color: var(--sage-dark); margin-bottom: var(--space-xs); }
+        .video-info p { font-size: 14px; color: var(--warm-muted); line-height: 1.6; }
+        .video-result {
+            display: inline-block;
             margin-top: var(--space-sm);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--terra);
         }
 
-        /* Case Studies */
+        /* === CASE STUDIES === */
         .case-study {
-            background: white;
+            background: var(--white);
             border-radius: var(--radius-xl);
-            padding: var(--space-2xl);
-            box-shadow: var(--shadow-md);
+            padding: var(--space-2xl) var(--space-2xl);
+            border: 1px solid rgba(42,36,32,0.06);
             margin-bottom: var(--space-xl);
         }
-
-        .case-study-header {
-            margin-bottom: var(--space-lg);
-        }
-
-        .case-study h3 {
-            font-family: var(--font-display);
-            font-size: 14px;
+        .case-study-label {
+            font-size: 12px;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--accent);
+            letter-spacing: 0.12em;
+            color: var(--terra);
             margin-bottom: var(--space-sm);
         }
-
         .case-study h2 {
             font-family: var(--font-display);
             font-size: 28px;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: var(--space-md);
-        }
-
-        .case-study p {
-            font-size: 16px;
-            color: var(--text-muted);
-            line-height: 1.7;
+            font-weight: 500;
+            color: var(--sage-dark);
+            font-style: italic;
             margin-bottom: var(--space-lg);
         }
-
-        .case-study-stats {
+        .case-study p { font-size: 16px; color: var(--warm-muted); line-height: 1.7; margin-bottom: var(--space-md); }
+        .case-stats {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: var(--space-lg);
             padding-top: var(--space-lg);
-            border-top: 1px solid rgba(0,0,0,0.08);
+            border-top: 1px solid rgba(42,36,32,0.06);
+            margin-top: var(--space-lg);
         }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-value {
+        .case-stat { text-align: center; }
+        .case-stat .val {
             font-family: var(--font-display);
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--primary);
+            font-size: 28px; font-weight: 600;
+            color: var(--sage);
+        }
+        .case-stat .lbl {
+            font-size: 11px; text-transform: uppercase;
+            letter-spacing: 0.08em; color: var(--warm-muted);
         }
 
-        .stat-label {
-            font-size: 12px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        /* Coach Section */
-        .coach-block {
+        /* === COACHES === */
+        .coach-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: var(--space-3xl);
             align-items: center;
             margin-bottom: var(--space-3xl);
         }
-
-        .coach-block:last-child {
-            margin-bottom: 0;
-        }
-
-        .coach-image img {
+        .coach-grid:last-child { margin-bottom: 0; }
+        .coach-grid.reverse .coach-photo { order: 2; }
+        .coach-grid.reverse .coach-content { order: 1; }
+        .coach-photo img {
             width: 100%;
             border-radius: var(--radius-xl);
             box-shadow: var(--shadow-xl);
+            object-fit: cover;
+            aspect-ratio: 4/5;
         }
-
-        .coach-image {
-            position: relative;
-        }
-
         .coach-content h2 {
             font-family: var(--font-display);
             font-size: clamp(32px, 4vw, 42px);
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: var(--space-sm);
+            font-weight: 500;
+            color: var(--sage-dark);
+            margin-bottom: var(--space-xs);
         }
-
-        .coach-title {
-            color: var(--accent);
+        .coach-role {
+            font-size: 14px;
             font-weight: 600;
-            font-size: 15px;
+            color: var(--terra);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
             margin-bottom: var(--space-lg);
             display: block;
         }
+        .coach-content p { font-size: 16px; color: var(--warm-muted); margin-bottom: var(--space-md); line-height: 1.8; }
 
-        .coach-content p {
-            font-size: 16px;
-            color: var(--text-muted);
-            margin-bottom: var(--space-md);
-            line-height: 1.8;
-        }
-
-        /* Photo Placeholder */
-        .photo-placeholder {
-            width: 100%;
-            aspect-ratio: 4/5;
-            border-radius: var(--radius-xl);
-            background: linear-gradient(135deg, var(--background-alt) 0%, #e8e0d8 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow-xl);
-            font-size: 14px;
-            color: var(--text-muted);
-            text-align: center;
-            padding: var(--space-xl);
-        }
-
-        /* Urgency Bar */
+        /* === PRICING === */
         .urgency-bar {
-            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-            border: 2px solid #f59e0b;
+            background: var(--sage-dark);
             border-radius: var(--radius-lg);
             padding: var(--space-lg) var(--space-xl);
             text-align: center;
             margin-bottom: var(--space-2xl);
+            position: relative;
+            overflow: hidden;
         }
-
-        .urgency-bar p {
-            font-size: 16px;
-            color: #92400e;
-            font-weight: 600;
-            margin: 0;
+        .urgency-bar::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(194,120,86,0.1), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 3s ease-in-out infinite;
         }
+        .urgency-bar p { font-size: 15px; color: var(--cream); font-weight: 600; position: relative; z-index: 2; margin: 0; }
+        .urgency-bar .sub { font-size: 13px; font-weight: 400; color: rgba(250,247,242,0.6); margin-top: 2px; }
 
-        .urgency-bar .urgency-detail {
-            font-size: 14px;
-            font-weight: 400;
-            color: #a16207;
-            margin-top: var(--space-xs);
-        }
-
-        /* Pricing */
         .pricing-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: var(--space-xl);
-            max-width: 900px;
+            max-width: 880px;
             margin: 0 auto;
         }
-
-        .pricing-card {
-            background: white;
+        .price-card {
+            background: var(--white);
             border-radius: var(--radius-xl);
             padding: var(--space-2xl);
             text-align: center;
-            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(42,36,32,0.06);
             position: relative;
             transition: var(--transition);
         }
-
-        .pricing-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
+        .price-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+        .price-card.featured {
+            border: 2px solid var(--terra);
+            transform: scale(1.02);
         }
-
-        .pricing-card.featured {
-            border: 3px solid var(--accent);
-            transform: scale(1.03);
-        }
-
-        .pricing-card.featured:hover {
-            transform: scale(1.03) translateY(-4px);
-        }
-
-        .popular-tag {
+        .price-card.featured:hover { transform: scale(1.02) translateY(-4px); }
+        .popular-badge {
             position: absolute;
-            top: -14px;
+            top: -13px;
             left: 50%;
             transform: translateX(-50%);
-            background: var(--accent);
-            color: white;
-            padding: 8px 24px;
+            background: var(--terra);
+            color: var(--white);
+            padding: 6px 20px;
             border-radius: var(--radius-full);
-            font-size: 13px;
+            font-size: 11px;
             font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
-
-        .pricing-card h3 {
+        .price-card h3 {
             font-family: var(--font-display);
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 600;
-            color: var(--primary);
-            margin-bottom: var(--space-xs);
+            color: var(--sage-dark);
+            margin-bottom: 2px;
         }
-
-        .pricing-card .subtitle {
-            font-size: 14px;
-            color: var(--text-muted);
-            margin-bottom: var(--space-lg);
-        }
-
-        .pricing-card .price {
+        .price-card .tier-sub { font-size: 13px; color: var(--warm-muted); margin-bottom: var(--space-lg); }
+        .price-amount {
             font-family: var(--font-display);
             font-size: 52px;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 0;
-        }
-
-        .pricing-card .price span {
-            font-size: 16px;
-            font-weight: 400;
-            color: var(--text-muted);
-        }
-
-        .per-month {
-            font-size: 15px;
-            color: var(--accent);
             font-weight: 600;
+            color: var(--sage-dark);
+            line-height: 1;
+        }
+        .price-amount .gst { font-size: 16px; font-weight: 400; color: var(--warm-muted); }
+        .per-month {
+            font-size: 15px; font-weight: 600; color: var(--terra);
             margin-bottom: var(--space-md);
         }
-
         .duration-select {
-            width: 100%;
-            padding: 14px;
+            width: 100%; padding: 12px 40px 12px 14px;
             border-radius: var(--radius-md);
-            border: 2px solid var(--primary);
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--text);
-            background: white;
+            border: 1.5px solid rgba(42,36,32,0.12);
+            font-size: 14px; font-weight: 600;
+            color: var(--warm-dark);
+            background: var(--cream);
             cursor: pointer;
             margin-bottom: var(--space-xl);
-            -webkit-appearance: none;
-            appearance: none;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a3a34' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            -webkit-appearance: none; appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233d5a45' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e");
             background-repeat: no-repeat;
-            background-position: right 14px center;
+            background-position: right 12px center;
             background-size: 16px;
-            padding-right: 40px;
+            transition: var(--transition-fast);
         }
-
-        .pricing-card ul {
-            list-style: none;
-            text-align: left;
-            margin-bottom: var(--space-xl);
+        .duration-select:focus { border-color: var(--sage); outline: none; }
+        .price-card ul { list-style: none; text-align: left; margin-bottom: var(--space-xl); }
+        .price-card li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(42,36,32,0.04);
+            font-size: 14px; color: var(--warm-muted);
+            display: flex; align-items: center; gap: var(--space-sm);
         }
+        .price-card li .check { color: var(--sage); font-size: 14px; font-weight: 700; }
 
-        .pricing-card li {
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(0,0,0,0.06);
-            font-size: 14px;
-            color: var(--text-muted);
-            display: flex;
-            align-items: center;
-            gap: var(--space-sm);
-        }
-
-        .pricing-card li::before {
-            content: '\2713';
-            color: var(--success);
-            font-weight: bold;
-        }
-
-        /* Guarantee */
-        .guarantee-block {
+        /* === GUARANTEE === */
+        .guarantee {
             text-align: center;
             margin-top: var(--space-2xl);
-            padding: var(--space-xl);
-            background: var(--background-alt);
+            padding: var(--space-xl) var(--space-2xl);
+            border: 1px solid rgba(42,36,32,0.08);
             border-radius: var(--radius-lg);
-            max-width: 600px;
+            max-width: 560px;
             margin-left: auto;
             margin-right: auto;
+            background: var(--cream);
         }
-
         .guarantee-icon {
-            font-size: 48px;
-            margin-bottom: var(--space-md);
-            display: block;
+            width: 56px; height: 56px;
+            border-radius: 50%;
+            background: var(--sage);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto var(--space-md);
         }
-
-        .guarantee-block h3 {
+        .guarantee-icon svg { width: 24px; height: 24px; stroke: var(--cream); fill: none; stroke-width: 2; }
+        .guarantee h3 {
             font-family: var(--font-display);
-            font-size: 22px;
-            color: var(--primary);
-            font-weight: 600;
+            font-size: 22px; font-weight: 600; color: var(--sage-dark);
             margin-bottom: var(--space-sm);
         }
+        .guarantee p { font-size: 14px; color: var(--warm-muted); line-height: 1.7; }
 
-        .guarantee-block p {
-            font-size: 14px;
-            color: var(--text-muted);
-            line-height: 1.7;
-        }
-
-        /* FAQ — Accordion */
-        .faq-grid {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid rgba(0,0,0,0.08);
-        }
-
-        .faq-question {
+        /* === FAQ === */
+        .faq-grid { max-width: 700px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid rgba(42,36,32,0.06); }
+        .faq-q {
             padding: var(--space-lg) 0;
-            font-size: 17px;
-            font-weight: 600;
-            color: var(--primary);
+            font-size: 16px; font-weight: 600; color: var(--sage-dark);
             cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            display: flex; justify-content: space-between; align-items: center;
             gap: var(--space-md);
             user-select: none;
+            transition: var(--transition-fast);
         }
-
-        .faq-question:hover {
-            color: var(--primary-light);
-        }
-
+        .faq-q:hover { color: var(--terra); }
         .faq-toggle {
-            font-size: 20px;
-            color: var(--accent);
-            transition: transform 0.3s ease;
+            width: 28px; height: 28px;
+            border-radius: 50%;
+            border: 1.5px solid var(--sage);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 16px; color: var(--sage);
+            transition: transform 0.3s ease, background 0.3s ease;
             flex-shrink: 0;
         }
-
         .faq-item.active .faq-toggle {
             transform: rotate(45deg);
+            background: var(--sage);
+            color: var(--cream);
         }
+        .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .faq-item.active .faq-a { max-height: 200px; }
+        .faq-a p { font-size: 15px; color: var(--warm-muted); line-height: 1.7; padding-bottom: var(--space-lg); }
 
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 200px;
-        }
-
-        .faq-answer p {
-            font-size: 15px;
-            color: var(--text-muted);
-            line-height: 1.7;
-            padding-bottom: var(--space-lg);
-        }
-
-        /* CTA */
-        .cta {
-            background: var(--primary);
+        /* === FINAL CTA === */
+        .final-cta {
+            background: var(--sage-dark);
             text-align: center;
-            color: white;
             position: relative;
             overflow: hidden;
         }
-
-        .cta::before {
+        .final-cta::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: 50%;
+            top: -50%; left: 50%;
             transform: translateX(-50%);
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(184,149,110,0.1) 0%, transparent 50%);
+            width: 800px; height: 800px;
+            background: radial-gradient(circle, rgba(194,120,86,0.08) 0%, transparent 50%);
             border-radius: 50%;
         }
-
-        .cta h2 {
+        .final-cta .inner { position: relative; z-index: 2; }
+        .final-cta h2 {
             font-family: var(--font-display);
-            font-size: clamp(32px, 4vw, 44px);
-            font-weight: 600;
-            color: white;
+            font-size: clamp(36px, 4.5vw, 52px);
+            font-weight: 500;
+            color: var(--cream);
             margin-bottom: var(--space-md);
+            font-style: italic;
         }
-
-        .cta p {
-            font-size: 18px;
-            color: rgba(255,255,255,0.8);
+        .final-cta p {
+            font-size: 17px;
+            color: rgba(250,247,242,0.7);
             margin-bottom: var(--space-xl);
-            max-width: 500px;
+            max-width: 480px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        /* Sticky Bottom CTA */
-        .sticky-cta {
+        /* === STICKY CTA === */
+        .sticky-bar {
             position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
+            bottom: 0; left: 0; right: 0;
             z-index: 99;
-            background: rgba(255,255,255,0.98);
+            background: rgba(250,247,242,0.98);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
-            padding: 14px 0;
+            box-shadow: 0 -2px 20px rgba(42,36,32,0.08);
+            padding: 12px 0;
             transform: translateY(100%);
             transition: transform 0.4s ease;
         }
-
-        .sticky-cta.visible {
-            transform: translateY(0);
-        }
-
-        .sticky-cta-inner {
+        .sticky-bar.visible { transform: translateY(0); }
+        .sticky-inner {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: var(--space-md);
         }
+        .sticky-text { font-size: 15px; font-weight: 600; color: var(--sage-dark); }
+        .sticky-text span { display: block; font-size: 13px; font-weight: 400; color: var(--warm-muted); }
 
-        .sticky-cta-text {
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--primary);
-        }
-
-        .sticky-cta-text span {
-            display: block;
-            font-size: 13px;
-            font-weight: 400;
-            color: var(--text-muted);
-        }
-
-        /* Footer */
+        /* === FOOTER === */
         footer {
+            padding: var(--space-2xl) 0;
+            padding-bottom: 80px;
+            background: var(--sage-dark);
+            text-align: center;
+        }
+        footer p { color: rgba(250,247,242,0.4); font-size: 13px; }
+        footer a { color: rgba(250,247,242,0.5); text-decoration: none; }
+        footer a:hover { color: var(--cream); }
+
+        /* === DIVIDER === */
+        .leaf-divider {
+            text-align: center;
             padding: var(--space-xl) 0;
-            padding-bottom: 80px; /* space for sticky CTA */
-            background: #0f231f;
-            text-align: center;
+            opacity: 0.15;
         }
+        .leaf-divider svg { width: 60px; height: 24px; }
 
-        footer p {
-            color: rgba(255,255,255,0.5);
-            font-size: 14px;
+        /* === SCROLL REVEAL === */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
         }
-
-        /* Trust Bar */
-        .trust-bar {
-            padding: var(--space-xl) 0;
-            background: white;
-            border-bottom: 1px solid rgba(0,0,0,0.06);
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
-
-        .trust-bar p {
-            text-align: center;
-            font-size: 13px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: var(--space-md);
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
         }
-
-        .trust-items {
-            display: flex;
-            justify-content: center;
-            gap: var(--space-xl);
-            flex-wrap: wrap;
+        .reveal-left.visible { opacity: 1; transform: translateX(0); }
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
         }
+        .reveal-right.visible { opacity: 1; transform: translateX(0); }
 
-        .trust-item {
-            font-family: var(--font-display);
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--primary);
-        }
-
-        /* Video Intro Bar */
-        .video-intro {
-            text-align: center;
-            margin-bottom: var(--space-xl);
-            padding: var(--space-xl);
-            background: var(--primary);
-            border-radius: var(--radius-lg);
-        }
-
-        .video-intro h2 {
-            color: white;
-            font-family: var(--font-display);
-            font-size: 28px;
-            margin-bottom: var(--space-sm);
-        }
-
-        .video-intro p {
-            color: rgba(255,255,255,0.8);
-            margin-bottom: 0;
-        }
-
-        /* Responsive */
+        /* === RESPONSIVE === */
         @media (max-width: 1024px) {
-            section { padding: var(--space-2xl) 0; }
-            .hero { padding: 120px 0 60px; }
-            h1 { font-size: 44px; }
+            section { padding: var(--space-4xl) 0; }
+            .hero { padding: 120px 0 80px; }
         }
-
         @media (max-width: 768px) {
-            .features-grid,
-            .pricing-grid,
-            .coach-block,
-            .case-study-stats,
-            .qualifier-grid,
-            .video-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .method-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .hero {
-                padding: 100px 20px 40px;
-                text-align: center;
-                min-height: auto;
-            }
-
-            .hero h1 {
-                font-size: 36px;
-                line-height: 1.2;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            section {
-                padding: 40px 0;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-                flex-direction: column;
-                align-items: center;
-                gap: 12px;
-            }
-
-            .hero-buttons .btn {
-                width: 100%;
-                max-width: 300px;
-            }
-
-            .coach-image {
-                order: -1;
-            }
-
-            .pricing-card.featured {
-                transform: none;
-            }
-
-            .pricing-card.featured:hover {
-                transform: translateY(-4px);
-            }
-
-            .sticky-cta-text span {
-                display: none;
-            }
-
-            .trust-items {
-                gap: var(--space-md);
-            }
-
-            .trust-item {
-                font-size: 13px;
-            }
+            .features-grid, .pricing-grid, .coach-grid, .qualifier-grid, .testimonial-grid, .video-grid { grid-template-columns: 1fr; }
+            .method-grid { grid-template-columns: repeat(2, 1fr); }
+            .method-grid::before { display: none; }
+            .case-stats { grid-template-columns: repeat(2, 1fr); }
+            .hero { padding: 100px 0 60px; min-height: auto; text-align: center; }
+            .hero-sub { margin-left: auto; margin-right: auto; }
+            .hero-buttons { justify-content: center; flex-direction: column; align-items: center; }
+            .hero-buttons .btn { width: 100%; max-width: 300px; }
+            section { padding: var(--space-3xl) 0; }
+            .coach-grid .coach-photo { order: -1 !important; }
+            .coach-grid .coach-content { order: 0 !important; }
+            .coach-grid.reverse .coach-photo { order: -1 !important; }
+            .coach-grid.reverse .coach-content { order: 0 !important; }
+            .price-card.featured { transform: none; }
+            .price-card.featured:hover { transform: translateY(-4px); }
+            .trust-grid { gap: var(--space-xl); }
+            .sticky-text span { display: none; }
         }
-
         @media (max-width: 480px) {
-            .method-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .case-study {
-                padding: var(--space-xl);
-            }
-
-            .case-study-stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .method-grid { grid-template-columns: 1fr; }
+            .trust-grid { gap: var(--space-lg); }
+            .trust-stat .value { font-size: 28px; }
         }
 
-        ::selection { background: var(--accent); color: white; }
+        ::selection { background: var(--terra); color: var(--white); }
     </style>
 </head>
 <body>
-    <!-- Header -->
+
+    <!-- ═══ HEADER ═══ -->
     <header id="header">
         <div class="container">
             <div class="header-inner">
-                <a href="#" class="logo">SNS <span>Method</span></a>
+                <a href="#" class="logo">SNS <em>Method</em></a>
                 <a href="#pricing" class="header-cta">Get Started</a>
             </div>
         </div>
     </header>
 
-    <!-- 1. HERO SECTION -->
+    <!-- ═══ HERO ═══ -->
     <section class="hero">
+        <div class="hero-shape-1"></div>
+        <div class="hero-shape-2"></div>
         <div class="container">
             <div class="hero-content">
-                <span class="badge">For Busy Women Who Want Lasting Results</span>
-
-                <h1>Stop Dieting. Start Living.</h1>
-
-                <p class="hero-subtitle">No more starving yourself or depriving yourself of your favorite foods. Get your dream body in a sustainable way, with results that last for life.</p>
-
+                <span class="hero-label">For Busy Women Who Want Lasting Results</span>
+                <h1>Stop Dieting.<br><em>Start Living.</em></h1>
+                <p class="hero-sub">No more starving yourself or depriving yourself of your favorite foods. Get your dream body in a sustainable way, with results that last for life.</p>
                 <div class="hero-buttons">
                     <a href="#pricing" class="btn btn-primary btn-primary-pulse">Get Your Dream Body</a>
-                    <a href="#case-studies" class="btn btn-secondary">See Results</a>
+                    <a href="#results" class="btn btn-ghost">See Results</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Trust Bar -->
+    <!-- ═══ TRUST BAR ═══ -->
     <section class="trust-bar">
         <div class="container">
-            <p>Results That Speak</p>
-            <div class="trust-items">
-                <span class="trust-item">14+ Years Experience</span>
-                <span class="trust-item">200+ Women Transformed</span>
-                <span class="trust-item">Certified Expert</span>
-                <span class="trust-item">98% Success Rate</span>
+            <div class="trust-grid">
+                <div class="trust-stat reveal">
+                    <span class="value" data-count="14">14+</span>
+                    <span class="label">Years Experience</span>
+                </div>
+                <div class="trust-stat reveal">
+                    <span class="value" data-count="200">200+</span>
+                    <span class="label">Women Transformed</span>
+                </div>
+                <div class="trust-stat reveal">
+                    <span class="value">Certified</span>
+                    <span class="label">Nutrition Experts</span>
+                </div>
+                <div class="trust-stat reveal">
+                    <span class="value" data-count="98">98%</span>
+                    <span class="label">Success Rate</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 2. WHAT YOU GET -->
-    <section>
+    <!-- ═══ WHAT YOU GET ═══ -->
+    <section class="section-white">
         <div class="container">
             <div class="section-header">
-                <h2>What You Get Inside The SNS Method</h2>
+                <span class="section-label">What You Get</span>
+                <h2 class="section-title">Everything You Need to<br>Transform Your Body</h2>
+                <p class="section-sub">The SNS Method is a complete system. Not a quick fix, not a meal plan. A proven framework for lasting change.</p>
             </div>
 
             <div class="features-grid">
-                <div class="feature-card">
-                    <span class="check">&#10003;</span>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                    </div>
                     <h3>Hormone Optimization</h3>
                     <p>Address the root cause. Stop fighting your body and start working with it.</p>
                 </div>
-                <div class="feature-card">
-                    <span class="check">&#10003;</span>
-                    <h3>Personalized Nutrition Plan</h3>
-                    <p>A plan built for YOUR body, YOUR lifestyle, and YOUR goals. Not generic rules.</p>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
+                    <h3>Personalized Nutrition</h3>
+                    <p>Built for YOUR body, YOUR lifestyle, and YOUR goals. Not generic rules.</p>
                 </div>
-                <div class="feature-card">
-                    <span class="check">&#10003;</span>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
                     <h3>Food Freedom</h3>
                     <p>Eat the foods you love without guilt. No labels, no restrictions, no deprivation.</p>
                 </div>
-                <div class="feature-card">
-                    <span class="check">&#10003;</span>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
                     <h3>Habits That Stick</h3>
                     <p>Build tiny habits that fit into your busy life. No dramatic overhauls.</p>
                 </div>
-                <div class="feature-card">
-                    <span class="check">&#10003;</span>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                    </div>
                     <h3>App Support</h3>
                     <p>Track progress, access resources, and stay accountable through our app.</p>
                 </div>
-                <div class="feature-card">
-                    <span class="check">&#10003;</span>
-                    <h3>WhatsApp Support (Elite)</h3>
-                    <p>Direct access to Sharan for real-time answers when you need them most.</p>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <h3>WhatsApp Support</h3>
+                    <p>Direct access to your coach for real-time answers when you need them most.</p>
                 </div>
-                <div class="feature-card">
-                    <span class="check">&#10003;</span>
-                    <h3>1-on-1 Video Calls (Elite)</h3>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                    </div>
+                    <h3>1-on-1 Video Calls</h3>
                     <p>Personal strategy sessions to keep you on track and troubleshoot obstacles.</p>
                 </div>
-                <div class="feature-card">
-                    <span class="check">&#10003;</span>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                    </div>
                     <h3>Lifetime Knowledge</h3>
                     <p>Once you learn how your body works, you have the tools forever.</p>
                 </div>
@@ -1195,559 +1116,523 @@
         </div>
     </section>
 
-    <!-- 3. PROBLEM SECTION -->
-    <section class="section-alt">
+    <!-- ═══ PROBLEM ═══ -->
+    <section class="section-sage">
         <div class="container">
             <div class="section-header">
-                <h2>How Long Will You Keep Trading Your Time And Energy For Results That Never Last?</h2>
-                <p>Be honest with yourself for a second.</p>
+                <span class="section-label" style="color: var(--terra);">Sound Familiar?</span>
+                <h2 class="section-title">How Long Will You Keep Trading Your Time for Results That Never Last?</h2>
+                <p class="section-sub">Be honest with yourself for a second.</p>
             </div>
 
             <div class="problem-list">
-                <div class="problem-item">The scale that goes up and down every week, no matter what you do</div>
-                <div class="problem-item">The diet that works for 2 weeks, then you "fall off" and gain it all back</div>
-                <div class="problem-item">The feeling of failure every time you cannot stick to another meal plan</div>
-                <div class="problem-item">The frustration of trying everything and getting nowhere</div>
-                <div class="problem-item">The "someday" that never comes... someday you will have the body you want</div>
+                <div class="problem-item reveal"><span class="arrow">&#10132;</span> The scale that goes up and down every week, no matter what you do</div>
+                <div class="problem-item reveal"><span class="arrow">&#10132;</span> The diet that works for 2 weeks, then you "fall off" and gain it all back</div>
+                <div class="problem-item reveal"><span class="arrow">&#10132;</span> The feeling of failure every time you cannot stick to another meal plan</div>
+                <div class="problem-item reveal"><span class="arrow">&#10132;</span> The frustration of trying everything and getting nowhere</div>
+                <div class="problem-item reveal"><span class="arrow">&#10132;</span> The "someday" that never comes... someday you will have the body you want</div>
             </div>
 
-            <p class="problem-conclusion">You are not broken.<br>You just have not been shown the right way yet.</p>
+            <div class="problem-conclusion reveal">
+                <p>You are not broken.<br>You just have not been shown the right way yet.</p>
+            </div>
         </div>
     </section>
 
-    <!-- 4. IS THIS FOR YOU? -->
+    <!-- ═══ QUALIFIER ═══ -->
     <section>
         <div class="container">
             <div class="section-header">
-                <h2>Is The SNS Method Right For You?</h2>
+                <span class="section-label">Is This You?</span>
+                <h2 class="section-title">Is The SNS Method Right For You?</h2>
             </div>
 
             <div class="qualifier-grid">
-                <div class="qualifier-card">
-                    <h3 class="yes">&#10003; This Is For You If...</h3>
-                    <div class="qualifier-list">
-                        <div class="item"><span class="icon-yes">&#10003;</span> You are a busy mom with limited time</div>
-                        <div class="item"><span class="icon-yes">&#10003;</span> You have tried every diet and failed</div>
-                        <div class="item"><span class="icon-yes">&#10003;</span> You want results without starving</div>
-                        <div class="item"><span class="icon-yes">&#10003;</span> You are tired of quick fixes</div>
-                        <div class="item"><span class="icon-yes">&#10003;</span> You want to eat your favorite foods</div>
-                        <div class="item"><span class="icon-yes">&#10003;</span> You want sustainable, long-term results</div>
-                        <div class="item"><span class="icon-yes">&#10003;</span> You are ready to commit to real change</div>
+                <div class="qual-card yes reveal-left">
+                    <h3>This is for you if...</h3>
+                    <div class="qual-list">
+                        <div class="item"><span class="icon">&#10003;</span> You are a busy mom with limited time</div>
+                        <div class="item"><span class="icon">&#10003;</span> You have tried every diet and failed</div>
+                        <div class="item"><span class="icon">&#10003;</span> You want results without starving</div>
+                        <div class="item"><span class="icon">&#10003;</span> You are tired of quick fixes</div>
+                        <div class="item"><span class="icon">&#10003;</span> You want to eat your favorite foods</div>
+                        <div class="item"><span class="icon">&#10003;</span> You want sustainable, long-term results</div>
+                        <div class="item"><span class="icon">&#10003;</span> You are ready to commit to real change</div>
                     </div>
                 </div>
-                <div class="qualifier-card not-for-you">
-                    <h3 class="no">&#10007; This Is NOT For You If...</h3>
-                    <div class="qualifier-list">
-                        <div class="item"><span class="icon-no">&#10007;</span> You are looking for a quick fix</div>
-                        <div class="item"><span class="icon-no">&#10007;</span> You want someone to tell you what to eat</div>
-                        <div class="item"><span class="icon-no">&#10007;</span> You are not willing to change habits</div>
-                        <div class="item"><span class="icon-no">&#10007;</span> You want results without any effort</div>
-                        <div class="item"><span class="icon-no">&#10007;</span> You are not ready to invest in yourself</div>
-                        <div class="item"><span class="icon-no">&#10007;</span> You want a meal plan, not a lifestyle</div>
-                        <div class="item"><span class="icon-no">&#10007;</span> You are not committed to lasting change</div>
+                <div class="qual-card no reveal-right">
+                    <h3>This is not for you if...</h3>
+                    <div class="qual-list">
+                        <div class="item"><span class="icon">&#10007;</span> You are looking for a quick fix</div>
+                        <div class="item"><span class="icon">&#10007;</span> You want someone to tell you what to eat</div>
+                        <div class="item"><span class="icon">&#10007;</span> You are not willing to change habits</div>
+                        <div class="item"><span class="icon">&#10007;</span> You want results without any effort</div>
+                        <div class="item"><span class="icon">&#10007;</span> You are not ready to invest in yourself</div>
+                        <div class="item"><span class="icon">&#10007;</span> You want a meal plan, not a lifestyle</div>
+                        <div class="item"><span class="icon">&#10007;</span> You are not committed to lasting change</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 5. SOLUTION / METHOD -->
-    <section class="section-dark">
+    <!-- ═══ METHOD ═══ -->
+    <section class="section-sage">
         <div class="container">
             <div class="section-header">
-                <h2>The SNS Method</h2>
-                <p style="color: var(--accent); font-size: 22px; font-weight: 500;">Not a diet. A complete lifestyle overhaul.</p>
+                <span class="section-label" style="color: var(--terra);">The Process</span>
+                <h2 class="section-title">The SNS Method</h2>
+                <p class="section-sub">Not a diet. A complete lifestyle transformation in four phases.</p>
             </div>
 
             <div class="method-grid">
-                <div class="method-card">
-                    <div class="method-number">01</div>
+                <div class="method-step reveal">
+                    <div class="method-num">1</div>
                     <h3>Hormone Reset</h3>
-                    <p>Optimize your hormones so your body burns fat and has energy.</p>
+                    <p>Optimize your hormones so your body burns fat and has energy naturally.</p>
                 </div>
-                <div class="method-card">
-                    <div class="method-number">02</div>
+                <div class="method-step reveal">
+                    <div class="method-num">2</div>
                     <h3>Food Freedom</h3>
                     <p>Learn to eat intuitively without labels, guilt, or restrictions.</p>
                 </div>
-                <div class="method-card">
-                    <div class="method-number">03</div>
+                <div class="method-step reveal">
+                    <div class="method-num">3</div>
                     <h3>Habit Stacking</h3>
                     <p>Build habits that fit seamlessly into your existing routine.</p>
                 </div>
-                <div class="method-card">
-                    <div class="method-number">04</div>
+                <div class="method-step reveal">
+                    <div class="method-num">4</div>
                     <h3>Maintenance</h3>
-                    <p>Learn to maintain results without constant tracking or effort.</p>
+                    <p>Maintain results without constant tracking or effort. For life.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. SOCIAL PROOF / CASE STUDIES -->
-    <section id="case-studies">
+    <!-- ═══ WRITTEN TESTIMONIALS ═══ -->
+    <section id="results">
         <div class="container">
             <div class="section-header">
-                <h2>Real Women. Real Results.</h2>
-                <p>Women just like you have transformed their bodies and lives.</p>
+                <span class="section-label">Real Results</span>
+                <h2 class="section-title">Women Just Like You Have<br>Transformed Their Lives</h2>
+                <p class="section-sub">These are not before-and-afters. These are life-changers.</p>
             </div>
 
-            <!-- Video Testimonials -->
-            <div class="video-intro">
-                <h2>Hear From Women Who Have Transformed</h2>
-                <p>Watch their real stories and see what is possible for you</p>
+            <div class="testimonial-grid">
+                <!-- Leanna -->
+                <div class="testimonial-card reveal">
+                    <span class="testimonial-quote-mark">"</span>
+                    <div class="testimonial-stats">
+                        <div class="t-stat"><span class="t-val">33 lbs</span><span class="t-label">Lost</span></div>
+                        <div class="t-stat"><span class="t-val">2 years</span><span class="t-label">Together</span></div>
+                    </div>
+                    <p class="testimonial-text">Thank you again for this wonderful program and providing me with the tools to finally start getting my life back. I felt so powerless when I first started, and felt chained to my PCOS and my history of eating disorder behaviors. But now I actually feel like I can meet my body comp goals and keep the weight off over time. More women need to learn that they NEED TO EAT if they actually want to successfully lose weight and fix their metabolism.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">L</div>
+                        <div>
+                            <div class="testimonial-name">Leanna</div>
+                            <div class="testimonial-detail">191 to 158 lbs across multiple phases</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Laura -->
+                <div class="testimonial-card reveal">
+                    <span class="testimonial-quote-mark">"</span>
+                    <div class="testimonial-stats">
+                        <div class="t-stat"><span class="t-val">27 lbs</span><span class="t-label">Lost</span></div>
+                        <div class="t-stat"><span class="t-val">16 mo</span><span class="t-label">Together</span></div>
+                    </div>
+                    <p class="testimonial-text">Truly you have made it feel possible for me to do this without you guys for a bit and have been patient and flexible and understanding with me. I am so much better set up than when I started and have changed so many habits thanks to you!</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">L</div>
+                        <div>
+                            <div class="testimonial-name">Laura</div>
+                            <div class="testimonial-detail">Learned food is not the enemy</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lisa -->
+                <div class="testimonial-card reveal">
+                    <span class="testimonial-quote-mark">"</span>
+                    <div class="testimonial-stats">
+                        <div class="t-stat"><span class="t-val">14.5"</span><span class="t-label">Inches Lost</span></div>
+                        <div class="t-stat"><span class="t-val">16 mo</span><span class="t-label">Together</span></div>
+                    </div>
+                    <p class="testimonial-text">Before I started, I had resigned to the fact that the weight I gained was just part of getting older and going through menopause, and I cannot do anything about it. I could not have done it on my own. I probably would have given up because of the time it took to achieve results.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">L</div>
+                        <div>
+                            <div class="testimonial-name">Lisa</div>
+                            <div class="testimonial-detail">134 to 123 lbs through menopause</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Samyta -->
+                <div class="testimonial-card reveal">
+                    <span class="testimonial-quote-mark">"</span>
+                    <div class="testimonial-stats">
+                        <div class="t-stat"><span class="t-val">20 lbs</span><span class="t-label">Lost</span></div>
+                        <div class="t-stat"><span class="t-val">9 mo</span><span class="t-label">Postpartum</span></div>
+                    </div>
+                    <p class="testimonial-text">Can't believe it was my last check in! Time has flown by and you have seriously helped me so much through this postpartum phase. She came to us 8 weeks postpartum, under-eating by nearly 1,000 calories. Even after increasing her intake, she lost 20 pounds.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">S</div>
+                        <div>
+                            <div class="testimonial-name">Samyta</div>
+                            <div class="testimonial-detail">Postpartum recovery + fat loss</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ VIDEO TESTIMONIALS ═══ -->
+    <section class="section-cream">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Watch Their Stories</span>
+                <h2 class="section-title">Hear It From Them</h2>
+                <p class="section-sub">Real women sharing their real experiences with the SNS Method.</p>
             </div>
 
             <div class="video-grid">
-                <!-- Video 1: Asha -->
-                <div class="video-card">
+                <div class="video-card reveal">
                     <div class="video-wrapper">
                         <iframe src="https://www.youtube.com/embed/4rWox-_Jeys" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="video-info">
                         <h3>Asha's Transformation</h3>
-                        <p>Asha had tried every diet out there. Keto. Intermittent fasting. Calorie counting. Nothing worked long-term. After the SNS Method, she finally found balance and lost weight without feeling deprived.</p>
-                        <p class="result-tag">Lost 20+ lbs without dieting</p>
+                        <p>Tried every diet. Nothing stuck. After the SNS Method, she found balance and lost weight without feeling deprived.</p>
+                        <span class="video-result">Lost 20+ lbs without dieting</span>
                     </div>
                 </div>
-
-                <!-- Video 2: Sandy -->
-                <div class="video-card">
+                <div class="video-card reveal">
                     <div class="video-wrapper">
                         <iframe src="https://www.youtube.com/embed/j-oLdHZWAZw" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="video-info">
                         <h3>Sandy's Journey</h3>
-                        <p>Sandy was skeptical after trying so many programs before. The SNS Method showed her that it was never about the food - it was about her mindset and relationship with eating.</p>
-                        <p class="result-tag">Found food freedom and energy</p>
+                        <p>Skeptical after trying so many programs. Learned it was never about the food. It was about her mindset.</p>
+                        <span class="video-result">Found food freedom and energy</span>
                     </div>
                 </div>
-
-                <!-- Video 3: Stephanie -->
-                <div class="video-card">
+                <div class="video-card reveal">
                     <div class="video-wrapper">
                         <iframe src="https://www.youtube.com/embed/mSh5F2Bsn6U" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="video-info">
                         <h3>Stephanie's Results</h3>
-                        <p>Stephanie was stuck in the yo-yo diet cycle for years. She learned how to eat intuitively and now maintains her results without constant tracking or restrictions.</p>
-                        <p class="result-tag">Broke free from yo-yo dieting</p>
+                        <p>Stuck in the yo-yo cycle for years. Now maintains her results without constant tracking or restrictions.</p>
+                        <span class="video-result">Broke free from yo-yo dieting</span>
                     </div>
                 </div>
-
-                <!-- Video 4: Megan -->
-                <div class="video-card">
+                <div class="video-card reveal">
                     <div class="video-wrapper">
                         <iframe src="https://www.youtube.com/embed/IjRiOQ2EQKg" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="video-info">
                         <h3>Megan's Story</h3>
-                        <p>Megan was afraid to eat more thinking it would make her gain weight. Through the SNS Method, she discovered that eating more actually helped her lose weight and feel more energized.</p>
-                        <p class="result-tag">More energy, better sleep</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Case Study 1 -->
-            <div class="case-study">
-                <div class="case-study-header">
-                    <h3>Case Study #1</h3>
-                    <h2>"I Lost 20+ lbs And Gained My Life Back"</h2>
-                </div>
-                <p>Kaitlin had tried everything. Keto. Intermittent fasting. Calorie counting. She was getting married and wanted to look her best, but every diet left her feeling deprived and hungry. She was stuck in the yo-yo cycle of losing weight and gaining it back.</p>
-                <p>When she joined the SNS Method, everything changed. She realized it was never about the food. It was about her relationship with food. She learned that she could eat the foods she loved and still see results. No deprivation. No starvation. Just balance.</p>
-                <div class="case-study-stats">
-                    <div class="stat">
-                        <div class="stat-value">20+</div>
-                        <div class="stat-label">Lbs Lost</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-value">100%</div>
-                        <div class="stat-label">Food Freedom</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-value">0</div>
-                        <div class="stat-label">Diets Tried</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-value">Happy</div>
-                        <div class="stat-label">Wedding Day</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Case Study 2 -->
-            <div class="case-study">
-                <div class="case-study-header">
-                    <h3>Case Study #2</h3>
-                    <h2>"I Have More Energy Than I Did In My 20s"</h2>
-                </div>
-                <p>Rianne was terrified that eating more would make her gain weight. She had been taught that less is more, and the thought of increasing her food intake felt completely wrong.</p>
-                <p>After the SNS Method, she now has more energy than ever before, sleeps better, and has completely eliminated binge eating. She says she has "never eaten this much in her life" and is now losing weight "easily and effortlessly" without even trying.</p>
-                <div class="case-study-stats">
-                    <div class="stat">
-                        <div class="stat-value">More</div>
-                        <div class="stat-label">Energy</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-value">Better</div>
-                        <div class="stat-label">Sleep</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-value">0</div>
-                        <div class="stat-label">Binge Days</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-value">Easy</div>
-                        <div class="stat-label">Weight Loss</div>
+                        <p>Afraid to eat more. Discovered that eating more actually helped her lose weight and feel more energized.</p>
+                        <span class="video-result">More energy, better sleep</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 7. ABOUT SECTION -->
-    <section class="section-alt">
+    <!-- ═══ CASE STUDIES ═══ -->
+    <section>
         <div class="container">
-            <div class="section-header">
-                <h2>Meet Your Team</h2>
-                <p>Two coaches dedicated to your transformation</p>
+            <div class="case-study reveal">
+                <div class="case-study-label">Case Study</div>
+                <h2>"I Lost 20+ lbs And Gained My Life Back"</h2>
+                <p>Kaitlin had tried everything. Keto. Intermittent fasting. Calorie counting. She was getting married and wanted to look her best, but every diet left her feeling deprived and hungry.</p>
+                <p>When she joined the SNS Method, everything changed. She realized it was never about the food. It was about her relationship with food. She learned that she could eat the foods she loved and still see results.</p>
+                <div class="case-stats">
+                    <div class="case-stat"><div class="val">20+</div><div class="lbl">Lbs Lost</div></div>
+                    <div class="case-stat"><div class="val">100%</div><div class="lbl">Food Freedom</div></div>
+                    <div class="case-stat"><div class="val">0</div><div class="lbl">Diets Since</div></div>
+                    <div class="case-stat"><div class="val">Happy</div><div class="lbl">Wedding Day</div></div>
+                </div>
             </div>
 
-            <!-- Coach 1: Sharan -->
-            <div class="coach-block">
-                <div class="coach-image">
-                    <img src="sharan.jpg" alt="Sharan Scali - Founder of SNS Method">
+            <div class="case-study reveal">
+                <div class="case-study-label">Case Study</div>
+                <h2>"I Have More Energy Than I Did In My 20s"</h2>
+                <p>Rianne was terrified that eating more would make her gain weight. She had been taught that less is more, and the thought of increasing her food intake felt completely wrong.</p>
+                <p>After the SNS Method, she now has more energy than ever before, sleeps better, and has completely eliminated binge eating. She says she has "never eaten this much in her life" and is losing weight "easily and effortlessly."</p>
+                <div class="case-stats">
+                    <div class="case-stat"><div class="val">More</div><div class="lbl">Energy</div></div>
+                    <div class="case-stat"><div class="val">Better</div><div class="lbl">Sleep</div></div>
+                    <div class="case-stat"><div class="val">0</div><div class="lbl">Binge Days</div></div>
+                    <div class="case-stat"><div class="val">Easy</div><div class="lbl">Weight Loss</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ COACHES ═══ -->
+    <section class="section-cream">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Your Coaches</span>
+                <h2 class="section-title">Meet Your Team</h2>
+                <p class="section-sub">Two coaches dedicated to your transformation.</p>
+            </div>
+
+            <div class="coach-grid reveal">
+                <div class="coach-photo">
+                    <img src="sharan.jpg" alt="Sharan Scali, Founder of SNS Method">
                 </div>
                 <div class="coach-content">
                     <h2>Sharan Scali</h2>
-                    <span class="coach-title">Founder, Certified Nutritional Advisor</span>
+                    <span class="coach-role">Founder &amp; Certified Nutritional Advisor</span>
                     <p>I am Sharan. Certified Nutritional Advisor. Hormone Specialist. Mom of one.</p>
                     <p>I have spent years helping women break free from the diet cycle. Not by giving you another meal plan to follow, but by teaching you how your body actually works.</p>
-                    <p>I have been where you are. I know what it feels like to fail another diet and blame yourself for not having enough willpower.</p>
-                    <p>That is why the SNS Method is not about perfection. It is about progress you can maintain. Forever.</p>
+                    <p>I have been where you are. I know what it feels like to fail another diet and blame yourself. That is why the SNS Method is not about perfection. It is about progress you can maintain. Forever.</p>
                 </div>
             </div>
 
-            <!-- Coach 2: Lindsay -->
-            <div class="coach-block">
-                <div class="coach-image">
-                    <!-- PLACEHOLDER: Replace with real photo of Lindsay -->
-                    <div class="photo-placeholder">
-                        Photo coming soon
-                    </div>
+            <div class="coach-grid reverse reveal">
+                <div class="coach-photo">
+                    <img src="lindsay.jpg" alt="Lindsay Langston, Nutrition Coach">
                 </div>
                 <div class="coach-content">
                     <h2>Lindsay Langston</h2>
-                    <span class="coach-title">PNL1 Nutrition Coach, Crossfit Level 1</span>
+                    <span class="coach-role">PNL1 Nutrition Coach &amp; Crossfit Level 1</span>
                     <p>I am Lindsay. Certified Nutrition Coach. Wife. Mom of two.</p>
-                    <p>I graduated from Arizona State University with a Bachelor of Science in Communication and a minor in Media Analysis in 2010. After moving to Canada, I got into all things health, fitness, and nutrition.</p>
-                    <p>I first did a deep dive into the importance of the quality of the food we eat. But I felt something was missing. That is when I reached out to Sharan and became a SnS client first.</p>
-                    <p>It was here I learned the importance of consuming enough food to reach your goals but also how important our everyday habits are to maintain them. I chose to work with Sharan because of the importance she placed on prioritizing your health over simply just losing weight.</p>
-                    <p>After having two boys, I decided to take the leap and got my nutrition certification. I now help clients thrive as a busy mother of two, wife, and full-time nutritionist.</p>
+                    <p>I reached out to Sharan and became an SnS client first. That is where I learned the importance of consuming enough food to reach your goals and how important everyday habits are to maintain them.</p>
+                    <p>I chose to work with Sharan because of the importance she placed on prioritizing your health over simply just losing weight. I now help clients thrive as a busy mother of two, wife, and full-time nutritionist.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 8. PRICING SECTION -->
+    <!-- ═══ PRICING ═══ -->
     <section id="pricing">
         <div class="container">
             <div class="section-header">
-                <h2>Invest In Yourself</h2>
-                <p>Your future self will thank you.</p>
+                <span class="section-label">Pricing</span>
+                <h2 class="section-title">Invest In Yourself</h2>
+                <p class="section-sub">Your future self will thank you.</p>
             </div>
 
-            <!-- Urgency -->
-            <div class="urgency-bar">
+            <div class="urgency-bar reveal">
                 <p>Limited spots available for March enrollment</p>
-                <p class="urgency-detail">We limit new clients each month to ensure everyone gets personalized attention.</p>
+                <p class="sub">We limit new clients each month to ensure everyone gets personalized attention.</p>
             </div>
 
             <div class="pricing-grid">
                 <!-- Starter -->
-                <div class="pricing-card">
+                <div class="price-card reveal">
                     <h3>Starter</h3>
-                    <p class="subtitle">Email + App Support</p>
-                    <p class="price" id="starter-price">$375<span>+GST</span></p>
+                    <p class="tier-sub">Email + App Support</p>
+                    <div class="price-amount" id="starter-price">$375<span class="gst">+GST</span></div>
                     <p class="per-month" id="starter-per-month">$125/month</p>
 
                     <select id="starterDuration" class="duration-select" onchange="updateStarter()">
-                        <option value="3">3 Months - $375</option>
-                        <option value="6">6 Months - $675</option>
-                        <option value="12">12 Months - $1,200</option>
+                        <option value="3">3 Months &mdash; $375</option>
+                        <option value="6">6 Months &mdash; $675</option>
+                        <option value="12">12 Months &mdash; $1,200</option>
                     </select>
 
                     <ul>
-                        <li>Personalized nutrition programming</li>
-                        <li>Hormone optimization guidance</li>
-                        <li>App-based support</li>
-                        <li>Food neutrality education</li>
-                        <li>Sustainable habit building</li>
+                        <li><span class="check">&#10003;</span> Personalized nutrition programming</li>
+                        <li><span class="check">&#10003;</span> Hormone optimization guidance</li>
+                        <li><span class="check">&#10003;</span> App-based support</li>
+                        <li><span class="check">&#10003;</span> Food neutrality education</li>
+                        <li><span class="check">&#10003;</span> Sustainable habit building</li>
                     </ul>
 
-                    <a href="#" class="btn btn-secondary" id="starter-checkout" style="width: 100%;" onclick="selectPlan('starter'); return false;">Get Started</a>
+                    <a href="https://buy.stripe.com/9B6bJ00BD26ugId2PUgrS00" class="btn btn-ghost" id="starter-checkout" style="width: 100%;">Get Started</a>
                 </div>
 
                 <!-- Elite -->
-                <div class="pricing-card featured">
-                    <span class="popular-tag">Most Popular</span>
+                <div class="price-card featured reveal">
+                    <span class="popular-badge">Most Popular</span>
                     <h3>Elite</h3>
-                    <p class="subtitle">WhatsApp + Video Calls</p>
-                    <p class="price" id="elite-price">$495<span>+GST</span></p>
+                    <p class="tier-sub">WhatsApp + Video Calls</p>
+                    <div class="price-amount" id="elite-price">$495<span class="gst">+GST</span></div>
                     <p class="per-month" id="elite-per-month">$165/month</p>
 
                     <select id="eliteDuration" class="duration-select" onchange="updateElite()">
-                        <option value="3">3 Months - $495</option>
-                        <option value="6">6 Months - $840</option>
-                        <option value="12">12 Months - $1,500</option>
+                        <option value="3">3 Months &mdash; $495</option>
+                        <option value="6">6 Months &mdash; $840</option>
+                        <option value="12">12 Months &mdash; $1,500</option>
                     </select>
 
                     <ul>
-                        <li>Everything in Starter, plus:</li>
-                        <li>WhatsApp support</li>
-                        <li>3x 1-on-1 video calls</li>
-                        <li>Personalized strategy sessions</li>
-                        <li>Direct access to Sharan</li>
+                        <li><span class="check">&#10003;</span> Everything in Starter, plus:</li>
+                        <li><span class="check">&#10003;</span> WhatsApp support</li>
+                        <li><span class="check">&#10003;</span> 3x 1-on-1 video calls</li>
+                        <li><span class="check">&#10003;</span> Personalized strategy sessions</li>
+                        <li><span class="check">&#10003;</span> Direct access to Sharan</li>
                     </ul>
 
-                    <a href="#" class="btn btn-primary btn-primary-pulse" id="elite-checkout" style="width: 100%;" onclick="selectPlan('elite'); return false;">Get Your Dream Body</a>
+                    <a href="https://buy.stripe.com/6oUbJ0est6mK0JfbmqgrS03" class="btn btn-primary btn-primary-pulse" id="elite-checkout" style="width: 100%;">Get Your Dream Body</a>
                 </div>
             </div>
 
             <!-- Guarantee -->
-            <div class="guarantee-block">
-                <span class="guarantee-icon">&#128737;</span>
+            <div class="guarantee reveal">
+                <div class="guarantee-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
                 <h3>30-Day Money-Back Guarantee</h3>
                 <p>If you are not happy after the first 30 days, we will refund your investment. No questions asked. We are that confident in the SNS Method.</p>
             </div>
         </div>
     </section>
 
-    <!-- 9. FAQ SECTION -->
-    <section class="section-alt">
+    <!-- ═══ FAQ ═══ -->
+    <section class="section-cream">
         <div class="container">
             <div class="section-header">
-                <h2>Questions?</h2>
+                <span class="section-label">FAQ</span>
+                <h2 class="section-title">Questions?</h2>
             </div>
 
             <div class="faq-grid">
                 <div class="faq-item active">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Do I have to give up foods I love?
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>No. This is not about restriction. It is about understanding how food affects your body, so you can make choices that work for YOU.</p>
-                    </div>
+                    <div class="faq-q" onclick="toggleFaq(this)">Do I have to give up foods I love?<span class="faq-toggle">+</span></div>
+                    <div class="faq-a"><p>No. This is not about restriction. It is about understanding how food affects your body, so you can make choices that work for YOU.</p></div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        How is this different from a meal plan?
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Meal plans tell you what to eat. We teach you how to eat. You will understand your body and have the knowledge forever.</p>
-                    </div>
+                    <div class="faq-q" onclick="toggleFaq(this)">How is this different from a meal plan?<span class="faq-toggle">+</span></div>
+                    <div class="faq-a"><p>Meal plans tell you what to eat. We teach you how to eat. You will understand your body and have the knowledge forever.</p></div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        I am really busy. Will I have time for this?
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes. The method fits into your life, not the other way around. We work with real moms with real schedules.</p>
-                    </div>
+                    <div class="faq-q" onclick="toggleFaq(this)">I am really busy. Will I have time for this?<span class="faq-toggle">+</span></div>
+                    <div class="faq-a"><p>Yes. The method fits into your life, not the other way around. We work with real moms with real schedules.</p></div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        What if I have tried everything and failed?
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Perfect. That is exactly who this is for. The SNS Method addresses why past attempts did not work.</p>
-                    </div>
+                    <div class="faq-q" onclick="toggleFaq(this)">What if I have tried everything and failed?<span class="faq-toggle">+</span></div>
+                    <div class="faq-a"><p>Perfect. That is exactly who this is for. The SNS Method addresses why past attempts did not work.</p></div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        How soon will I see results?
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Most women see initial results within 2-4 weeks. This is about sustainable, long-term transformation.</p>
-                    </div>
+                    <div class="faq-q" onclick="toggleFaq(this)">How soon will I see results?<span class="faq-toggle">+</span></div>
+                    <div class="faq-a"><p>Most women see initial results within 2-4 weeks. This is about sustainable, long-term transformation.</p></div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        What is included in the video calls?
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Personal strategy sessions where we review your progress, troubleshoot challenges, and adjust your plan.</p>
-                    </div>
+                    <div class="faq-q" onclick="toggleFaq(this)">What is included in the video calls?<span class="faq-toggle">+</span></div>
+                    <div class="faq-a"><p>Personal strategy sessions where we review your progress, troubleshoot challenges, and adjust your plan.</p></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 10. FINAL CTA -->
-    <section class="cta">
-        <div class="container" style="position: relative; z-index: 2;">
-            <h2>Your Dream Body Is Waiting</h2>
-            <p>You have tried the diets. You have done the deprivation. Now try the method that actually works.</p>
-            <a href="#pricing" class="btn" style="background: white; color: var(--primary); font-size: 16px; padding: 18px 40px;">Get Started Now</a>
+    <!-- ═══ FINAL CTA ═══ -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="inner">
+                <h2>Your Dream Body<br>Is Waiting</h2>
+                <p>You have tried the diets. You have done the deprivation. Now try the method that actually works.</p>
+                <a href="#pricing" class="btn btn-white" style="font-size: 15px; padding: 18px 40px;">Get Started Now</a>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ═══ FOOTER ═══ -->
     <footer>
         <div class="container">
             <p>&copy; <span id="year"></span> SNS Method. All rights reserved.</p>
+            <p style="margin-top: 8px;"><a href="https://instagram.com/snatchesandsamosas" target="_blank" rel="noopener">@snatchesandsamosas</a></p>
         </div>
     </footer>
 
-    <!-- Sticky Bottom CTA -->
-    <div class="sticky-cta" id="stickyCta">
+    <!-- ═══ STICKY BOTTOM CTA ═══ -->
+    <div class="sticky-bar" id="stickyBar">
         <div class="container">
-            <div class="sticky-cta-inner">
-                <div class="sticky-cta-text">
+            <div class="sticky-inner">
+                <div class="sticky-text">
                     Ready to transform?
                     <span>Starting at $125/month</span>
                 </div>
-                <a href="#pricing" class="btn btn-primary" style="padding: 12px 28px; font-size: 14px;">Get Started</a>
+                <a href="#pricing" class="btn btn-primary" style="padding: 12px 28px; font-size: 13px;">Get Started</a>
             </div>
         </div>
     </div>
 
     <script>
-        // ── Pricing Data ──
-        const starterPrices = { '3': 375, '6': 675, '12': 1200 };
-        const elitePrices = { '3': 495, '6': 840, '12': 1500 };
-
-        // TODO: Replace these with actual Stripe checkout URLs from Sharan
-        const checkoutUrls = {
-            starter: {
-                '3': '#', // Stripe link for Starter 3-month
-                '6': '#', // Stripe link for Starter 6-month
-                '12': '#' // Stripe link for Starter 12-month
-            },
-            elite: {
-                '3': '#', // Stripe link for Elite 3-month
-                '6': '#', // Stripe link for Elite 6-month
-                '12': '#' // Stripe link for Elite 12-month
-            }
+        /* ── Pricing ── */
+        var starterPrices = { '3': 375, '6': 675, '12': 1200 };
+        var elitePrices = { '3': 495, '6': 840, '12': 1500 };
+        var starterLinks = {
+            '3': 'https://buy.stripe.com/9B6bJ00BD26ugId2PUgrS00',
+            '6': 'https://buy.stripe.com/cNicN4ckldPc77DbmqgrS01',
+            '12': 'https://buy.stripe.com/8x26oG5VX3ayfE976agrS02'
+        };
+        var eliteLinks = {
+            '3': 'https://buy.stripe.com/6oUbJ0est6mK0JfbmqgrS03',
+            '6': 'https://buy.stripe.com/14A8wO8455iG77DcqugrS04',
+            '12': 'https://buy.stripe.com/7sYfZgfwxbH4fE9duygrS05'
         };
 
-        function getPerMonth(price, months) {
-            return Math.round(price / parseInt(months));
-        }
-
-        function formatPrice(price) {
-            return price >= 1000 ? '$' + price.toLocaleString() : '$' + price;
-        }
+        function fmt(n) { return n >= 1000 ? '$' + n.toLocaleString() : '$' + n; }
+        function perMonth(p, m) { return '$' + Math.round(p / parseInt(m)); }
 
         function updateStarter() {
-            var duration = document.getElementById('starterDuration').value;
-            var price = starterPrices[duration];
-            document.getElementById('starter-price').innerHTML = formatPrice(price) + '<span>+GST</span>';
-            document.getElementById('starter-per-month').textContent = '$' + getPerMonth(price, duration) + '/month';
-            document.getElementById('starter-checkout').href = checkoutUrls.starter[duration];
+            var d = document.getElementById('starterDuration').value;
+            document.getElementById('starter-price').innerHTML = fmt(starterPrices[d]) + '<span class="gst">+GST</span>';
+            document.getElementById('starter-per-month').textContent = perMonth(starterPrices[d], d) + '/month';
+            document.getElementById('starter-checkout').href = starterLinks[d];
         }
-
         function updateElite() {
-            var duration = document.getElementById('eliteDuration').value;
-            var price = elitePrices[duration];
-            document.getElementById('elite-price').innerHTML = formatPrice(price) + '<span>+GST</span>';
-            document.getElementById('elite-per-month').textContent = '$' + getPerMonth(price, duration) + '/month';
-            document.getElementById('elite-checkout').href = checkoutUrls.elite[duration];
+            var d = document.getElementById('eliteDuration').value;
+            document.getElementById('elite-price').innerHTML = fmt(elitePrices[d]) + '<span class="gst">+GST</span>';
+            document.getElementById('elite-per-month').textContent = perMonth(elitePrices[d], d) + '/month';
+            document.getElementById('elite-checkout').href = eliteLinks[d];
         }
 
-        function selectPlan(plan) {
-            var duration = document.getElementById(plan === 'starter' ? 'starterDuration' : 'eliteDuration').value;
-            var url = checkoutUrls[plan][duration];
-            if (url && url !== '#') {
-                window.location.href = url;
-            } else {
-                // Temporary: scroll to show contact info until Stripe is connected
-                alert('Checkout is being set up. Please DM @snatchesandsamosas on Instagram to get started!');
-            }
-        }
-
-        // ── FAQ Accordion ──
+        /* ── FAQ ── */
         function toggleFaq(el) {
             var item = el.parentElement;
             var wasActive = item.classList.contains('active');
-            // Close all
-            document.querySelectorAll('.faq-item').forEach(function(faq) {
-                faq.classList.remove('active');
-            });
-            // Open clicked (if it wasn't already open)
-            if (!wasActive) {
-                item.classList.add('active');
-            }
+            document.querySelectorAll('.faq-item').forEach(function(f) { f.classList.remove('active'); });
+            if (!wasActive) item.classList.add('active');
         }
 
-        // ── Header scroll effect ──
+        /* ── Header scroll ── */
         var header = document.getElementById('header');
-        var lastScroll = 0;
-
         window.addEventListener('scroll', function() {
-            var scrollY = window.scrollY;
-            if (scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-            lastScroll = scrollY;
+            header.classList.toggle('scrolled', window.scrollY > 60);
         });
 
-        // ── Sticky CTA — show after scrolling past hero ──
-        var stickyCta = document.getElementById('stickyCta');
-        var hero = document.querySelector('.hero');
-        var pricingSection = document.getElementById('pricing');
-
+        /* ── Sticky CTA ── */
+        var stickyBar = document.getElementById('stickyBar');
+        var heroEl = document.querySelector('.hero');
+        var pricingEl = document.getElementById('pricing');
         window.addEventListener('scroll', function() {
-            var heroBottom = hero.offsetTop + hero.offsetHeight;
-            var pricingTop = pricingSection.offsetTop;
-            var scrollY = window.scrollY + window.innerHeight;
-
-            // Show after hero, hide when pricing is visible
-            if (window.scrollY > heroBottom && scrollY < pricingTop + 200) {
-                stickyCta.classList.add('visible');
-            } else {
-                stickyCta.classList.remove('visible');
-            }
+            var heroBottom = heroEl.offsetTop + heroEl.offsetHeight;
+            var pricingTop = pricingEl.offsetTop;
+            var viewBottom = window.scrollY + window.innerHeight;
+            stickyBar.classList.toggle('visible', window.scrollY > heroBottom && viewBottom < pricingTop + 200);
         });
 
-        // ── Scroll Animations ──
+        /* ── Scroll Reveal ── */
         document.addEventListener('DOMContentLoaded', function() {
-            var observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
             var observer = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry, index) {
+                entries.forEach(function(entry) {
                     if (entry.isIntersecting) {
-                        // Stagger the animation for sibling elements
                         var siblings = entry.target.parentElement.children;
                         var idx = Array.prototype.indexOf.call(siblings, entry.target);
-                        entry.target.style.transitionDelay = (idx * 0.08) + 's';
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
+                        entry.target.style.transitionDelay = (idx * 0.06) + 's';
+                        entry.target.classList.add('visible');
                         observer.unobserve(entry.target);
                     }
                 });
-            }, observerOptions);
+            }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-            document.querySelectorAll('.feature-card, .method-card, .case-study, .pricing-card, .faq-item, .video-card, .qualifier-card').forEach(function(el) {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(function(el) {
                 observer.observe(el);
             });
 
-            // Dynamic year
+            /* Dynamic year */
             document.getElementById('year').textContent = new Date().getFullYear();
         });
     </script>
