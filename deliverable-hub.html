@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Growth Package for Metropointe MIC | Prepared for Suki Gill</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: #05071a;
+  color: #fff;
+  line-height: 1.6;
+}
+.container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+
+/* Hero */
+.hero {
+  padding: 80px 0 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(212,175,55,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  border: 1px solid rgba(212,175,55,0.3);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #d4af37;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  color: #fff;
+}
+.hero h1 span { color: #d4af37; }
+.hero p {
+  font-size: 18px;
+  color: #a6a6a6;
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+/* Deliverables Grid */
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-align: center;
+}
+.section-subtitle {
+  font-size: 16px;
+  color: #a6a6a6;
+  text-align: center;
+  margin-bottom: 48px;
+  font-weight: 300;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 60px;
+}
+@media (max-width: 700px) {
+  .grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 32px; }
+}
+
+.card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 32px;
+  transition: border-color 0.3s, transform 0.2s;
+  cursor: default;
+}
+.card:hover {
+  border-color: rgba(212,175,55,0.3);
+  transform: translateY(-2px);
+}
+.card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(212,175,55,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+.card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.card p {
+  font-size: 14px;
+  color: #a6a6a6;
+  font-weight: 300;
+  line-height: 1.7;
+}
+.card-tag {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+.tag-research { background: rgba(63,166,217,0.15); color: #3fa6d9; }
+.tag-strategy { background: rgba(212,175,55,0.15); color: #d4af37; }
+.tag-creative { background: rgba(120,3,255,0.15); color: #a855f7; }
+.tag-html { background: rgba(52,211,153,0.15); color: #34d399; }
+
+/* Full Width Card */
+.card-full {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, rgba(212,175,55,0.02) 100%);
+  border: 1px solid rgba(212,175,55,0.2);
+}
+
+/* Stats */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 60px 0;
+  padding: 40px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+@media (max-width: 700px) {
+  .stats { grid-template-columns: repeat(2, 1fr); }
+}
+.stat { text-align: center; }
+.stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #d4af37;
+  line-height: 1;
+}
+.stat-label {
+  font-size: 13px;
+  color: #a6a6a6;
+  margin-top: 8px;
+  font-weight: 400;
+}
+
+/* CTA */
+.cta-section {
+  text-align: center;
+  padding: 60px 0 80px;
+}
+.cta-button {
+  display: inline-block;
+  padding: 16px 40px;
+  background: linear-gradient(135deg, #d4af37, #a88647);
+  color: #05071a;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(212,175,55,0.3);
+}
+.cta-sub {
+  font-size: 14px;
+  color: #a6a6a6;
+  margin-top: 12px;
+  font-weight: 300;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 40px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  font-size: 13px;
+  color: #666;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-badge">Prepared for Suki Gill, CPA, CGA</div>
+    <h1>Your <span>Growth Package</span> for Metropointe MIC</h1>
+    <p>A complete marketing audit, strategy, and sample creative built specifically for Metmic. Everything you need to see what a paid acquisition system could do for your business.</p>
+  </section>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-number">15</div>
+      <div class="stat-label">Sources Researched</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">5</div>
+      <div class="stat-label">Competitors Analyzed</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">7</div>
+      <div class="stat-label">Sample Ad Variations</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">2</div>
+      <div class="stat-label">Landing Pages Built</div>
+    </div>
+  </div>
+
+  <!-- Research Section -->
+  <h2 class="section-title">Research & Analysis</h2>
+  <p class="section-subtitle">Deep market intelligence on the BC MIC landscape, your audience, and your competitors</p>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-icon">&#128200;</div>
+      <h3>Growth Audit</h3>
+      <p>A 10-category scorecard of Metmic's current digital marketing, identifying the 5 biggest growth gaps and how to close them. Includes competitor comparison table.</p>
+      <span class="card-tag tag-research">Research</span>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">&#127919;</div>
+      <h3>Competitor Matrix</h3>
+      <p>Head-to-head analysis of Cambridge MIC, Canguard, 460 MIC, and AP Capital. Positioning, funnels, ads, content, social media, and the gaps nobody is filling.</p>
+      <span class="card-tag tag-research">Research</span>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">&#128101;</div>
+      <h3>Investor Avatar Profile</h3>
+      <p>Deep psychographic profile of your ideal investor. Demographics, pain points, objections, desired outcomes, awareness level, and exactly where they spend time online.</p>
+      <span class="card-tag tag-research">Research</span>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">&#127968;</div>
+      <h3>Borrower Avatar Profile</h3>
+      <p>The developer, flipper, and bridge capital seeker. What frustrates them about banks, what they need from a lender, and how to reach them through paid channels.</p>
+      <span class="card-tag tag-research">Research</span>
+    </div>
+  </div>
+
+  <!-- Strategy Section -->
+  <h2 class="section-title">Strategy & Projections</h2>
+  <p class="section-subtitle">The roadmap for building a paid acquisition engine for Metmic</p>
+
+  <div class="grid">
+    <div class="card card-full">
+      <div class="card-icon">&#128640;</div>
+      <h3>Full Marketing Strategy</h3>
+      <p>Dual acquisition funnel design (investor + borrower), campaign budget recommendations by phase, creative strategy with 5 ad angles, RRSP season burst plan, 90-day implementation roadmap, and KPI targets.</p>
+      <span class="card-tag tag-strategy">Strategy</span>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">&#128176;</div>
+      <h3>ROI Projection</h3>
+      <p>Month-by-month financial projections across conservative, moderate, and aggressive scenarios. AUM growth, lead volume, break-even analysis, and the compounding effect over 5 years.</p>
+      <span class="card-tag tag-strategy">Strategy</span>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">&#128218;</div>
+      <h3>Case Study</h3>
+      <p>How a financial services firm with a similar profile (strong track record, referral-dependent, zero digital presence) generated 380+ leads in 90 days with a paid funnel.</p>
+      <span class="card-tag tag-strategy">Strategy</span>
+    </div>
+  </div>
+
+  <!-- Creative Section -->
+  <h2 class="section-title">Sample Creative</h2>
+  <p class="section-subtitle">Production-ready ad copy, landing pages, and email sequences built for Metmic</p>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-icon">&#128244;</div>
+      <h3>Meta Ad Copy (7 Variations)</h3>
+      <p>5 investor acquisition ads (GIC frustration, stock fear, RRSP urgency, CPA authority, passive income) + 2 borrower ads (speed, bank rejection). Full scripts with hooks, body, and CTAs.</p>
+      <span class="card-tag tag-creative">Creative</span>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">&#128270;</div>
+      <h3>Google Search Ads</h3>
+      <p>4 ad groups with headlines, descriptions, and keyword targeting for MIC investing, RRSP alternatives, bridge loans, and private lending searches in BC.</p>
+      <span class="card-tag tag-creative">Creative</span>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">&#128187;</div>
+      <h3>Investor Acquisition Landing Page</h3>
+      <p>Full 10-section HTML landing page designed to convert paid traffic into investor leads. Lead magnet offer, social proof, FAQ, and multiple CTAs. Self-contained, ready to deploy.</p>
+      <span class="card-tag tag-html">HTML Page</span>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">&#128187;</div>
+      <h3>Borrower Acquisition Landing Page</h3>
+      <p>Speed and flexibility-focused landing page for developers and borrowers. Simple application form, urgency messaging, and trust signals. Self-contained HTML.</p>
+      <span class="card-tag tag-html">HTML Page</span>
+    </div>
+
+    <div class="card card-full">
+      <div class="card-icon">&#128231;</div>
+      <h3>Investor Email Nurture Sequence (5 Emails)</h3>
+      <p>Post-opt-in email sequence that educates, builds trust, and moves investor leads toward a consultation. Covers how MICs work, why advisors don't mention them, track record proof, and qualification CTA.</p>
+      <span class="card-tag tag-creative">Creative</span>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2 class="section-title">Want to walk through this together?</h2>
+    <p class="section-subtitle" style="margin-bottom: 32px;">15 minutes. I'll show you the highlights and answer any questions.</p>
+    <a href="mailto:YOUREMAIL@domain.com?subject=Metmic%20Growth%20Package%20Walkthrough" class="cta-button">Book a 15-Minute Walkthrough</a>
+    <p class="cta-sub">No pitch. Just a walkthrough of what we built for Metmic.</p>
+  </section>
+
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>This growth package was prepared specifically for Metropointe Mortgage Investment Corporation. All research is based on publicly available information. February 2026.</p>
+  </div>
+</footer>
+
+</body>
+</html>
