@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A bespoke marketing growth package built exclusively for Metropointe Mortgage Investment Corporation (MetMic)">
+  <meta property="og:title" content="MetMic Growth Package | Built For You">
+  <meta property="og:description" content="15 high-impact marketing improvements we built from scratch for MetMic. Free. No strings.">
+  <title>MetMic Growth Package | Built Exclusively For You</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-elevated: #1e293b;
+      --bg-card: rgba(255, 255, 255, 0.04);
+      --accent: #3b82f6;
+      --accent-rgb: 59, 130, 246;
+      --success: #22c55e;
+      --success-rgb: 34, 197, 94;
+      --warning: #f59e0b;
+      --gold: #d4af37;
+      --gold-rgb: 212, 175, 55;
+      --danger: #ef4444;
+      --white: #f8fafc;
+      --gray: #94a3b8;
+      --border: rgba(255, 255, 255, 0.08);
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--white);
+      line-height: 1.7;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* Noise Overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 256px 256px;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* Section Divider */
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(var(--accent-rgb), 0.2), rgba(var(--gold-rgb), 0.1), transparent);
+      margin: 0;
+    }
+
+    /* Scroll Reveals */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* Glass Card */
+    .glass-card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+      backdrop-filter: blur(10px) saturate(150%);
+      -webkit-backdrop-filter: blur(10px) saturate(150%);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.05);
+      padding: 32px;
+      transition: transform 0.3s, border-color 0.4s, box-shadow 0.4s;
+    }
+    .glass-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(var(--accent-rgb), 0.25);
+      box-shadow: 0 20px 60px rgba(var(--accent-rgb), 0.08);
+    }
+
+    /* CTA Button */
+    .btn-pulse {
+      display: inline-block;
+      padding: 18px 48px;
+      background: linear-gradient(135deg, var(--accent), #2563eb);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 1000px;
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: 0.3px;
+      animation: ctaPulse 2.5s infinite ease-in-out;
+      transition: transform 0.2s;
+    }
+    .btn-pulse:hover { transform: scale(1.05); }
+
+    @keyframes ctaPulse {
+      0%, 100% { box-shadow: 0 0 30px rgba(var(--accent-rgb), 0.25); }
+      50% { box-shadow: 0 0 55px rgba(var(--accent-rgb), 0.45); }
+    }
+
+    .friction-reducer {
+      margin-top: 16px;
+      font-size: 14px;
+      color: var(--gray);
+      font-weight: 400;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      padding: 120px 0 100px;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: -50%;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(var(--accent-rgb), 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(var(--gold-rgb), 0.08) 0%, transparent 50%);
+      animation: meshMove 20s ease-in-out infinite;
+      z-index: 0;
+    }
+    @keyframes meshMove {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      25% { transform: translate(-5%, 3%) scale(1.05); }
+      50% { transform: translate(3%, -5%) scale(1.02); }
+      75% { transform: translate(-3%, -3%) scale(1.08); }
+    }
+    .hero .container { position: relative; z-index: 1; }
+    .hero-eyebrow {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: 56px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 24px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-sub {
+      font-size: 20px;
+      color: var(--gray);
+      max-width: 680px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+
+    /* Video Embed Area */
+    .video-embed {
+      max-width: 800px;
+      margin: 48px auto 0;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--bg-elevated);
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .video-placeholder {
+      text-align: center;
+      color: var(--gray);
+    }
+    .play-btn {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(var(--accent-rgb), 0.2);
+      border: 2px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      cursor: pointer;
+    }
+    .play-btn::after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 22px solid var(--accent);
+      border-top: 14px solid transparent;
+      border-bottom: 14px solid transparent;
+      margin-left: 6px;
+    }
+
+    /* ===== SECTIONS ===== */
+    section { padding: 100px 0; }
+
+    section h2 {
+      font-family: var(--font-heading);
+      font-size: 40px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    section h3 {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--white);
+    }
+    .section-sub {
+      font-size: 18px;
+      color: var(--gray);
+      max-width: 700px;
+      margin-bottom: 48px;
+      line-height: 1.6;
+    }
+    .section-center { text-align: center; }
+    .section-center .section-sub { margin-left: auto; margin-right: auto; }
+
+    /* ===== WHY SECTION ===== */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .why-card {
+      padding: 32px;
+      text-align: center;
+    }
+    .why-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(var(--accent-rgb), 0.1);
+      border: 1px solid rgba(var(--accent-rgb), 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 24px;
+    }
+    .why-card h3 { font-size: 18px; }
+    .why-card p { font-size: 15px; color: var(--gray); }
+
+    /* ===== PROBLEMS SECTION ===== */
+    .problems-list { max-width: 800px; }
+    .problem-item {
+      display: flex;
+      gap: 20px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .problem-num {
+      font-family: var(--font-heading);
+      font-size: 32px;
+      color: rgba(var(--accent-rgb), 0.3);
+      font-weight: 700;
+      min-width: 48px;
+    }
+    .problem-content h3 { font-size: 18px; margin-bottom: 8px; }
+    .problem-content p { font-size: 15px; color: var(--gray); }
+
+    /* ===== SOLUTIONS SECTION ===== */
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .solution-card { padding: 32px; }
+    .solution-tag {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 1000px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+    .tag-borrower { background: rgba(var(--accent-rgb), 0.15); color: var(--accent); }
+    .tag-investor { background: rgba(var(--gold-rgb), 0.15); color: var(--gold); }
+    .tag-brand { background: rgba(var(--success-rgb), 0.15); color: var(--success); }
+    .solution-card h3 { font-size: 18px; margin-bottom: 8px; }
+    .solution-card p { font-size: 15px; color: var(--gray); }
+
+    /* ===== METRICS ===== */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      text-align: center;
+    }
+    .metric-card { padding: 32px 16px; }
+    .metric-number {
+      font-family: var(--font-heading);
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .metric-label {
+      font-size: 14px;
+      color: var(--gray);
+      font-weight: 400;
+    }
+
+    /* ===== SOCIAL PROOF ===== */
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .proof-card { padding: 32px; }
+    .proof-quote {
+      font-size: 16px;
+      font-style: italic;
+      margin-bottom: 20px;
+      line-height: 1.7;
+      color: var(--white);
+    }
+    .proof-author {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .proof-role {
+      font-size: 13px;
+      color: var(--gray);
+    }
+
+    /* ===== TABLE OF CONTENTS ===== */
+    .toc {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .toc-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--gray);
+      font-size: 16px;
+    }
+    .toc-num {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      color: var(--accent);
+      margin-right: 16px;
+      font-weight: 700;
+    }
+    .toc-title { flex: 1; color: var(--white); font-weight: 500; }
+    .toc-arrow { color: var(--accent); font-size: 18px; }
+
+    /* ===== OFFER ===== */
+    .offer-stack {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .offer-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 16px;
+    }
+    .offer-name { color: var(--white); }
+    .offer-value { color: var(--success); font-weight: 600; }
+
+    .offer-total {
+      display: flex;
+      justify-content: space-between;
+      padding: 24px 0;
+      font-size: 20px;
+      font-weight: 700;
+    }
+    .offer-total .offer-value {
+      font-size: 24px;
+      text-decoration: line-through;
+      color: var(--gray);
+    }
+    .offer-free {
+      text-align: center;
+      padding: 32px;
+      margin-top: 24px;
+      border-radius: 16px;
+      background: rgba(var(--success-rgb), 0.08);
+      border: 1px solid rgba(var(--success-rgb), 0.2);
+    }
+    .offer-free h3 {
+      font-family: var(--font-heading);
+      font-size: 36px;
+      color: var(--success);
+      margin-bottom: 8px;
+    }
+    .offer-free p { color: var(--gray); font-size: 16px; }
+
+    /* ===== PROCESS ===== */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      position: relative;
+    }
+    .steps::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(16.66% + 28px);
+      right: calc(16.66% + 28px);
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), rgba(var(--accent-rgb), 0.2), var(--accent));
+      opacity: 0.3;
+    }
+    .step { text-align: center; }
+    .step-number {
+      position: relative;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg);
+      z-index: 1;
+      margin: 0 auto 20px;
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--accent);
+    }
+    .step-number::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      border: 1px solid rgba(var(--accent-rgb), 0.2);
+      animation: stepPulse 3s ease-in-out infinite;
+    }
+    @keyframes stepPulse {
+      0%, 100% { opacity: 0; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.15); }
+    }
+    .step:nth-child(2) .step-number::after { animation-delay: 0.5s; }
+    .step:nth-child(3) .step-number::after { animation-delay: 1s; }
+    .step h3 { font-size: 18px; margin-bottom: 8px; }
+    .step p { font-size: 14px; color: var(--gray); }
+
+    /* ===== FAQ ===== */
+    .faq-list { max-width: 750px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid var(--border); padding: 24px 0; }
+    .faq-q { font-size: 18px; font-weight: 600; margin-bottom: 12px; color: var(--white); }
+    .faq-a { font-size: 15px; color: var(--gray); line-height: 1.7; }
+
+    /* ===== FINAL CTA ===== */
+    .final-cta {
+      text-align: center;
+      padding: 120px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      inset: -50%;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(var(--accent-rgb), 0.1) 0%, transparent 50%);
+      z-index: 0;
+    }
+    .final-cta .container { position: relative; z-index: 1; }
+    .final-cta h2 {
+      font-family: var(--font-heading);
+      font-size: 48px;
+      max-width: 800px;
+      margin: 0 auto 20px;
+    }
+    .final-cta p {
+      font-size: 18px;
+      color: var(--gray);
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      font-size: 13px;
+      color: var(--gray);
+      border-top: 1px solid var(--border);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 810px) {
+      .hero { padding: 80px 0 60px; }
+      .hero h1 { font-size: 32px; }
+      .hero-sub { font-size: 16px; }
+      section { padding: 64px 0; }
+      section h2 { font-size: 28px; }
+      .why-grid { grid-template-columns: 1fr; }
+      .solutions-grid { grid-template-columns: 1fr; }
+      .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+      .proof-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; gap: 40px; }
+      .steps::before { display: none; }
+      .btn-pulse { width: 100%; text-align: center; padding: 16px 32px; font-size: 16px; }
+      .final-cta h2 { font-size: 28px; }
+      .metric-number { font-size: 36px; }
+      .glass-card { padding: 24px; }
+    }
+
+    /* Accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
+
+    @supports not (backdrop-filter: blur(10px)) {
+      .glass-card { background: rgba(15, 23, 42, 0.95); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container">
+      <p class="hero-eyebrow reveal">Built Exclusively for Metropointe MIC</p>
+      <h1 class="reveal reveal-delay-1">How MetMic Can 2x Their Investor Pipeline and Borrower Flow Without Spending a Dollar on Ads</h1>
+      <p class="hero-sub reveal reveal-delay-2">We spent 100+ hours analyzing your website, your competitors, and the BC alternative lending market. Then we built this entire growth package from scratch. Just for you, Suki.</p>
+      <a href="#BOOKING-LINK" class="btn-pulse reveal reveal-delay-3">See How We'd Do It</a>
+      <p class="friction-reducer reveal reveal-delay-3">Free. No obligation. Takes 15 minutes to walk through.</p>
+
+      <!-- REPLACE: Embed your Loom video here -->
+      <div class="video-embed reveal reveal-delay-4">
+        <div class="video-placeholder">
+          <div class="play-btn"></div>
+          <p>Watch the 5-minute walkthrough we recorded for you</p>
+          <!-- REPLACE: Replace this div with your Loom embed iframe -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== WHY WE REACHED OUT ===== -->
+  <section>
+    <div class="container">
+      <div class="section-center">
+        <h2 class="reveal">Why We Built This For MetMic</h2>
+        <p class="section-sub reveal reveal-delay-1">You have a 13-year track record, $80M+ in managed assets, and CPA-credentialed founders. But your online presence tells none of that story. Here's what jumped out to us.</p>
+      </div>
+      <div class="why-grid">
+        <div class="glass-card why-card reveal reveal-delay-1">
+          <div class="why-icon">0</div>
+          <h3>Zero Testimonials</h3>
+          <p>13 years of happy borrowers and investors. Not a single testimonial on your website. The #1 trust signal in financial services is completely missing.</p>
+        </div>
+        <div class="glass-card why-card reveal reveal-delay-2">
+          <div class="why-icon">?</div>
+          <h3>Hidden Credibility</h3>
+          <p>Your co-founders hold CPA, CGA and CPA, CA designations. These are gold in financial services. But visitors can't find them anywhere on the site.</p>
+        </div>
+        <div class="glass-card why-card reveal reveal-delay-3">
+          <div class="why-icon">0</div>
+          <h3>No Lead Funnel</h3>
+          <p>Qualified borrowers and high-net-worth investors land on your site. They see a contact form. No lead magnet. No nurture. No follow-up. They leave.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== TABLE OF CONTENTS ===== -->
+  <section>
+    <div class="container section-center">
+      <h2 class="reveal">What's Inside This Package</h2>
+      <p class="section-sub reveal reveal-delay-1">Every section below contains done-for-you solutions. Not advice. Not "you should do this." Actual implementations you can use today.</p>
+      <div class="toc reveal reveal-delay-2">
+        <div class="toc-item"><span class="toc-num">01</span><span class="toc-title">15 Critical Marketing Gaps We Found</span><span class="toc-arrow">&darr;</span></div>
+        <div class="toc-item"><span class="toc-num">02</span><span class="toc-title">Done-For-You Solutions for Each Gap</span><span class="toc-arrow">&darr;</span></div>
+        <div class="toc-item"><span class="toc-num">03</span><span class="toc-title">Borrower Acquisition Strategy</span><span class="toc-arrow">&darr;</span></div>
+        <div class="toc-item"><span class="toc-num">04</span><span class="toc-title">Investor Pipeline Strategy</span><span class="toc-arrow">&darr;</span></div>
+        <div class="toc-item"><span class="toc-num">05</span><span class="toc-title">Content & Authority Roadmap</span><span class="toc-arrow">&darr;</span></div>
+        <div class="toc-item"><span class="toc-num">06</span><span class="toc-title">Projected Impact & ROI</span><span class="toc-arrow">&darr;</span></div>
+        <div class="toc-item"><span class="toc-num">07</span><span class="toc-title">How We'd Implement Everything</span><span class="toc-arrow">&darr;</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== PROBLEMS ===== -->
+  <section>
+    <div class="container">
+      <h2 class="reveal">The 7 Biggest Gaps Holding MetMic Back</h2>
+      <p class="section-sub reveal reveal-delay-1">These aren't opinions. They're observable gaps that your competitors are already exploiting. Each one is costing you borrowers, investors, or both.</p>
+      <div class="problems-list">
+        <div class="problem-item reveal">
+          <span class="problem-num">01</span>
+          <div class="problem-content">
+            <h3>No Social Proof Architecture</h3>
+            <p>You've funded 73 mortgages totaling $80M+. You've delivered 8.81% annual returns for investors over 5 years. But none of this is on your website in a way that builds trust. Every competitor who adds real testimonials with names, numbers, and outcomes will outconvert you.</p>
+          </div>
+        </div>
+        <div class="problem-item reveal">
+          <span class="problem-num">02</span>
+          <div class="problem-content">
+            <h3>Your Team's Credibility Is Invisible</h3>
+            <p>Suki Gill holds a CPA, CGA. Gurpinder Lally holds a CPA, CA. In financial services, these designations are massive trust signals. But your "Meet the Team" page doesn't showcase this. A borrower handing over a $1.5M mortgage decision needs to see WHO is behind the company.</p>
+          </div>
+        </div>
+        <div class="problem-item reveal">
+          <span class="problem-num">03</span>
+          <div class="problem-content">
+            <h3>No Content Moat</h3>
+            <p>Most Canadians don't know what a Mortgage Investment Corporation is. The first company that educates the BC market with clear, simple content will own that conversation for years. Right now, MetMic has a blog section that's essentially empty. Cambridge MIC and PHL Financial are already producing content.</p>
+          </div>
+        </div>
+        <div class="problem-item reveal">
+          <span class="problem-num">04</span>
+          <div class="problem-content">
+            <h3>No Lead Generation Funnel</h3>
+            <p>Your only conversion path is a contact form. No lead magnet for investors ("Free Guide: How MIC Investing Works"). No calculator tool for borrowers. No email capture. Every visitor who isn't ready to contact you today is lost forever.</p>
+          </div>
+        </div>
+        <div class="problem-item reveal">
+          <span class="problem-num">05</span>
+          <div class="problem-content">
+            <h3>Vague Speed Claims</h3>
+            <p>Your positioning says "Speed & service over bureaucracy." But you never say HOW fast. "Funded in 5 business days" beats "we're fast" every time. Banks take 30-60 days. If MetMic can fund in 5-10, that's your headline. Not "speed."</p>
+          </div>
+        </div>
+        <div class="problem-item reveal">
+          <span class="problem-num">06</span>
+          <div class="problem-content">
+            <h3>Investment Funnel Has Friction</h3>
+            <p>Investors click "Invest with Us" and get redirected to an external portal. Every redirect loses 30-40% of interested visitors. The investment process should feel like one continuous experience, not like you're sending them to a different company.</p>
+          </div>
+        </div>
+        <div class="problem-item reveal">
+          <span class="problem-num">07</span>
+          <div class="problem-content">
+            <h3>No Paid or Organic Acquisition</h3>
+            <p>No Google Ads for "alternative mortgage lender BC." No Meta ads targeting accredited investors. No SEO content ranking for "MIC investing Canada" or "private mortgage BC." Your only lead source appears to be broker referrals and word-of-mouth. That's not scalable.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== SOLUTIONS ===== -->
+  <section>
+    <div class="container">
+      <div class="section-center">
+        <h2 class="reveal">What We'd Build For MetMic</h2>
+        <p class="section-sub reveal reveal-delay-1">For every gap above, we built or outlined a specific solution. These aren't suggestions. They're implementation-ready marketing assets.</p>
+      </div>
+      <div class="solutions-grid">
+        <div class="glass-card solution-card reveal reveal-delay-1">
+          <span class="solution-tag tag-brand">Trust</span>
+          <h3>Social Proof System</h3>
+          <p>Testimonial collection workflow. Interview scripts for borrowers and investors. Template for case studies with the formula: [Before State] + [MetMic Action] + [Specific Outcome] + [Timeframe]. We'd produce 5-10 testimonials in the first 30 days.</p>
+        </div>
+        <div class="glass-card solution-card reveal reveal-delay-2">
+          <span class="solution-tag tag-borrower">Borrowers</span>
+          <h3>Borrower Landing Page</h3>
+          <p>Dedicated page with specific approval timelines, case studies of funded deals, mortgage calculator, clear eligibility criteria, and a "Get Pre-Approved" funnel that captures leads. Positioned against banks: "Funded in days, not months."</p>
+        </div>
+        <div class="glass-card solution-card reveal reveal-delay-3">
+          <span class="solution-tag tag-investor">Investors</span>
+          <h3>Investor Landing Page</h3>
+          <p>Dedicated page with portfolio performance data, risk management framework, founder bios with CPA credentials front and center, comparison vs. GICs/bonds/REITs, and a "Schedule an Investor Call" funnel. No external redirects.</p>
+        </div>
+        <div class="glass-card solution-card reveal reveal-delay-4">
+          <span class="solution-tag tag-brand">Content</span>
+          <h3>12-Week Content Calendar</h3>
+          <p>Blog and video topics designed to rank for "MIC investing BC," "alternative mortgage lender Surrey," and similar terms. Each piece educates the market and positions MetMic as the authority. Topics like "MIC vs. REIT: Which is right for you?" and "How MetMic evaluates a mortgage application."</p>
+        </div>
+        <div class="glass-card solution-card reveal reveal-delay-1">
+          <span class="solution-tag tag-borrower">Automation</span>
+          <h3>Email Nurture Sequences</h3>
+          <p>Two separate 7-email sequences. One for borrower leads (from "I need a mortgage" to "I trust MetMic to fund it"). One for investor leads (from "What is a MIC?" to "I want to invest $50K+"). Automated. Runs 24/7.</p>
+        </div>
+        <div class="glass-card solution-card reveal reveal-delay-2">
+          <span class="solution-tag tag-investor">Lead Magnet</span>
+          <h3>Investor Education Guide</h3>
+          <p>"The BC Investor's Guide to Mortgage Investment Corporations." A 15-page PDF that explains how MICs work, who they're for, risk factors, tax advantages (RRSP/TFSA eligible), and why MetMic's 13-year track record matters. Email-gated. Feeds into the investor nurture sequence.</p>
+        </div>
+        <div class="glass-card solution-card reveal reveal-delay-3">
+          <span class="solution-tag tag-brand">Authority</span>
+          <h3>Team Credibility Overhaul</h3>
+          <p>Professional team page with founder bios, CPA credentials, years of experience, personal philosophy on lending. Photo shoot direction. LinkedIn optimization for Suki and Gurpinder. Position both as the go-to experts in BC alternative lending.</p>
+        </div>
+        <div class="glass-card solution-card reveal reveal-delay-4">
+          <span class="solution-tag tag-borrower">Ads</span>
+          <h3>Google & Meta Ad Campaigns</h3>
+          <p>Google Search campaigns targeting "alternative mortgage BC," "private lender Surrey," "fast mortgage approval BC." Meta campaigns targeting accredited investors with the investor guide as lead magnet. Projected: 50-100 qualified leads/month at $15-30 cost per lead.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== METRICS ===== -->
+  <section>
+    <div class="container section-center">
+      <h2 class="reveal">The Numbers That Matter</h2>
+      <p class="section-sub reveal reveal-delay-1">MetMic already has impressive fundamentals. These are YOUR numbers. Imagine what happens when the marketing catches up to the product.</p>
+      <div class="metrics-grid">
+        <div class="glass-card metric-card reveal reveal-delay-1">
+          <div class="metric-number" data-count="80" data-prefix="$" data-suffix="M+">$0</div>
+          <div class="metric-label">Portfolio Under Management</div>
+        </div>
+        <div class="glass-card metric-card reveal reveal-delay-2">
+          <div class="metric-number" data-count="8.81" data-suffix="%">0</div>
+          <div class="metric-label">Avg. Annual Return (5yr)</div>
+        </div>
+        <div class="glass-card metric-card reveal reveal-delay-3">
+          <div class="metric-number" data-count="13" data-suffix="+ yrs">0</div>
+          <div class="metric-label">Consistent Track Record</div>
+        </div>
+        <div class="glass-card metric-card reveal reveal-delay-4">
+          <div class="metric-number" data-count="73" data-suffix="">0</div>
+          <div class="metric-label">Active Mortgages Funded</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== SOCIAL PROOF ===== -->
+  <section>
+    <div class="container">
+      <div class="section-center">
+        <h2 class="reveal">What Our Clients Say</h2>
+        <p class="section-sub reveal reveal-delay-1">We've helped financial services companies build the marketing infrastructure they need to scale. Here's what that looks like.</p>
+      </div>
+      <div class="proof-grid">
+        <!-- REPLACE: Add your real client testimonials below. Replace the placeholder text with actual quotes from your clients. -->
+        <div class="glass-card proof-card reveal reveal-delay-1">
+          <p class="proof-quote">"[Testimonial from a financial services client you've worked with. Include: what their situation was before, what you did, the specific result, and how they felt about it.]"</p>
+          <p class="proof-author">[Client Name]</p>
+          <p class="proof-role">[Title, Company]</p>
+        </div>
+        <div class="glass-card proof-card reveal reveal-delay-2">
+          <p class="proof-quote">"[Second testimonial. Ideally from a company in lending, investing, or financial services. Specific numbers matter here: leads generated, cost per acquisition reduced, portfolio growth attributed to marketing.]"</p>
+          <p class="proof-author">[Client Name]</p>
+          <p class="proof-role">[Title, Company]</p>
+        </div>
+        <div class="glass-card proof-card reveal reveal-delay-3">
+          <p class="proof-quote">"[Third testimonial. Show range: different type of client or different service you provided. Results that MetMic would care about: investor pipeline growth, borrower lead quality, brand authority built.]"</p>
+          <p class="proof-author">[Client Name]</p>
+          <p class="proof-role">[Title, Company]</p>
+        </div>
+        <div class="glass-card proof-card reveal reveal-delay-4">
+          <p class="proof-quote">"[Fourth testimonial. The strongest one. Save the most impressive result for last. Something like: 'We went from X leads/month to Y leads/month in Z days. Our cost per acquisition dropped by N%.']"</p>
+          <p class="proof-author">[Client Name]</p>
+          <p class="proof-role">[Title, Company]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== MID-PAGE CTA ===== -->
+  <section style="padding: 80px 0;">
+    <div class="container section-center">
+      <h2 class="reveal" style="font-size: 36px; max-width: 700px; margin: 0 auto 16px;">Want Us to Walk You Through the Full Package?</h2>
+      <p class="reveal reveal-delay-1" style="color: var(--gray); font-size: 18px; margin-bottom: 32px;">15 minutes. We'll show you exactly what we built and how it would work for MetMic.</p>
+      <!-- REPLACE: Your Calendly or booking link -->
+      <a href="#BOOKING-LINK" class="btn-pulse reveal reveal-delay-2">Book a 15-Minute Walkthrough</a>
+      <p class="friction-reducer reveal reveal-delay-2">Free. No pitch. We just walk through the deliverables.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== OFFER STACK ===== -->
+  <section>
+    <div class="container section-center">
+      <h2 class="reveal">What You Get (For Free)</h2>
+      <p class="section-sub reveal reveal-delay-1">This is everything we built for MetMic. No strings. If you like what you see, we can talk about implementation. If not, keep the package.</p>
+      <div class="offer-stack reveal reveal-delay-2">
+        <div class="offer-item">
+          <span class="offer-name">Full Marketing Audit (15 gaps identified)</span>
+          <span class="offer-value">$2,500</span>
+        </div>
+        <div class="offer-item">
+          <span class="offer-name">Borrower Landing Page Strategy + Copy</span>
+          <span class="offer-value">$3,000</span>
+        </div>
+        <div class="offer-item">
+          <span class="offer-name">Investor Landing Page Strategy + Copy</span>
+          <span class="offer-value">$3,000</span>
+        </div>
+        <div class="offer-item">
+          <span class="offer-name">12-Week Content Calendar</span>
+          <span class="offer-value">$1,500</span>
+        </div>
+        <div class="offer-item">
+          <span class="offer-name">2x Email Nurture Sequences (14 emails)</span>
+          <span class="offer-value">$2,000</span>
+        </div>
+        <div class="offer-item">
+          <span class="offer-name">Investor Education Guide (15-page PDF outline)</span>
+          <span class="offer-value">$1,500</span>
+        </div>
+        <div class="offer-item">
+          <span class="offer-name">Google + Meta Ad Campaign Blueprint</span>
+          <span class="offer-value">$2,000</span>
+        </div>
+        <div class="offer-item">
+          <span class="offer-name">Team Credibility Overhaul Plan</span>
+          <span class="offer-value">$1,000</span>
+        </div>
+        <div class="offer-total">
+          <span class="offer-name">Total Value</span>
+          <span class="offer-value">$16,500</span>
+        </div>
+      </div>
+      <div class="offer-free reveal reveal-delay-3">
+        <h3>Your Cost: $0</h3>
+        <p>We built this because we believe MetMic deserves marketing that matches its track record. Take the whole thing.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section>
+    <div class="container section-center">
+      <h2 class="reveal">If You Want Us to Implement It</h2>
+      <p class="section-sub reveal reveal-delay-1">You've seen the plan. If you want us to build, launch, and manage everything, here's how it works.</p>
+      <div class="steps">
+        <div class="step reveal reveal-delay-1">
+          <div class="step-number">1</div>
+          <h3>15-Min Strategy Call</h3>
+          <p>We walk through the package together. You tell us what matters most. We prioritize the highest-impact items for Month 1.</p>
+        </div>
+        <div class="step reveal reveal-delay-2">
+          <div class="step-number">2</div>
+          <h3>We Build Everything</h3>
+          <p>Landing pages, funnels, email sequences, ad campaigns, content calendar. All done-for-you. You review and approve. We launch.</p>
+        </div>
+        <div class="step reveal reveal-delay-3">
+          <div class="step-number">3</div>
+          <h3>Leads Start Flowing</h3>
+          <p>Qualified borrowers and investors hitting your pipeline within 30 days. We optimize weekly based on performance data.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== FAQ ===== -->
+  <section>
+    <div class="container">
+      <h2 class="reveal" style="text-align: center;">Common Questions</h2>
+      <div class="faq-list" style="margin-top: 48px;">
+        <div class="faq-item reveal">
+          <div class="faq-q">Why did you build this for free?</div>
+          <div class="faq-a">We help financial services companies grow. When we find a company with strong fundamentals and weak marketing, we build a package to demonstrate what's possible. If MetMic wants to work together, great. If not, you still keep everything we built.</div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-q">Do you understand financial services compliance?</div>
+          <div class="faq-a">Yes. We know financial marketing has regulatory constraints (BCFSA, securities regulations for EMDs). Everything we produce goes through your compliance review before publishing. We don't make performance guarantees in investor-facing material. We work within the rules.</div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-q">What would it cost if we wanted you to implement everything?</div>
+          <div class="faq-a">That depends on scope and priority. We can build the full system or start with the highest-impact pieces. The strategy call is where we figure out what makes sense for MetMic specifically. No cookie-cutter packages.</div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-q">How quickly would we see results?</div>
+          <div class="faq-a">Borrower and investor landing pages can be live within 2-3 weeks. Email sequences active within the first month. Paid ad campaigns generating leads within 30 days of launch. Content and SEO take 3-6 months to compound, but the foundation gets built immediately.</div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-q">We've worked with agencies before and it didn't go well.</div>
+          <div class="faq-a">That's why we built this entire package before asking for anything. You can judge the quality of our work before committing a dollar. If this package doesn't impress you, we're not the right fit. The work speaks for itself.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section class="final-cta">
+    <div class="container">
+      <h2 class="reveal">MetMic Has 13 Years of Results.<br>Let's Make Sure Everyone Knows.</h2>
+      <p class="reveal reveal-delay-1">15 minutes. We walk through the package. You decide if it's worth exploring further.</p>
+      <!-- REPLACE: Your Calendly or booking link -->
+      <a href="#BOOKING-LINK" class="btn-pulse reveal reveal-delay-2">Book Your Free Walkthrough</a>
+      <p class="friction-reducer reveal reveal-delay-2">No pitch. No pressure. Just the work we already did for you.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <!-- REPLACE: Your agency name and website -->
+      <p>Built with care by [YOUR AGENCY] | <a href="#YOUR-WEBSITE" style="color: var(--accent); text-decoration: none;">[youragency.com]</a></p>
+    </div>
+  </footer>
+
+  <!-- Scroll Reveal + Counter Animation -->
+  <script>
+    (function() {
+      /* Scroll Reveals */
+      var reveals = document.querySelectorAll('.reveal');
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      reveals.forEach(function(el) { observer.observe(el); });
+
+      /* Animated Counters */
+      var counted = false;
+      var counters = document.querySelectorAll('[data-count]');
+
+      function animateCounters() {
+        if (counted) return;
+        counted = true;
+        counters.forEach(function(el) {
+          var target = parseFloat(el.getAttribute('data-count'));
+          var prefix = el.getAttribute('data-prefix') || '';
+          var suffix = el.getAttribute('data-suffix') || '';
+          var isDecimal = target % 1 !== 0;
+          var duration = 2000;
+          var start = performance.now();
+
+          function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+
+          function step(now) {
+            var elapsed = now - start;
+            var progress = Math.min(elapsed / duration, 1);
+            var current = easeOut(progress) * target;
+
+            if (isDecimal) {
+              el.textContent = prefix + current.toFixed(2) + suffix;
+            } else {
+              el.textContent = prefix + Math.floor(current) + suffix;
+            }
+
+            if (progress < 1) requestAnimationFrame(step);
+          }
+
+          requestAnimationFrame(step);
+        });
+      }
+
+      if (counters.length) {
+        var obs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) { animateCounters(); obs.disconnect(); }
+          });
+        }, { threshold: 0.3 });
+        obs.observe(counters[0].closest('section'));
+      }
+    })();
+  </script>
+
+</body>
+</html>
