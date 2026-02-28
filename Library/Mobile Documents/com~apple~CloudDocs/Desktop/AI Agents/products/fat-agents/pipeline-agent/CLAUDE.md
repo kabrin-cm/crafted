@@ -146,15 +146,16 @@ Read these skill files based on what's needed:
 
 ### Research Deliverables
 
-The research phase produces these 7 deliverables:
+The research phase produces these 8 deliverables:
 
 1. **Market Dossier** -- Industry overview, market size, trends, opportunities, risks
 2. **Avatar Profile(s)** -- Deep psychographic profiles of ideal customers
 3. **Competitor Matrix** -- Teardowns of 3-8 competitors (positioning, funnels, ads, weaknesses)
 4. **Voice-of-Customer Database** -- Real audience language, pain points, desires, objections (verbatim quotes)
 5. **Voice & Brand DNA Profile** -- Authentic voice extracted and documented
-6. **Connections Map** -- How all findings connect and feed into marketing strategy
-7. **Strategic Recommendations** -- Positioning gaps, quick wins, content priorities, offer optimization
+6. **Social Media Profile Audit** -- Instagram + YouTube analysis (client and/or competitors)
+7. **Connections Map** -- How all findings connect and feed into marketing strategy
+8. **Strategic Recommendations** -- Positioning gaps, quick wins, content priorities, offer optimization
 
 ### Research Quality Standards
 
@@ -164,6 +165,73 @@ The research phase produces these 7 deliverables:
 - **Psychographics over demographics** -- "35-45 year old male" is less useful than "ambitious but overwhelmed agency owner who feels like they're building the plane while flying it"
 - **Voice samples must be REAL language** -- Pull from reviews, Reddit, forums, social comments
 - **Competitive gaps must be ACTIONABLE** -- Don't just say "competitors are weak at email." Say what specifically is missing and how to exploit it
+
+### Social Media Profile Research (Instagram + YouTube)
+
+When researching a business (client or prospect), **always audit their social media profiles**. This reveals content strategy, audience engagement, and positioning gaps that inform everything downstream.
+
+**Instagram Audit (for client AND top 3 competitors):**
+- **Profile overview:** Bio copy, link in bio destination, highlight categories, verified status
+- **Follower metrics:** Follower count, following count, follower-to-following ratio
+- **Content themes:** What topics do they post about? Group into 3-5 content pillars
+- **Posting cadence:** How often do they post? (daily, 3x/week, sporadically)
+- **Format mix:** Ratio of Reels vs. carousels vs. single images vs. Stories highlights
+- **Engagement signals:** Approximate likes/comments on recent posts. Which posts get the most engagement and why?
+- **Top-performing content:** Identify 3-5 posts with highest engagement. What made them work? (hook, topic, format, CTA)
+- **Weakest content:** What falls flat? (low engagement, generic posts, inconsistent branding)
+- **CTA patterns:** How do they drive action? (link in bio, DM me, comment [word], swipe up)
+- **Hashtag strategy:** What hashtags do they use? Are they niche-specific or generic?
+- **Gaps and opportunities:** What topics are competitors NOT covering? Where is engagement low across the niche?
+
+**YouTube Audit (for client AND top 3 competitors):**
+- **Channel overview:** Subscriber count, total video count, channel description, banner/branding
+- **Content themes:** What video topics dominate? Group into 3-5 content pillars
+- **Upload cadence:** How often do they post? (weekly, biweekly, monthly, sporadic)
+- **View counts:** Average views per video. Identify outlier videos (10x+ average views) and analyze why
+- **Top 5 videos:** Title, view count, topic, thumbnail style. What pattern connects top performers?
+- **Thumbnail strategy:** Consistent style? Text on thumbnails? Face close-ups? Before/after?
+- **Title formulas:** What title patterns do they use? (How-to, listicle, story, controversy, number-driven)
+- **Video length:** Average duration. Do longer or shorter videos perform better?
+- **Comment sentiment:** What do commenters say? What questions do they ask? What do they want more of?
+- **Description/CTA patterns:** How do they convert viewers? (lead magnets, course links, booking links, community links)
+- **Gaps and opportunities:** What topics have high search volume but low competition in this niche?
+
+**Output format for the research brief:**
+
+```
+## SOCIAL MEDIA PROFILE AUDIT
+
+### Client: [Name]
+**Instagram:** @[handle] | [X] followers | Posts [X]x/week
+- Content pillars: [list]
+- Top content type: [Reels/Carousels/etc]
+- Engagement rate: [approx high/med/low]
+- Key strength: [what works]
+- Key gap: [what's missing]
+
+**YouTube:** [channel name] | [X] subscribers | [X] videos
+- Content pillars: [list]
+- Upload cadence: [frequency]
+- Avg views: [range]
+- Top video: "[title]" ([X] views) - why it worked: [reason]
+- Key gap: [what's missing]
+
+### Competitor Comparison
+| Metric | Client | Competitor 1 | Competitor 2 | Competitor 3 |
+|--------|--------|-------------|-------------|-------------|
+| IG Followers | | | | |
+| IG Post Cadence | | | | |
+| IG Engagement | | | | |
+| YT Subscribers | | | | |
+| YT Avg Views | | | | |
+| YT Upload Cadence | | | | |
+| Content Pillars | | | | |
+
+### Social Media Opportunities
+1. [Specific opportunity based on gaps found]
+2. [Specific opportunity based on competitor weaknesses]
+3. [Specific opportunity based on audience demand signals]
+```
 
 ### Save Research Brief
 
@@ -191,6 +259,9 @@ Structure it with these labeled sections:
 
 ## KEYWORD INTEL
 [Search terms, content opportunities, SEO gaps]
+
+## SOCIAL MEDIA PROFILE AUDIT
+[Instagram + YouTube analysis for client and/or competitors]
 
 ## STRATEGIC RECOMMENDATIONS
 [Quick wins, positioning moves, content priorities]

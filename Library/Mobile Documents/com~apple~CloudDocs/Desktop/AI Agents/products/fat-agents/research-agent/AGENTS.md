@@ -729,9 +729,82 @@ Based on the customer journey mapping (Phase 1) and tool stack analysis, where c
 
 ---
 
+### Phase 7: Social Media Profile Audit (Instagram + YouTube)
+
+**Purpose:** Audit the client's social media presence AND their competitors' profiles to reveal content strategy gaps, engagement patterns, and positioning opportunities that don't show up in website-only research.
+
+**Always run this phase.** Social media is where brands show their real personality and where audiences interact most openly. Skipping this means missing half the competitive picture.
+
+**Instagram Audit (for client AND top 3 competitors):**
+- **Profile overview:** Bio copy, link in bio destination, highlight categories, verified status
+- **Follower metrics:** Follower count, following count, follower-to-following ratio
+- **Content themes:** What topics do they post about? Group into 3-5 content pillars
+- **Posting cadence:** How often do they post? (daily, 3x/week, sporadically)
+- **Format mix:** Ratio of Reels vs. carousels vs. single images vs. Stories highlights
+- **Engagement signals:** Approximate likes/comments on recent posts. Which posts get the most engagement and why?
+- **Top-performing content:** Identify 3-5 posts with highest engagement. What made them work? (hook, topic, format, CTA)
+- **Weakest content:** What falls flat? (low engagement, generic posts, inconsistent branding)
+- **CTA patterns:** How do they drive action? (link in bio, DM me, comment [word], swipe up)
+- **Hashtag strategy:** What hashtags do they use? Are they niche-specific or generic?
+- **Gaps and opportunities:** What topics are competitors NOT covering? Where is engagement low across the niche?
+
+**YouTube Audit (for client AND top 3 competitors):**
+- **Channel overview:** Subscriber count, total video count, channel description, banner/branding
+- **Content themes:** What video topics dominate? Group into 3-5 content pillars
+- **Upload cadence:** How often do they post? (weekly, biweekly, monthly, sporadic)
+- **View counts:** Average views per video. Identify outlier videos (10x+ average views) and analyze why
+- **Top 5 videos:** Title, view count, topic, thumbnail style. What pattern connects top performers?
+- **Thumbnail strategy:** Consistent style? Text on thumbnails? Face close-ups? Before/after?
+- **Title formulas:** What title patterns do they use? (How-to, listicle, story, controversy, number-driven)
+- **Video length:** Average duration. Do longer or shorter videos perform better?
+- **Comment sentiment:** What do commenters say? What questions do they ask? What do they want more of?
+- **Description/CTA patterns:** How do they convert viewers? (lead magnets, course links, booking links, community links)
+- **Gaps and opportunities:** What topics have high search volume but low competition in this niche?
+
+**Output format:**
+
+```markdown
+## SOCIAL MEDIA PROFILE AUDIT
+
+### Client: [Name]
+**Instagram:** @[handle] | [X] followers | Posts [X]x/week
+- Content pillars: [list]
+- Top content type: [Reels/Carousels/etc]
+- Engagement rate: [approx high/med/low]
+- Key strength: [what works]
+- Key gap: [what's missing]
+
+**YouTube:** [channel name] | [X] subscribers | [X] videos
+- Content pillars: [list]
+- Upload cadence: [frequency]
+- Avg views: [range]
+- Top video: "[title]" ([X] views) - why it worked: [reason]
+- Key gap: [what's missing]
+
+### Competitor Comparison
+| Metric | Client | Competitor 1 | Competitor 2 | Competitor 3 |
+|--------|--------|-------------|-------------|-------------|
+| IG Followers | | | | |
+| IG Post Cadence | | | | |
+| IG Engagement | | | | |
+| YT Subscribers | | | | |
+| YT Avg Views | | | | |
+| YT Upload Cadence | | | | |
+| Content Pillars | | | | |
+
+### Social Media Opportunities
+1. [Specific opportunity based on gaps found]
+2. [Specific opportunity based on competitor weaknesses]
+3. [Specific opportunity based on audience demand signals]
+```
+
+**Output:** Social Media Profile Audit (Deliverable #7)
+
+---
+
 ## Deliverables
 
-Every research engagement produces these 7 core deliverables. Active modules may add additional outputs specific to their domain.
+Every research engagement produces these 8 core deliverables. Active modules may add additional outputs specific to their domain.
 
 ### Deliverable #1: Market Dossier
 
@@ -2512,8 +2585,9 @@ Your research agent is a custom-built AI that conducts deep market research for 
 3. **Competitor Matrix** - Teardowns of 3-8 competitors (positioning, funnels, ads, weaknesses)
 4. **Voice-of-Customer Database** - Real audience language, pain points, desires, objections (verbatim quotes)
 5. **Voice & Brand DNA Profile** - Your authentic voice extracted and documented so all content sounds like YOU
-6. **Connections Map** - How all research findings connect and feed into marketing strategy
-7. **Strategic Recommendations** - Positioning gaps, quick wins, content priorities, offer optimization
+6. **Social Media Profile Audit** - Instagram + YouTube analysis (client and/or competitors)
+7. **Connections Map** - How all research findings connect and feed into marketing strategy
+8. **Strategic Recommendations** - Positioning gaps, quick wins, content priorities, offer optimization
 
 These deliverables become the foundation for everything: ad copy, email sequences, landing pages, content strategy, sales scripts. Every piece of marketing you build after this is grounded in real research, not guesswork.
 
